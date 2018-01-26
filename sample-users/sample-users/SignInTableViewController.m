@@ -37,8 +37,8 @@
 {
     [super viewDidLoad];
     
-    self.loginTextField.text = @"samuel27";
-    self.passwordTextField.text = @"samuel27";
+    self.loginTextField.text = @"bacsivietapp@gmail.com";
+    self.passwordTextField.text = @"Bien!@#678Thanh";
 }
 
 - (IBAction)nextButtonClicked:(id)sender
@@ -55,7 +55,7 @@
         [SVProgressHUD showWithStatus:@"Signing in"];
 
         __weak typeof(self)weakSelf = self;
-        [QBRequest logInWithUserLogin:login password:password successBlock:^(QBResponse *response, QBUUser *user) {
+        [QBRequest logInWithUserEmail:login password:password successBlock:^(QBResponse *response, QBUUser *user) {
             [SVProgressHUD dismiss];
             
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
