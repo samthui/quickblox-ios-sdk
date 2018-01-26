@@ -41,7 +41,7 @@ NS_ENUM(NSInteger, UsersViewControllerMenuMap) {
     [super viewDidLoad];
     self.title = @"Users";
     
-    self.paginator = [[UsersPaginator alloc] initWithPageSize:10 delegate:self];
+    self.paginator = [[UsersPaginator alloc] initWithTags:@[@"doctor"] pageSize:10 delegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated

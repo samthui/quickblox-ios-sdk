@@ -10,5 +10,8 @@
 #import "NMPaginator.h"
 
 @interface UsersPaginator : NMPaginator
+@property (retain, readonly) NSArray<NSString *> * tags;
+
+- (id)initWithTags:(NSArray<NSString *> *)tags pageSize:(NSInteger)pageSize delegate:(id<NMPaginatorDelegate>)paginatorDelegate;
 
 @end
