@@ -85,8 +85,8 @@
         [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"success! data=%@",responseObject);
             
-            if ([responseObject objectForKey:@"isLogin"] == true) {
-                
+            if ([[responseObject objectForKey:@"isLogin"] intValue] == 1) {
+                [self performSegueWithIdentifier:@"showUsersSegue" sender:nil];
             } else {
                 
                 

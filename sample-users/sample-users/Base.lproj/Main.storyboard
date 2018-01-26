@@ -410,6 +410,7 @@
                     <connections>
                         <outlet property="loginTextField" destination="Uyc-At-6HM" id="Fss-aG-9iA"/>
                         <outlet property="passwordTextField" destination="nI0-kh-q4q" id="f8N-5A-WV4"/>
+                        <segue destination="Vhg-m8-f1P" kind="show" identifier="showUsersSegue" id="mZf-X1-n50"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fb-pN-CrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
