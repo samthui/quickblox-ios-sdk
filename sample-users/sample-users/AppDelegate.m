@@ -9,10 +9,10 @@
 #import "AppDelegate.h"
 #import <Quickblox/Quickblox.h>
 
-const NSUInteger kApplicationID = 92;
-NSString *const kAuthKey        = @"wJHdOcQSxXQGWx5";
-NSString *const kAuthSecret     = @"BTFsj7Rtt27DAmT";
-NSString *const kAccountKey     = @"7yvNe17TnjNUqDoPwfqp";
+const NSUInteger kApplicationID = 67043;
+NSString *const kAuthKey        = @"tJq9BqRPyNTeKy9";
+NSString *const kAuthSecret     = @"yhgCMPAfpCNXJcz";
+NSString *const kAccountKey     = @"suHzUtFPa1RhcBeFtnwU";
 
 @interface AppDelegate ()
 
