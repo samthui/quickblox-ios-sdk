@@ -76,7 +76,7 @@
             [alert show];
         }];*/
         NSString *url = @"http://bacsiviet.vn/test-mobile";
-        NSDictionary *parameters = @{@"email": @"ngocnguyen@gmail.com", @"pwd": @"12345"};
+        NSDictionary *parameters = @{@"email": login, @"pwd": password};
         
         AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -88,6 +88,7 @@
             if ([[responseObject objectForKey:@"isLogin"] intValue] == 1) {
                 [self performSegueWithIdentifier:@"showUsersSegue" sender:nil];
             } else {
+                [SVProgressHUD dismiss];
                 
                 
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
