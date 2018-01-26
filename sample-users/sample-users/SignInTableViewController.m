@@ -10,6 +10,10 @@
 #import <Quickblox/Quickblox.h>
 #import <SVProgressHUD.h>
 
+#import "AFURLRequestSerialization.h"
+#import "AFURLResponseSerialization.h"
+#import "AFHTTPSessionManager.h"
+
 @interface SignInTableViewController () <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *loginTextField;
@@ -55,7 +59,7 @@
         [SVProgressHUD showWithStatus:@"Signing in"];
 
         __weak typeof(self)weakSelf = self;
-        [QBRequest logInWithUserEmail:login password:password successBlock:^(QBResponse *response, QBUUser *user) {
+        /*[QBRequest logInWithUserEmail:login password:password successBlock:^(QBResponse *response, QBUUser *user) {
             [SVProgressHUD dismiss];
             
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
@@ -66,6 +70,41 @@
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:[response.error  description]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }];*/
+        NSString *url = @"http://bacsiviet.vn/test-mobile";
+        NSDictionary *parameters = @{@"email": @"ngocnguyen@gmail.com", @"pwd": @"12345"};
+        
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+        [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"success! data=%@",responseObject);
+            
+            if ([responseObject objectForKey:@"isLogin"] == true) {
+                
+            } else {
+                
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                message:[responseObject objectForKey:@"msg"]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [SVProgressHUD dismiss];
+            
+            NSLog(@"Errors=%@", [error description]);
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error  description]
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];

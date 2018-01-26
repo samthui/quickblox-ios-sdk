@@ -21,7 +21,7 @@ typedef enum {
 @end
 
 @interface NMPaginator : NSObject {
-    id <NMPaginatorDelegate> __weak delegate;
+    id <NMPaginatorDelegate> delegate;
 }
 
 @property (weak) id delegate;

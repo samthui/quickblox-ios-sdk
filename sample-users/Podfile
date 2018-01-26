@@ -4,6 +4,7 @@
 target 'sample-users' do
     pod 'SVProgressHUD'
     pod 'NMPaginator'
+    pod 'AFNetworking', '~> 3.0'    
 end
 
 target 'sample-usersTests' do

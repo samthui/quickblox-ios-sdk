@@ -403,8 +403,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="gOf-Gp-qnK">
                             <connections>
-                                <action selector="nextButtonClicked:" destination="TsT-Mn-D6E" id="pB3-ew-8oU"/>
-                                <segue destination="Vhg-m8-f1P" kind="show" identifier="showUsersSegue" id="dph-Az-A1q"/>
+                                <action selector="nextButtonClicked:" destination="TsT-Mn-D6E" id="J4w-zc-HsR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
