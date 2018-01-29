@@ -1,6 +1,6 @@
 //
 //  ToolBar.m
-//  sample-videochat-webrtc
+//  BacSiViet.VN
 //
 //  Created by Andrey Ivanov on 13/10/15.
 //  Copyright © 2015 QuickBlox Team. All rights reserved.

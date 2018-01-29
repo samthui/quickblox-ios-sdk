@@ -161,10 +161,12 @@ static NSString * const kVoipEvent = @"VOIPCall";
     __block void(^t_request) (QBGeneralResponsePage *, NSMutableArray *);
     __weak __typeof(self)weakSelf = self;
     
+    NSLog(@"tags = ", Core.currentUser.tags);
+    
     void(^request) (QBGeneralResponsePage *, NSMutableArray *) =
     ^(QBGeneralResponsePage *page, NSMutableArray *allUsers) {
         
-        [QBRequest usersWithTags:Core.currentUser.tags
+        [QBRequest usersWithTags:@[@"user"]
                             page:page
                     successBlock:^(QBResponse *response, QBGeneralResponsePage *page, NSArray<QBUUser *> *users)
          {

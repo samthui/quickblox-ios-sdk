@@ -1,6 +1,6 @@
 //
 //  CallKitManager.m
-//  sample-videochat-webrtc-old
+//  BacSiViet.VN-old
 //
 //  Created by Vitaliy Gorbachov on 10/9/17.
 //  Copyright © 2017 QuickBlox Team. All rights reserved.

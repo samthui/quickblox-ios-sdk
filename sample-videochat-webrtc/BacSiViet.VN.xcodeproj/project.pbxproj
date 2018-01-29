@@ -117,7 +117,7 @@
 
 /* Begin PBXFileReference section */
 		55CF63A71A3AFF2500FE8D19 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		55E076E31A30817800118D23 /* sample-videochat-webrtc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sample-videochat-webrtc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E076E31A30817800118D23 /* BacSiViet.VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BacSiViet.VN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E156AE1AD6C41C00C62699 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		55F6BDC91A3F21CC0080C326 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		55F6BDCB1A3F21F10080C326 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -239,7 +239,7 @@
 		E3B0B1ED1E1576EC00BE5FBD /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		E3B0B1EE1E1576EC00BE5FBD /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		E3B0B1EF1E1576EC00BE5FBD /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
-		E3B0B2301E15798400BE5FBD /* sample-videochat-webrtc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sample-videochat-webrtc-Prefix.pch"; sourceTree = "<group>"; };
+		E3B0B2301E15798400BE5FBD /* BacSiViet.VN-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BacSiViet.VN-Prefix.pch"; sourceTree = "<group>"; };
 		E3B0B2311E157AA800BE5FBD /* QuickbloxWebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickbloxWebRTC.framework; path = ../Framework/QuickbloxWebRTC.framework; sourceTree = "<group>"; };
 		E3B50D981FC8763500796F0D /* CallKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallKitManager.m; sourceTree = "<group>"; };
 		E3B50D991FC8763500796F0D /* CallKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallKitManager.h; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 		55E076DA1A30817800118D23 = {
 			isa = PBXGroup;
 			children = (
-				E3B0B2301E15798400BE5FBD /* sample-videochat-webrtc-Prefix.pch */,
+				E3B0B2301E15798400BE5FBD /* BacSiViet.VN-Prefix.pch */,
 				E3B0B1531E1576EC00BE5FBD /* sample-videochat-webrtc */,
 				FB29BBC51B32BBC0009751A1 /* Resources */,
 				55E076E41A30817800118D23 /* Products */,
@@ -298,7 +298,7 @@
 		55E076E41A30817800118D23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55E076E31A30817800118D23 /* sample-videochat-webrtc.app */,
+				55E076E31A30817800118D23 /* BacSiViet.VN.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -863,9 +863,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		55E076E21A30817800118D23 /* sample-videochat-webrtc */ = {
+		55E076E21A30817800118D23 /* BacSiViet.VN */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55E077061A30817900118D23 /* Build configuration list for PBXNativeTarget "sample-videochat-webrtc" */;
+			buildConfigurationList = 55E077061A30817900118D23 /* Build configuration list for PBXNativeTarget "BacSiViet.VN" */;
 			buildPhases = (
 				55E076DF1A30817800118D23 /* Sources */,
 				55E076E01A30817800118D23 /* Frameworks */,
@@ -878,9 +878,9 @@
 			);
 			dependencies = (
 			);
-			name = "sample-videochat-webrtc";
+			name = BacSiViet.VN;
 			productName = QBRTCChatSemple;
-			productReference = 55E076E31A30817800118D23 /* sample-videochat-webrtc.app */;
+			productReference = 55E076E31A30817800118D23 /* BacSiViet.VN.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -894,7 +894,7 @@
 				TargetAttributes = {
 					55E076E21A30817800118D23 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 8885H5G2YX;
+						DevelopmentTeam = Z2724AW2JL;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -910,7 +910,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 55E076DE1A30817800118D23 /* Build configuration list for PBXProject "sample-videochat-webrtc" */;
+			buildConfigurationList = 55E076DE1A30817800118D23 /* Build configuration list for PBXProject "BacSiViet.VN" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -923,7 +923,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				55E076E21A30817800118D23 /* sample-videochat-webrtc */,
+				55E076E21A30817800118D23 /* BacSiViet.VN */,
 			);
 		};
 /* End PBXProject section */
@@ -1184,17 +1184,18 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = "sample-videochat-webrtc/sample-videochat-webrtc.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 8885H5G2YX;
+				DEVELOPMENT_TEAM = Z2724AW2JL;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Framework\"",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_PREFIX_HEADER = "sample-videochat-webrtc-Prefix.pch";
+				GCC_PREFIX_HEADER = "BacSiViet.VN-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1212,8 +1213,8 @@
 					"-ObjC",
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.quickblox.sample-videochat-webrtc-old";
-				PRODUCT_NAME = "sample-videochat-webrtc";
+				PRODUCT_BUNDLE_IDENTIFIER = vn.bacsiviet.bacsiviet;
+				PRODUCT_NAME = BacSiViet.VN;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1228,16 +1229,17 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = "sample-videochat-webrtc/sample-videochat-webrtc.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8885H5G2YX;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z2724AW2JL;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Framework\"",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_PREFIX_HEADER = "sample-videochat-webrtc-Prefix.pch";
+				GCC_PREFIX_HEADER = "BacSiViet.VN-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1255,8 +1257,8 @@
 					"-ObjC",
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.quickblox.sample-videochat-webrtc-old";
-				PRODUCT_NAME = "sample-videochat-webrtc";
+				PRODUCT_BUNDLE_IDENTIFIER = vn.bacsiviet.bacsiviet;
+				PRODUCT_NAME = BacSiViet.VN;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1266,7 +1268,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		55E076DE1A30817800118D23 /* Build configuration list for PBXProject "sample-videochat-webrtc" */ = {
+		55E076DE1A30817800118D23 /* Build configuration list for PBXProject "BacSiViet.VN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55E077041A30817900118D23 /* Debug */,
@@ -1275,7 +1277,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55E077061A30817900118D23 /* Build configuration list for PBXNativeTarget "sample-videochat-webrtc" */ = {
+		55E077061A30817900118D23 /* Build configuration list for PBXNativeTarget "BacSiViet.VN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55E077071A30817900118D23 /* Debug */,

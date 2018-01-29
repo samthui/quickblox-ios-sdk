@@ -1,6 +1,6 @@
 //
 //  BaseSettingsViewController.h
-//  sample-videochat-webrtc-old
+//  BacSiViet.VN-old
 //
 //  Copyright (c) 2017 QuickBlox. All rights reserved.
 //

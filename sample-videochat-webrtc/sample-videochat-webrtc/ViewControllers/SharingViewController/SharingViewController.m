@@ -1,6 +1,6 @@
 //
 //  SharingViewController.m
-//  sample-videochat-webrtc
+//  BacSiViet.VN
 //
 //  Created by Andrey Ivanov on 27/10/15.
 //  Copyright © 2015 QuickBlox Team. All rights reserved.

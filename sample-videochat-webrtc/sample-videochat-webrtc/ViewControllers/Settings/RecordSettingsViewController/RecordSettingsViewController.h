@@ -1,6 +1,6 @@
 //
 //  RecordSettingsViewController.h
-//  sample-videochat-webrtc-old
+//  BacSiViet.VN-old
 //
 //  Created by Vitaliy Gorbachov on 4/18/17.
 //  Copyright © 2017 QuickBlox Team. All rights reserved.
