@@ -41,8 +41,8 @@
 {
     [super viewDidLoad];
     
-    self.loginTextField.text = @"bacsivietapp@gmail.com";
-    self.passwordTextField.text = @"Bien!@#678Thanh";
+//    self.loginTextField.text = @"ngocnguyen@gmail.com";
+//    self.passwordTextField.text = @"12345";
 }
 
 - (IBAction)nextButtonClicked:(id)sender

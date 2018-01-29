@@ -41,7 +41,7 @@ NS_ENUM(NSInteger, UsersViewControllerMenuMap) {
     [super viewDidLoad];
     self.title = @"Users";
     
-    self.paginator = [[UsersPaginator alloc] initWithTags:@[@"doctor"] pageSize:10 delegate:self];
+    self.paginator = [[UsersPaginator alloc] initWithTags:@[@"user"] pageSize:10 delegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -269,8 +269,19 @@ NS_ENUM(NSInteger, UsersViewControllerMenuMap) {
         userCell.tag = indexPath.row;
         
         QBUUser *user = [Storage instance].users[indexPath.row];
-        userCell.nameLabel.text = user.fullName != nil ? user.fullName : user.login;
-        userCell.emailLabel.text = user.email;
+        
+        NSString *name = @"";
+        NSString *detail = @"";
+        
+        NSString *customData = user.customData;
+        NSArray *array = [customData componentsSeparatedByString:@"-"];
+        if (array.count > 0) {
+            name = [array firstObject];
+            detail = [customData substringFromIndex:[name length] + 1];
+        }
+        
+        userCell.nameLabel.text = name;
+        userCell.emailLabel.text = detail;
         
         cell = userCell;
     }
