@@ -130,13 +130,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3B270A05201ADAFB00BF4017 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
 		60FCC77C31BB4FC97069F15F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +164,6 @@
 		BF0CF43E1B2993FD00078084 /* sample-users */ = {
 			isa = PBXGroup;
 			children = (
-				3B270A05201ADAFB00BF4017 /* New Group */,
 				BF0CF4431B2993FD00078084 /* AppDelegate.h */,
 				BF0CF4441B2993FD00078084 /* AppDelegate.m */,
 				BF0CF4461B2993FD00078084 /* UsersViewController.h */,

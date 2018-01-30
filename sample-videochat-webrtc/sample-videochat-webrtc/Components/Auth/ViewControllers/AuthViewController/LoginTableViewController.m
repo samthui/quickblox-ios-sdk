@@ -13,6 +13,10 @@
 #import "QBCore.h"
 #import "SVProgressHUD.h"
 
+#import "AFURLRequestSerialization.h"
+#import "AFURLResponseSerialization.h"
+#import "AFHTTPSessionManager.h"
+
 @interface LoginTableViewController () <UITextFieldDelegate, QBCoreDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *loginInfo;
@@ -66,7 +70,7 @@
         
         NSString *loginInfo = (status == QBNetworkStatusNotReachable) ?
         NSLocalizedString(@"Please check your Internet connection", nil):
-        NSLocalizedString(@"Please enter your username and chat room name. You can join existent chat room.", nil);
+        NSLocalizedString(@"Hãy nhập tên đăng nhập và mật khẩu mà bạn đã đăng ký trên website bacsiviet.vn.", nil);
         [self setLoginInfoText:loginInfo];
     };
     
@@ -156,7 +160,7 @@
 
 #pragma mark - Login
 
-- (void)login {
+/*- (void)login {
     
     [self setEditing:NO];
     [self beginConnect];
@@ -169,6 +173,79 @@
         
         [Core signUpWithFullName:self.userNameTextField.text
                         roomName:self.chatRoomNameTextField.text];
+    }
+}*/
+
+- (BOOL)isLoginEmpty
+{
+    BOOL emptyLogin = self.userNameTextField.text.length == 0;
+    self.userNameTextField.backgroundColor = emptyLogin ? [UIColor redColor] : [UIColor whiteColor];
+    return emptyLogin;
+}
+
+- (BOOL)isPasswordEmpty
+{
+    BOOL emptyPassword = self.chatRoomNameTextField.text.length == 0;
+    self.chatRoomNameTextField.backgroundColor = emptyPassword ? [UIColor redColor] : [UIColor whiteColor];
+    return emptyPassword;
+}
+
+- (void)login
+{
+    
+    [self setEditing:NO];
+    [self beginConnect];
+    
+    
+    [self.view endEditing:YES];
+    
+    BOOL notEmptyLogin = ![self isLoginEmpty];
+    BOOL notEmptyPassword = ![self isPasswordEmpty];
+    
+    if (notEmptyLogin && notEmptyPassword) {
+        NSString *login = self.userNameTextField.text;
+        NSString *password = self.chatRoomNameTextField.text;
+        
+        [SVProgressHUD showWithStatus:@"Signing in"];
+        
+        NSString *url = @"http://bacsiviet.vn/test-mobile";
+        NSDictionary *parameters = @{@"email": login, @"pwd": password};
+        
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+        [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"success! data=%@",responseObject);
+            
+            if ([[responseObject objectForKey:@"isLogin"] intValue] == 1) {
+                [SVProgressHUD dismiss];
+                
+                [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
+            } else {
+                [SVProgressHUD dismiss];
+                
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                message:[responseObject objectForKey:@"msg"]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [SVProgressHUD dismiss];
+            
+            NSLog(@"Errors=%@", [error description]);
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error  description]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }];
     }
 }
 
@@ -227,24 +304,26 @@
 
 - (BOOL)userNameIsValid {
     
-    NSCharacterSet *characterSet = [NSCharacterSet whitespaceCharacterSet];
-    NSString *userName = [self.userNameTextField.text stringByTrimmingCharactersInSet:characterSet];
-    NSString *userNameRegex = @"^[^_][\\w\\u00C0-\\u1FFF\\u2C00-\\uD7FF\\s]{2,19}$";
-    NSPredicate *userNamePredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", userNameRegex];
-    BOOL userNameIsValid = [userNamePredicate evaluateWithObject:userName];
-    
-    return userNameIsValid;
+//    NSCharacterSet *characterSet = [NSCharacterSet whitespaceCharacterSet];
+//    NSString *userName = [self.userNameTextField.text stringByTrimmingCharactersInSet:characterSet];
+//    NSString *userNameRegex = @"^[^_][\\w\\u00C0-\\u1FFF\\u2C00-\\uD7FF\\s]{2,19}$";
+//    NSPredicate *userNamePredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", userNameRegex];
+//    BOOL userNameIsValid = [userNamePredicate evaluateWithObject:userName];
+//
+//    return userNameIsValid;
+    return YES;
 }
 
 - (BOOL)chatRoomIsValid {
     
-    NSCharacterSet *characterSet = [NSCharacterSet whitespaceCharacterSet];
-    NSString *tag = [self.chatRoomNameTextField.text stringByTrimmingCharactersInSet:characterSet];
-    NSString *tagRegex = @"^[a-zA-Z][a-zA-Z0-9]{2,14}$";
-    NSPredicate *tagPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", tagRegex];
-    BOOL tagIsValid = [tagPredicate evaluateWithObject:tag];
-    
-    return tagIsValid;
+//    NSCharacterSet *characterSet = [NSCharacterSet whitespaceCharacterSet];
+//    NSString *tag = [self.chatRoomNameTextField.text stringByTrimmingCharactersInSet:characterSet];
+//    NSString *tagRegex = @"^[a-zA-Z][a-zA-Z0-9]{2,14}$";
+//    NSPredicate *tagPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", tagRegex];
+//    BOOL tagIsValid = [tagPredicate evaluateWithObject:tag];
+//
+//    return tagIsValid;
+    return YES;
 }
 
 @end
