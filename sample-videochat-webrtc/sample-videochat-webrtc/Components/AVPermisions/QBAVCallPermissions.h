@@ -1,6 +1,6 @@
 //
 //  QBAVCallPermissions.h
-//  BacSiViet.VN
+//  BacSiViet
 //
 //  Created by Andrey Ivanov on 29/06/16.
 //  Copyright © 2016 QuickBlox Team. All rights reserved.

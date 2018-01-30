@@ -1,6 +1,6 @@
 //
 //  QBButtonsFactory.h
-//  BacSiViet.VN
+//  BacSiViet
 //
 //  Created by Andrey Ivanov on 23/10/15.
 //  Copyright © 2015 QuickBlox Team. All rights reserved.

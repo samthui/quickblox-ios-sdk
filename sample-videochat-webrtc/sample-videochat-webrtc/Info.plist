@@ -21,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0</string>
+	<string>1</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -36,12 +36,14 @@
 			</dict>
 		</array>
 	</dict>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>We would like to use your camera for video calling</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string></string>
+	<string>We would like to use your camera for audio calling</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>voip</string>

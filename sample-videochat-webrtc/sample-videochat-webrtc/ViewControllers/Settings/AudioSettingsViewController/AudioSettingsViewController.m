@@ -1,6 +1,6 @@
 //
 //  AudioSettingsViewController.m
-//  BacSiViet.VN
+//  BacSiViet
 //
 //  Created by Andrey Ivanov on 25.06.15.
 //  Copyright (c) 2015 QuickBlox Team. All rights reserved.

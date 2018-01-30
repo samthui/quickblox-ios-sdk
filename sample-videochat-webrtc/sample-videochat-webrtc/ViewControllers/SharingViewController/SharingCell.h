@@ -1,6 +1,6 @@
 //
 //  SharingCell.h
-//  BacSiViet.VN
+//  BacSiViet
 //
 //  Created by Andrey Ivanov on 27/10/15.
 //  Copyright © 2015 QuickBlox Team. All rights reserved.

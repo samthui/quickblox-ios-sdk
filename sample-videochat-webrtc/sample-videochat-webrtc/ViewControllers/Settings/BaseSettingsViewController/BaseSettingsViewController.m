@@ -1,6 +1,6 @@
 //
 //  BaseSettingsViewController.m
-//  BacSiViet.VN-old
+//  BacSiViet-old
 //
 //  Copyright (c) 2017 QuickBlox. All rights reserved.
 //

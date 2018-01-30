@@ -1,6 +1,6 @@
 //
 //  SettingsViewController.h
-//  BacSiViet.VN
+//  BacSiViet
 //
 //  Created by Andrey Ivanov on 21.06.15.
 //  Copyright (c) 2015 QuickBlox Team. All rights reserved.

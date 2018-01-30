@@ -1,6 +1,6 @@
 //
 //  RecordsViewController.m
-//  BacSiViet.VN
+//  BacSiViet
 //
 //  Created by Andrey Ivanov on 28.02.17.
 //  Copyright © 2017 QuickBlox Team. All rights reserved.
