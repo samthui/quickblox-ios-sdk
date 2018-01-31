@@ -201,7 +201,7 @@
                         <outlet property="loginInfo" destination="lCi-rE-4bS" id="MQJ-TS-w7V"/>
                         <outlet property="userNameDescriptionLabel" destination="Bl5-f3-GmO" id="bXV-yu-HPe"/>
                         <outlet property="userNameTextField" destination="iwd-Ux-nSU" id="TmM-9p-igD"/>
-                        <segue destination="dHk-93-006" kind="show" identifier="ShowUsersViewController" id="ciD-PN-tm0"/>
+                        <segue destination="dHk-93-006" kind="presentation" identifier="ShowUsersViewController" id="ciD-PN-tm0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jut-XR-5L9" userLabel="First Responder" sceneMemberID="firstResponder"/>
