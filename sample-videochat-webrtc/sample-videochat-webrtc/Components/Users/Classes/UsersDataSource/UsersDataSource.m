@@ -186,9 +186,16 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    NSString *str = [NSString stringWithFormat:@"Select users for call (%tu)", _selectedUsers.count];
+    NSString *str = @"";//[NSString stringWithFormat:@"Select users for call (%tu)", _selectedUsers.count];
     
     return NSLocalizedString(str, nil);
+}
+
+- (QBUUser *)userAtIndexPath:(NSIndexPath *)indexPath {
+    
+    QBUUser *user = self.usersSortedByLastSeen[indexPath.row];
+    
+    return user;
 }
 
 @end

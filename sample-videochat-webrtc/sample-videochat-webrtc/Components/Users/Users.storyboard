@@ -14,7 +14,7 @@
         <scene sceneID="fsv-5u-p1Y">
             <objects>
                 <tableViewController storyboardIdentifier="UsersViewController" id="0AV-U1-m9M" customClass="UsersViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="4Sl-MW-z0j">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="64" sectionHeaderHeight="18" sectionFooterHeight="18" id="4Sl-MW-z0j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,22 +69,22 @@
                                     <outlet property="userImageView" destination="09c-qR-16P" id="Dfb-A1-Mey"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="UserIconCellIdentifier" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserIconCellIdentifier" id="wzl-Ak-xCO" customClass="UserIconTableViewCell">
-                                <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="UserIconCellIdentifier" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserIconCellIdentifier" rowHeight="64" id="wzl-Ak-xCO" customClass="UserIconTableViewCell">
+                                <rect key="frame" x="0.0" y="99.5" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wzl-Ak-xCO" id="ieV-aK-6c1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="eTy-fn-BXV">
-                                            <rect key="frame" x="20" y="-2.5" width="49" height="48.5"/>
+                                            <rect key="frame" x="20" y="8" width="49" height="48.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="48" id="IPv-4s-OtZ"/>
                                                 <constraint firstAttribute="width" constant="49" id="lzx-4P-K77"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBh-SD-ogo">
-                                            <rect key="frame" x="81" y="-0.5" width="67" height="44.5"/>
+                                            <rect key="frame" x="81" y="10" width="67" height="44.5"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdC-Nt-NCQ" userLabel="User name">
                                                     <rect key="frame" x="0.0" y="0.0" width="67" height="19.5"/>
@@ -553,8 +553,8 @@
         <image name="icon" width="49" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9hH-r1-uG9"/>
-        <segue reference="NiV-wR-fQ7"/>
-        <segue reference="5X9-lb-Gl5"/>
+        <segue reference="num-3x-oEx"/>
+        <segue reference="aQd-I2-Vb8"/>
+        <segue reference="muR-nh-XnT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -231,6 +231,78 @@ static NSString * const kVoipEvent = @"VOIPCall";
     [self callWithConferenceType:QBRTCConferenceTypeVideo];
 }
 
+- (void)call:(QBUUser *)user conferenceType:(QBRTCConferenceType)conferenceType {
+    
+    if (self.session) {
+        return;
+    }
+    
+    if ([self hasConnectivity]) {
+        
+        [QBAVCallPermissions checkPermissionsWithConferenceType:conferenceType completion:^(BOOL granted) {
+            
+            if (granted) {
+                
+                NSArray *opponentsIDs = [self.dataSource idsForUsers:@[user]];
+                //Create new session
+                QBRTCSession *session =
+                [QBRTCClient.instance createNewSessionWithOpponents:opponentsIDs
+                                                 withConferenceType:conferenceType];
+                if (session) {
+                    
+                    self.session = session;
+                    
+                    NSUUID *uuid = nil;
+                    if (CallKitManager.isCallKitAvailable) {
+                        uuid = [NSUUID UUID];
+                        [CallKitManager.instance startCallWithUserIDs:opponentsIDs session:session uuid:uuid];
+                    }
+                    
+                    CallViewController *callViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CallViewController"];
+                    callViewController.session = self.session;
+                    callViewController.usersDatasource = self.dataSource;
+                    callViewController.callUUID = uuid;
+                    
+                    self.nav = [[UINavigationController alloc] initWithRootViewController:callViewController];
+                    self.nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                    
+                    [self presentViewController:self.nav animated:NO completion:nil];
+                    
+                    NSDictionary *payload = @{
+                                              @"message"  : [NSString stringWithFormat:@"%@ is calling you.", Core.currentUser.fullName],
+                                              @"ios_voip" : @"1",
+                                              kVoipEvent  : @"1",
+                                              };
+                    NSData *data =
+                    [NSJSONSerialization dataWithJSONObject:payload
+                                                    options:NSJSONWritingPrettyPrinted
+                                                      error:nil];
+                    NSString *message =
+                    [[NSString alloc] initWithData:data
+                                          encoding:NSUTF8StringEncoding];
+                    
+                    QBMEvent *event = [QBMEvent event];
+                    event.notificationType = QBMNotificationTypePush;
+                    event.usersIDs = [opponentsIDs componentsJoinedByString:@","];
+                    event.type = QBMEventTypeOneShot;
+                    event.message = message;
+                    
+                    [QBRequest createEvent:event
+                              successBlock:^(QBResponse *response, NSArray<QBMEvent *> *events) {
+                                  NSLog(@"Send voip push - Success");
+                              } errorBlock:^(QBResponse * _Nonnull response) {
+                                  NSLog(@"Send voip push - Error");
+                              }];
+                }
+                else {
+                    
+                    [SVProgressHUD showErrorWithStatus:@"You should login to use chat API. Session hasn’t been created. Please try to relogin the chat."];
+                }
+            }
+        }];
+    }
+}
+
 - (void)callWithConferenceType:(QBRTCConferenceType)conferenceType {
     
     if (self.session) {
@@ -356,7 +428,7 @@ static NSString * const kVoipEvent = @"VOIPCall";
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self.dataSource selectUserAtIndexPath:indexPath];
     
@@ -367,6 +439,44 @@ static NSString * const kVoipEvent = @"VOIPCall";
     }
     
     [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+}*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    QBUUser *user = [self.dataSource userAtIndexPath:indexPath];
+    
+    NSString *name = @"";
+    NSString *detail = @"";
+    
+    NSString *customData = user.customData;
+    NSArray *array = [customData componentsSeparatedByString:@"-"];
+    if (array.count > 0) {
+        name = [array firstObject];
+        if (array.count > 1) {
+            detail = [array objectAtIndex:1];
+        }
+    }
+    
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:name message:detail preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* videoAction = [UIAlertAction actionWithTitle:@"Video Call" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self call:user conferenceType:QBRTCConferenceTypeVideo];
+    }];
+    
+    UIAlertAction* audioAction = [UIAlertAction actionWithTitle:@"Audio Call" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self call:user conferenceType:QBRTCConferenceTypeAudio];
+        
+    }];
+    
+    UIAlertAction* chatAction = [UIAlertAction actionWithTitle:@"Chat" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    
+    UIAlertAction* dismissAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {}];
+    
+    [actionSheet addAction:videoAction];
+    [actionSheet addAction:audioAction];
+    [actionSheet addAction:chatAction];
+    [actionSheet addAction:dismissAction];
+    [self presentViewController:actionSheet animated:YES completion:nil];
+    
 }
 
 #pragma mark - QBSampleCoreDelegate

@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray <QBUUser *> *)usersSortedByFullName;
 - (NSArray <QBUUser *> *)usersSortedByLastSeen;
 
+- (QBUUser *)userAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 NS_ASSUME_NONNULL_END
