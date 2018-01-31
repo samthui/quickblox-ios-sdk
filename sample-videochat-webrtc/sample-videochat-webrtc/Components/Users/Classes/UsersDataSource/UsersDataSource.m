@@ -8,6 +8,7 @@
 
 #import "UsersDataSource.h"
 #import "UserTableViewCell.h"
+#import "UserIconTableViewCell.h"
 #import <Quickblox/Quickblox.h>
 #import "QBProfile.h"
 #import "PlaceholderGenerator.h"
@@ -146,7 +147,7 @@
     return self.usersSortedByLastSeen.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserCell"];
     
@@ -157,6 +158,28 @@
     [cell setFullName:user.fullName];
     [cell setCheck:selected];
     [cell setUserImage:userImage];
+    
+    return cell;
+}*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UserIconTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserIconCellIdentifier"];
+    
+    QBUUser *user = self.usersSortedByLastSeen[indexPath.row];
+    
+    NSString *name = @"";
+    NSString *detail = @"";
+    
+    NSString *customData = user.customData;
+    NSArray *array = [customData componentsSeparatedByString:@"-"];
+    if (array.count > 0) {
+        name = [array firstObject];
+        detail = [customData substringFromIndex:[name length] + 1];
+    }
+    
+    cell.nameLabel.text = name;
+    cell.emailLabel.text = detail;
     
     return cell;
 }

@@ -105,7 +105,7 @@ static NSString * const kVoipEvent = @"VOIPCall";
     CallKitManager.instance.usersDatasource = _dataSource;
     
     self.tableView.dataSource = _dataSource;
-    self.tableView.rowHeight = 44;
+//    self.tableView.rowHeight = 44;
     [self.refreshControl beginRefreshing];
 }
 

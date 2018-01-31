@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B71C7DB202218A500C560BE /* DoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DA202218A500C560BE /* DoctorsViewController.m */; };
 		3B71C7DE20221BA500C560BE /* PatientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DD20221BA500C560BE /* PatientsViewController.m */; };
+		3B71C7E120222CEC00C560BE /* UserIconTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7E020222CEC00C560BE /* UserIconTableViewCell.m */; };
 		55CF63A81A3AFF2500FE8D19 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CF63A71A3AFF2500FE8D19 /* SystemConfiguration.framework */; };
 		55E156AF1AD6C41C00C62699 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E156AE1AD6C41C00C62699 /* MobileCoreServices.framework */; };
 		55F6BDCA1A3F21CC0080C326 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F6BDC91A3F21CC0080C326 /* GLKit.framework */; };
@@ -123,6 +124,8 @@
 		3B71C7DA202218A500C560BE /* DoctorsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoctorsViewController.m; sourceTree = "<group>"; };
 		3B71C7DC20221BA500C560BE /* PatientsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatientsViewController.h; sourceTree = "<group>"; };
 		3B71C7DD20221BA500C560BE /* PatientsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PatientsViewController.m; sourceTree = "<group>"; };
+		3B71C7DF20222CEC00C560BE /* UserIconTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIconTableViewCell.h; sourceTree = "<group>"; };
+		3B71C7E020222CEC00C560BE /* UserIconTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIconTableViewCell.m; sourceTree = "<group>"; };
 		558AB9372E84DB0C976B3271 /* libPods-BacSiViet.VN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BacSiViet.VN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CF63A71A3AFF2500FE8D19 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		55E076E31A30817800118D23 /* BacSiViet.VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BacSiViet.VN.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -618,6 +621,8 @@
 		E3B0B1931E1576EC00BE5FBD /* UserTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				3B71C7DF20222CEC00C560BE /* UserIconTableViewCell.h */,
+				3B71C7E020222CEC00C560BE /* UserIconTableViewCell.m */,
 				E3B0B1941E1576EC00BE5FBD /* UserTableViewCell.h */,
 				E3B0B1951E1576EC00BE5FBD /* UserTableViewCell.m */,
 			);
@@ -1099,6 +1104,7 @@
 				E3B0B1FB1E1576EC00BE5FBD /* LoginTableViewController.m in Sources */,
 				E3B0B1FD1E1576EC00BE5FBD /* QBAVCallPermissions.m in Sources */,
 				E3B0B21A1E1576EC00BE5FBD /* SessionSettingsViewController.m in Sources */,
+				3B71C7E120222CEC00C560BE /* UserIconTableViewCell.m in Sources */,
 				E3B0B1F81E1576EC00BE5FBD /* QMSoundManager.m in Sources */,
 				E3B0B21B1E1576EC00BE5FBD /* SettingCell.m in Sources */,
 				E332B21C1EDD7E3700FFF7EE /* RecordSettingsViewController.m in Sources */,
