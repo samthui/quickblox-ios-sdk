@@ -208,10 +208,10 @@
             </objects>
             <point key="canvasLocation" x="459" y="488"/>
         </scene>
-        <!--UsersViewController-->
+        <!--UsersTabBarController-->
         <scene sceneID="qDA-Zm-d3P">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UsersViewController" storyboardName="Users" referencedIdentifier="UsersViewController" id="dHk-93-006" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="UsersTabBarController" storyboardName="Users" referencedIdentifier="UsersTabBarController" id="dHk-93-006" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLa-tH-4oI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1041.5" y="488"/>

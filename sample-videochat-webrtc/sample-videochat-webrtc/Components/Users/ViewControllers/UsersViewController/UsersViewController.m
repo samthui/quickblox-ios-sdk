@@ -42,12 +42,18 @@ static NSString * const kVoipEvent = @"VOIPCall";
 @property (strong, nonatomic) NSUUID *callUUID;
 @property (assign, nonatomic) UIBackgroundTaskIdentifier backgroundTask;
 
+@property (nonatomic, retain) NSArray *tags;
+
 @end
 
 @implementation UsersViewController
 
 - (void)dealloc {
     
+}
+
+- (NSArray *)getTags {
+    return @[@"user"];
 }
 
 - (void)viewDidLoad {
@@ -161,12 +167,10 @@ static NSString * const kVoipEvent = @"VOIPCall";
     __block void(^t_request) (QBGeneralResponsePage *, NSMutableArray *);
     __weak __typeof(self)weakSelf = self;
     
-    NSLog(@"tags = ", Core.currentUser.tags);
-    
     void(^request) (QBGeneralResponsePage *, NSMutableArray *) =
     ^(QBGeneralResponsePage *page, NSMutableArray *allUsers) {
         
-        [QBRequest usersWithTags:@[@"user"]
+        [QBRequest usersWithTags:[self getTags]
                             page:page
                     successBlock:^(QBResponse *response, QBGeneralResponsePage *page, NSArray<QBUUser *> *users)
          {
