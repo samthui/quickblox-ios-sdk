@@ -22,6 +22,7 @@
 #import "RecordsViewController.h"
 #import "CallKitManager.h"
 #import "ServicesManager.h"
+#import "ChatViewController.h"
 
 const NSUInteger kQBPageSize = 50;
 static NSString * const kAps = @"aps";
@@ -417,6 +418,13 @@ static NSString * const kVoipEvent = @"VOIPCall";
     else if ([segue.identifier isEqualToString:@"PresentRecordsViewController"]) {
         self.recordsViewController = segue.destinationViewController;
     }
+    else if ([segue.identifier isEqualToString:kGoToChatSegueIdentifier]) {
+            ChatViewController* viewController = segue.destinationViewController;
+            viewController.dialog = sender;
+        
+        // Hide bottom tab bar in the detail view
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
 }
 
 #pragma mark - SettingsViewControllerDelegate
@@ -497,7 +505,7 @@ static NSString * const kVoipEvent = @"VOIPCall";
 }
 
 - (void)navigateToChatViewControllerWithDialog:(QBChatDialog *)dialog {
-    [self performSegueWithIdentifier:@"Go To Chat" sender:dialog];
+    [self performSegueWithIdentifier:kGoToChatSegueIdentifier sender:dialog];
 }
 
 - (void)createChatWithName:(NSString *)name users:(NSArray <QBUUser*> *)users completion:(void(^)(QBChatDialog *dialog))completion {

@@ -363,30 +363,12 @@
                         <segue destination="MJL-K9-GZh" kind="presentation" identifier="PresentSettingsViewController" id="5X9-lb-Gl5"/>
                         <segue destination="2v9-Nr-3SC" kind="show" id="NiV-wR-fQ7"/>
                         <segue destination="vTV-qm-f5k" kind="show" identifier="PresentRecordsViewController" id="9hH-r1-uG9"/>
-                        <segue destination="wKv-RG-4sS" kind="show" identifier="Go To Chat" id="hVQ-2R-wDx"/>
+                        <segue destination="zsV-od-EZL" kind="show" identifier="goToChat" id="Mwa-zv-wEC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5q8-oD-L4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3249" y="1269"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="qR0-MY-ITS">
-            <objects>
-                <viewController id="wKv-RG-4sS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="C7c-0U-1dp"/>
-                        <viewControllerLayoutGuide type="bottom" id="0ZJ-XH-7RB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Lem-NA-1hB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MVf-3r-bgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4214" y="1227"/>
         </scene>
         <!--Patients View Controller-->
         <scene sceneID="oyl-3W-ZqV">
@@ -523,6 +505,7 @@
                         <segue destination="MJL-K9-GZh" kind="presentation" identifier="PresentSettingsViewController" id="6Aw-of-7yw"/>
                         <segue destination="2v9-Nr-3SC" kind="show" id="UKc-yC-tiS"/>
                         <segue destination="vTV-qm-f5k" kind="show" identifier="PresentRecordsViewController" id="K0e-uR-aGb"/>
+                        <segue destination="zsV-od-EZL" kind="show" identifier="goToChat" id="ber-eZ-QJ9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X69-B0-gKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -567,13 +550,36 @@
             </objects>
             <point key="canvasLocation" x="2547.1999999999998" y="1961.9190404797603"/>
         </scene>
+        <!--Chat-->
+        <scene sceneID="OJF-LF-aBz">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" title="Chat" automaticallyAdjustsScrollViewInsets="NO" id="zsV-od-EZL" customClass="ChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gts-7g-XgA"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Nm-70-KQY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zjm-ZM-SIe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat View Controller" id="ffm-ds-j3I">
+                        <barButtonItem key="rightBarButtonItem" title="Info" id="tsj-wB-qrx"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GsK-Qc-AZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4604" y="1557"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon" width="49" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9hH-r1-uG9"/>
-        <segue reference="NiV-wR-fQ7"/>
-        <segue reference="5X9-lb-Gl5"/>
+        <segue reference="ber-eZ-QJ9"/>
+        <segue reference="K0e-uR-aGb"/>
+        <segue reference="UKc-yC-tiS"/>
+        <segue reference="6Aw-of-7yw"/>
     </inferredMetricsTieBreakers>
 </document>

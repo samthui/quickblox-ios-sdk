@@ -16,6 +16,8 @@
 		3B71C7FF202250B200C560BE /* QMMessageNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7F8202250B100C560BE /* QMMessageNotification.m */; };
 		3B71C800202250B200C560BE /* QMMessageNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7F9202250B100C560BE /* QMMessageNotificationManager.m */; };
 		3B71C801202250B200C560BE /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7FB202250B100C560BE /* UIImage+fixOrientation.m */; };
+		3B71C805202254A200C560BE /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C803202254A200C560BE /* ChatViewController.m */; };
+		3B71C809202255C300C560BE /* MessageStatusStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C808202255C300C560BE /* MessageStatusStringBuilder.m */; };
 		55CF63A81A3AFF2500FE8D19 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CF63A71A3AFF2500FE8D19 /* SystemConfiguration.framework */; };
 		55E156AF1AD6C41C00C62699 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E156AE1AD6C41C00C62699 /* MobileCoreServices.framework */; };
 		55F6BDCA1A3F21CC0080C326 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F6BDC91A3F21CC0080C326 /* GLKit.framework */; };
@@ -145,6 +147,10 @@
 		3B71C7F9202250B100C560BE /* QMMessageNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMMessageNotificationManager.m; sourceTree = "<group>"; };
 		3B71C7FA202250B100C560BE /* QMMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMMessageNotification.h; sourceTree = "<group>"; };
 		3B71C7FB202250B100C560BE /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		3B71C803202254A200C560BE /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		3B71C804202254A200C560BE /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		3B71C807202255C300C560BE /* MessageStatusStringBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageStatusStringBuilder.h; sourceTree = "<group>"; };
+		3B71C808202255C300C560BE /* MessageStatusStringBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageStatusStringBuilder.m; sourceTree = "<group>"; };
 		558AB9372E84DB0C976B3271 /* libPods-BacSiViet.VN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BacSiViet.VN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CF63A71A3AFF2500FE8D19 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		55E076E31A30817800118D23 /* BacSiViet.VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BacSiViet.VN.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,12 +306,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E156AF1AD6C41C00C62699 /* MobileCoreServices.framework in Frameworks */,
 				FB4490581BFB8B2E00A8233D /* Accelerate.framework in Frameworks */,
 				FB415B9C1D80043400AD4C08 /* Quickblox.framework in Frameworks */,
 				FB4490521BFB8ADD00A8233D /* libresolv.tbd in Frameworks */,
 				FB4490501BFB8AD000A8233D /* libxml2.2.tbd in Frameworks */,
 				FB5764E01B42A00F00501049 /* VideoToolbox.framework in Frameworks */,
-				55E156AF1AD6C41C00C62699 /* MobileCoreServices.framework in Frameworks */,
 				55F6BDCC1A3F21F10080C326 /* CFNetwork.framework in Frameworks */,
 				55F6BDCA1A3F21CC0080C326 /* GLKit.framework in Frameworks */,
 				E329E0791E38AE7B00E0A183 /* QuickbloxWebRTC.framework in Frameworks */,
@@ -366,6 +372,24 @@
 				3B71C7FA202250B100C560BE /* QMMessageNotification.h */,
 			);
 			path = QMMessageNotificationManager;
+			sourceTree = "<group>";
+		};
+		3B71C8022022547700C560BE /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				3B71C804202254A200C560BE /* ChatViewController.h */,
+				3B71C803202254A200C560BE /* ChatViewController.m */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		3B71C806202255C300C560BE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3B71C807202255C300C560BE /* MessageStatusStringBuilder.h */,
+				3B71C808202255C300C560BE /* MessageStatusStringBuilder.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		55E076DA1A30817800118D23 = {
@@ -438,6 +462,7 @@
 		E3B0B1531E1576EC00BE5FBD /* sample-videochat-webrtc */ = {
 			isa = PBXGroup;
 			children = (
+				3B71C806202255C300C560BE /* Utils */,
 				3B71C7EE202250B100C560BE /* ThirdParty */,
 				3B71C7E620224D7800C560BE /* Services */,
 				E3B0B1541E1576EC00BE5FBD /* AppDelegate.h */,
@@ -513,6 +538,7 @@
 		E3B0B16E1E1576EC00BE5FBD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3B71C8022022547700C560BE /* Chat */,
 				E3B50D971FC8763500796F0D /* CallKitManager */,
 				E3B0B16F1E1576EC00BE5FBD /* Auth */,
 				E3B0B1791E1576EC00BE5FBD /* AVPermisions */,
@@ -1184,6 +1210,7 @@
 				E3B0B2161E1576EC00BE5FBD /* StatsView.m in Sources */,
 				E3B0B2231E1576EC00BE5FBD /* VideoSettingsViewController.m in Sources */,
 				E3B0B22C1E1576EC00BE5FBD /* SVProgressAnimatedView.m in Sources */,
+				3B71C805202254A200C560BE /* ChatViewController.m in Sources */,
 				E3B0B2151E1576EC00BE5FBD /* OpponentsFlowLayout.m in Sources */,
 				E3B0B2031E1576EC00BE5FBD /* UsersViewController.m in Sources */,
 				E3B0B2251E1576EC00BE5FBD /* SharingCell.m in Sources */,
@@ -1192,6 +1219,7 @@
 				E3B0B21D1E1576EC00BE5FBD /* SettingsSectionModel.m in Sources */,
 				E3B0B1FF1E1576EC00BE5FBD /* QBProfile.m in Sources */,
 				E332B2291EDD7E9900FFF7EE /* RecordSettings.m in Sources */,
+				3B71C809202255C300C560BE /* MessageStatusStringBuilder.m in Sources */,
 				E3B0B2271E1576EC00BE5FBD /* CornerView.m in Sources */,
 				E3B0B2131E1576EC00BE5FBD /* CallViewController.m in Sources */,
 				E3B0B21E1E1576EC00BE5FBD /* SettingSwitchCell.m in Sources */,

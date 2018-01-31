@@ -10,3 +10,13 @@
 
 #import <Quickblox/Quickblox.h>
 #import <QuickbloxWebRTC/QuickbloxWebRTC.h>
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <Quickblox/QBMulticastDelegate.h>
+#import <QMServicesDevelopment/QMServices.h>
+#import "SVProgressHUD.h"
+#import "Constants.h"
+#endif
