@@ -10,6 +10,12 @@
 		3B71C7DB202218A500C560BE /* DoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DA202218A500C560BE /* DoctorsViewController.m */; };
 		3B71C7DE20221BA500C560BE /* PatientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DD20221BA500C560BE /* PatientsViewController.m */; };
 		3B71C7E120222CEC00C560BE /* UserIconTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7E020222CEC00C560BE /* UserIconTableViewCell.m */; };
+		3B71C7EC20224D7800C560BE /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7E720224D7800C560BE /* NotificationService.m */; };
+		3B71C7ED20224D7800C560BE /* ServicesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7E820224D7800C560BE /* ServicesManager.m */; };
+		3B71C7FC202250B200C560BE /* UIAlertDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7EF202250B100C560BE /* UIAlertDialog.m */; };
+		3B71C7FF202250B200C560BE /* QMMessageNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7F8202250B100C560BE /* QMMessageNotification.m */; };
+		3B71C800202250B200C560BE /* QMMessageNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7F9202250B100C560BE /* QMMessageNotificationManager.m */; };
+		3B71C801202250B200C560BE /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7FB202250B100C560BE /* UIImage+fixOrientation.m */; };
 		55CF63A81A3AFF2500FE8D19 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CF63A71A3AFF2500FE8D19 /* SystemConfiguration.framework */; };
 		55E156AF1AD6C41C00C62699 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E156AE1AD6C41C00C62699 /* MobileCoreServices.framework */; };
 		55F6BDCA1A3F21CC0080C326 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F6BDC91A3F21CC0080C326 /* GLKit.framework */; };
@@ -126,6 +132,19 @@
 		3B71C7DD20221BA500C560BE /* PatientsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PatientsViewController.m; sourceTree = "<group>"; };
 		3B71C7DF20222CEC00C560BE /* UserIconTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIconTableViewCell.h; sourceTree = "<group>"; };
 		3B71C7E020222CEC00C560BE /* UserIconTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIconTableViewCell.m; sourceTree = "<group>"; };
+		3B71C7E720224D7800C560BE /* NotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		3B71C7E820224D7800C560BE /* ServicesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesManager.m; sourceTree = "<group>"; };
+		3B71C7E920224D7800C560BE /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		3B71C7EA20224D7800C560BE /* ServicesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesManager.h; sourceTree = "<group>"; };
+		3B71C7EB20224D7800C560BE /* NotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		3B71C7EF202250B100C560BE /* UIAlertDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertDialog.m; sourceTree = "<group>"; };
+		3B71C7F1202250B100C560BE /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		3B71C7F4202250B100C560BE /* UIAlertDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertDialog.h; sourceTree = "<group>"; };
+		3B71C7F7202250B100C560BE /* QMMessageNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMMessageNotificationManager.h; sourceTree = "<group>"; };
+		3B71C7F8202250B100C560BE /* QMMessageNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMMessageNotification.m; sourceTree = "<group>"; };
+		3B71C7F9202250B100C560BE /* QMMessageNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMMessageNotificationManager.m; sourceTree = "<group>"; };
+		3B71C7FA202250B100C560BE /* QMMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMMessageNotification.h; sourceTree = "<group>"; };
+		3B71C7FB202250B100C560BE /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
 		558AB9372E84DB0C976B3271 /* libPods-BacSiViet.VN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BacSiViet.VN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CF63A71A3AFF2500FE8D19 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		55E076E31A30817800118D23 /* BacSiViet.VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BacSiViet.VN.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,6 +333,41 @@
 			path = UserTabBarController;
 			sourceTree = "<group>";
 		};
+		3B71C7E620224D7800C560BE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3B71C7E720224D7800C560BE /* NotificationService.m */,
+				3B71C7E820224D7800C560BE /* ServicesManager.m */,
+				3B71C7E920224D7800C560BE /* Constants.h */,
+				3B71C7EA20224D7800C560BE /* ServicesManager.h */,
+				3B71C7EB20224D7800C560BE /* NotificationService.h */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3B71C7EE202250B100C560BE /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				3B71C7EF202250B100C560BE /* UIAlertDialog.m */,
+				3B71C7F1202250B100C560BE /* UIImage+fixOrientation.h */,
+				3B71C7F4202250B100C560BE /* UIAlertDialog.h */,
+				3B71C7FB202250B100C560BE /* UIImage+fixOrientation.m */,
+				3B71C7F6202250B100C560BE /* QMMessageNotificationManager */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		3B71C7F6202250B100C560BE /* QMMessageNotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				3B71C7F7202250B100C560BE /* QMMessageNotificationManager.h */,
+				3B71C7F8202250B100C560BE /* QMMessageNotification.m */,
+				3B71C7F9202250B100C560BE /* QMMessageNotificationManager.m */,
+				3B71C7FA202250B100C560BE /* QMMessageNotification.h */,
+			);
+			path = QMMessageNotificationManager;
+			sourceTree = "<group>";
+		};
 		55E076DA1A30817800118D23 = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +438,8 @@
 		E3B0B1531E1576EC00BE5FBD /* sample-videochat-webrtc */ = {
 			isa = PBXGroup;
 			children = (
+				3B71C7EE202250B100C560BE /* ThirdParty */,
+				3B71C7E620224D7800C560BE /* Services */,
 				E3B0B1541E1576EC00BE5FBD /* AppDelegate.h */,
 				E3B0B1551E1576EC00BE5FBD /* AppDelegate.m */,
 				E3B0B1561E1576EC00BE5FBD /* Call.storyboard */,
@@ -1079,9 +1135,17 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BacSiViet.VN/Pods-BacSiViet.VN-resources.sh",
+				"${PODS_ROOT}/QMCVDevelopment/QMChatViewController/Icons/Media.xcassets",
+				$PODS_CONFIGURATION_BUILD_DIR/QMCVDevelopment/QMChatViewController.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/QMServicesDevelopment/QMChatCacheModel.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/QMServicesDevelopment/QMContactListCacheModel.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/QMServicesDevelopment/QMUsersCacheModel.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/QMServicesDevelopment/QMOpenGraphCacheModel.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1099,11 +1163,14 @@
 				E3B0B2201E1576EC00BE5FBD /* BaseItemModel.m in Sources */,
 				E3B0B1FE1E1576EC00BE5FBD /* QBCore.m in Sources */,
 				E3B0B1F71E1576EC00BE5FBD /* Profile.m in Sources */,
+				3B71C7FF202250B200C560BE /* QMMessageNotification.m in Sources */,
 				E3B0B22A1E1576EC00BE5FBD /* QBToolBar.m in Sources */,
+				3B71C7ED20224D7800C560BE /* ServicesManager.m in Sources */,
 				E3B0B2051E1576EC00BE5FBD /* UserTableViewCell.m in Sources */,
 				E3B0B1FB1E1576EC00BE5FBD /* LoginTableViewController.m in Sources */,
 				E3B0B1FD1E1576EC00BE5FBD /* QBAVCallPermissions.m in Sources */,
 				E3B0B21A1E1576EC00BE5FBD /* SessionSettingsViewController.m in Sources */,
+				3B71C7EC20224D7800C560BE /* NotificationService.m in Sources */,
 				3B71C7E120222CEC00C560BE /* UserIconTableViewCell.m in Sources */,
 				E3B0B1F81E1576EC00BE5FBD /* QMSoundManager.m in Sources */,
 				E3B0B21B1E1576EC00BE5FBD /* SettingCell.m in Sources */,
@@ -1120,6 +1187,7 @@
 				E3B0B2151E1576EC00BE5FBD /* OpponentsFlowLayout.m in Sources */,
 				E3B0B2031E1576EC00BE5FBD /* UsersViewController.m in Sources */,
 				E3B0B2251E1576EC00BE5FBD /* SharingCell.m in Sources */,
+				3B71C801202250B200C560BE /* UIImage+fixOrientation.m in Sources */,
 				E3B0B1F91E1576EC00BE5FBD /* Settings.m in Sources */,
 				E3B0B21D1E1576EC00BE5FBD /* SettingsSectionModel.m in Sources */,
 				E3B0B1FF1E1576EC00BE5FBD /* QBProfile.m in Sources */,
@@ -1130,6 +1198,7 @@
 				E3B0B2041E1576EC00BE5FBD /* CheckView.m in Sources */,
 				E3B0B2001E1576EC00BE5FBD /* PlaceholderGenerator.m in Sources */,
 				E3B50D9A1FC8763500796F0D /* CallKitManager.m in Sources */,
+				3B71C800202250B200C560BE /* QMMessageNotificationManager.m in Sources */,
 				E332B2221EDD7E6500FFF7EE /* RecordsViewController.m in Sources */,
 				E3B0B2211E1576EC00BE5FBD /* BaseSettingsCell.m in Sources */,
 				E3B0B21C1E1576EC00BE5FBD /* SettingSliderCell.m in Sources */,
@@ -1140,6 +1209,7 @@
 				E3B0B1F01E1576EC00BE5FBD /* AppDelegate.m in Sources */,
 				3B71C7DE20221BA500C560BE /* PatientsViewController.m in Sources */,
 				E3B0B22B1E1576EC00BE5FBD /* SVIndefiniteAnimatedView.m in Sources */,
+				3B71C7FC202250B200C560BE /* UIAlertDialog.m in Sources */,
 				3B71C7DB202218A500C560BE /* DoctorsViewController.m in Sources */,
 				E3B0B2241E1576EC00BE5FBD /* QBRTCScreenCapture.m in Sources */,
 				E3B0B2221E1576EC00BE5FBD /* SwitchItemModel.m in Sources */,

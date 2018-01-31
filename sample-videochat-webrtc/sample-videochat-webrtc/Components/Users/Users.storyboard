@@ -363,11 +363,30 @@
                         <segue destination="MJL-K9-GZh" kind="presentation" identifier="PresentSettingsViewController" id="5X9-lb-Gl5"/>
                         <segue destination="2v9-Nr-3SC" kind="show" id="NiV-wR-fQ7"/>
                         <segue destination="vTV-qm-f5k" kind="show" identifier="PresentRecordsViewController" id="9hH-r1-uG9"/>
+                        <segue destination="wKv-RG-4sS" kind="show" identifier="Go To Chat" id="hVQ-2R-wDx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5q8-oD-L4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3249" y="1269"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qR0-MY-ITS">
+            <objects>
+                <viewController id="wKv-RG-4sS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C7c-0U-1dp"/>
+                        <viewControllerLayoutGuide type="bottom" id="0ZJ-XH-7RB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lem-NA-1hB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVf-3r-bgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4214" y="1227"/>
         </scene>
         <!--Patients View Controller-->
         <scene sceneID="oyl-3W-ZqV">
@@ -553,8 +572,8 @@
         <image name="icon" width="49" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="num-3x-oEx"/>
-        <segue reference="aQd-I2-Vb8"/>
-        <segue reference="muR-nh-XnT"/>
+        <segue reference="9hH-r1-uG9"/>
+        <segue reference="NiV-wR-fQ7"/>
+        <segue reference="5X9-lb-Gl5"/>
     </inferredMetricsTieBreakers>
 </document>

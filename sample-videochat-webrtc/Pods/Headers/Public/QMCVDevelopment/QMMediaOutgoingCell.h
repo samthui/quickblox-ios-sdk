@@ -1,0 +1,1 @@
+../../../QMCVDevelopment/QMChatViewController/Views/Cells/QMChatMediaAttachmentCell/QMMediaOutgoingCell/QMMediaOutgoingCell.h

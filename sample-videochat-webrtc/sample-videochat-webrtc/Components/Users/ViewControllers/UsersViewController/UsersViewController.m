@@ -21,6 +21,7 @@
 #import "IncomingCallViewController.h"
 #import "RecordsViewController.h"
 #import "CallKitManager.h"
+#import "ServicesManager.h"
 
 const NSUInteger kQBPageSize = 50;
 static NSString * const kAps = @"aps";
@@ -467,7 +468,9 @@ static NSString * const kVoipEvent = @"VOIPCall";
         
     }];
     
-    UIAlertAction* chatAction = [UIAlertAction actionWithTitle:@"Chat" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    UIAlertAction* chatAction = [UIAlertAction actionWithTitle:@"Chat" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self chatWithUser:user];
+    }];
     
     UIAlertAction* dismissAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {}];
     
@@ -477,6 +480,96 @@ static NSString * const kVoipEvent = @"VOIPCall";
     [actionSheet addAction:dismissAction];
     [self presentViewController:actionSheet animated:YES completion:nil];
     
+}
+
+- (void)chatWithUser:(QBUUser *)user {
+    [self createChatWithName:nil users:@[user] completion:^(QBChatDialog *dialog) {
+//        __typeof(self) strongSelf = weakSelf;
+        if( dialog != nil ) {
+//            [strongSelf navigateToChatViewControllerWithDialog:dialog];
+            [self navigateToChatViewControllerWithDialog:dialog];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"SA_STR_CANNOT_CREATE_DIALOG", nil)];
+        }
+    }];
+    
+}
+
+- (void)navigateToChatViewControllerWithDialog:(QBChatDialog *)dialog {
+    [self performSegueWithIdentifier:@"Go To Chat" sender:dialog];
+}
+
+- (void)createChatWithName:(NSString *)name users:(NSArray <QBUUser*> *)users completion:(void(^)(QBChatDialog *dialog))completion {
+    NSMutableIndexSet *selectedUsersIndexSet = [NSMutableIndexSet indexSet];
+    [self.tableView.indexPathsForSelectedRows enumerateObjectsUsingBlock:^(NSIndexPath* obj, NSUInteger idx, BOOL *stop) {
+        [selectedUsersIndexSet addIndex:obj.row];
+    }];
+    
+    NSArray *selectedUsers =users;
+    
+//    if (selectedUsers.count == 1) {
+        // Creating private chat dialog.
+        [ServicesManager.instance.chatService createPrivateChatDialogWithOpponent:selectedUsers.firstObject completion:^(QBResponse *response, QBChatDialog *createdDialog) {
+            if (!response.success && createdDialog == nil) {
+                if (completion) {
+                    completion(nil);
+                }
+            }
+            else {
+                if (completion) {
+                    completion(createdDialog);
+                }
+            }
+        }];
+//    } else if (selectedUsers.count > 1) {
+//        if (name == nil || [[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+//            name = [NSString stringWithFormat:@"%@_", [QBSession currentSession].currentUser.login];
+//            for (QBUUser *user in selectedUsers) {
+//                name = [NSString stringWithFormat:@"%@%@,", name, user.login];
+//            }
+//            name = [name substringToIndex:name.length - 1]; // remove last , (comma)
+//        }
+//        else {
+//            name = [name stringByTrimmingCharactersInSet:
+//                    [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+//        }
+//
+//        [SVProgressHUD showWithStatus:NSLocalizedString(@"SA_STR_LOADING", nil) maskType:SVProgressHUDMaskTypeClear];
+//
+//
+//        // Creating group chat dialog.
+//        [ServicesManager.instance.chatService createGroupChatDialogWithName:name photo:nil occupants:selectedUsers completion:^(QBResponse *response, QBChatDialog *createdDialog) {
+//            if (response.success) {
+//                NSString * notificationText = [self updatedMessageWithUsers:selectedUsers];
+//                // Notifying users about created dialog.
+//                [[ServicesManager instance].chatService sendSystemMessageAboutAddingToDialog:createdDialog
+//                                                                                  toUsersIDs:createdDialog.occupantIDs
+//                                                                                    withText:notificationText
+//                                                                                  completion:^(NSError *error) {
+//
+//
+//                                                                                      // Notify occupants that dialog was updated.
+//                                                                                      [[ServicesManager instance].chatService sendNotificationMessageAboutAddingOccupants:createdDialog.occupantIDs
+//                                                                                                                                                                 toDialog:createdDialog
+//                                                                                                                                                     withNotificationText:notificationText
+//                                                                                                                                                               completion:nil];
+//
+//                                                                                      if (completion) {
+//                                                                                          completion(createdDialog);
+//                                                                                      }
+//                                                                                  }];
+//            }
+//            else {
+//                [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"SA_STR_ERROR", nil)];
+//                if (completion) {
+//                    completion(nil);
+//                }
+//            }
+//        }];
+//    } else {
+//        assert("no given users");
+//    }
 }
 
 #pragma mark - QBSampleCoreDelegate
