@@ -292,6 +292,7 @@
      {
          
          [SVProgressHUD dismiss];
+         user.password = @"x6Bt0VDy5";
          [Core didLoginWithUser:user];
          [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
      } errorBlock:^(QBResponse * _Nonnull response) {
