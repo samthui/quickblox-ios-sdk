@@ -49,9 +49,14 @@
 //    if (Core.currentUser) {
 //
 //        self.userNameTextField.text = Core.currentUser.fullName;
-//        self.chatRoomNameTextField.text = [Core.currentUser.tags firstObject];
+//        self.chatRoomNameTextField.text = Core.currentUser.password;//[Core.currentUser.tags firstObject];
 //        [self login];
 //    }
+    
+    if (Core.currentUser) {
+        [self beginConnect];
+        [Core loginWithCurrentUser];
+    }
 }
 
 - (void)defaultConfiguration {
