@@ -86,6 +86,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)loginWithCurrentUser;
 
+- (void)didLoginWithUser:(QBUUser *)user;
+
 /**
  *  Clear current profile (Keychain)
  */

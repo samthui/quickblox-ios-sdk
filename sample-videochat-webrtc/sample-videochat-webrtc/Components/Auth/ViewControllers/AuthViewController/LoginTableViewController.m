@@ -46,12 +46,12 @@
     
     [self defaultConfiguration];
     //Update interface and start login if user exist
-    if (Core.currentUser) {
-        
-        self.userNameTextField.text = Core.currentUser.fullName;
-        self.chatRoomNameTextField.text = [Core.currentUser.tags firstObject];
-        [self login];
-    }
+//    if (Core.currentUser) {
+//
+//        self.userNameTextField.text = Core.currentUser.fullName;
+//        self.chatRoomNameTextField.text = [Core.currentUser.tags firstObject];
+//        [self login];
+//    }
 }
 
 - (void)defaultConfiguration {
@@ -219,9 +219,43 @@
             NSLog(@"success! data=%@",responseObject);
             
             if ([[responseObject objectForKey:@"isLogin"] intValue] == 1) {
-                [SVProgressHUD dismiss];
                 
-                [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
+//                [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
+                
+//                [QBRequest logInWithUserEmail:login password:password successBlock:^(QBResponse *response, QBUUser *user) {
+//                    [SVProgressHUD dismiss];
+//
+//                    [Core didLoginWithUser:user];
+//
+//                    [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
+//                } errorBlock:^(QBResponse *response) {
+//                    [SVProgressHUD dismiss];
+//
+//                    NSLog(@"Errors=%@", [response.error description]);
+//
+//                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+//                                                                    message:[response.error  description]
+//                                                                   delegate:nil
+//                                                          cancelButtonTitle:@"OK"
+//                                                          otherButtonTitles:nil];
+//                    [alert show];
+//                }];
+                
+                
+//                if (Core.currentUser) {
+//
+//                    [Core loginWithCurrentUser];
+//                }
+//                else {
+//
+//                    [Core signUpWithFullName:login
+//                                    roomName:@"Bacsiviet"];
+//                }
+                
+                NSString *userType = [responseObject objectForKey:@"user_type"];
+                NSString *fullName = [responseObject objectForKey:@"fullname"];
+                QBUUser *qbUser = [self createUserWithEnteredData:userType data:fullName];
+                [self startSignUpNewUser:qbUser];
             } else {
                 [SVProgressHUD dismiss];
                 
@@ -249,6 +283,67 @@
     }
 }
 
+- (void)startSignUpNewUser:(QBUUser *)newUser {
+    
+    [SVProgressHUD showWithStatus:@"Đang tạo mới..."];
+    
+    [QBRequest signUp:newUser
+         successBlock:^(QBResponse * _Nonnull response, QBUUser * _Nullable user)
+     {
+         
+         [SVProgressHUD dismiss];
+         [Core didLoginWithUser:user];
+         [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
+     } errorBlock:^(QBResponse * _Nonnull response) {
+         
+        [SVProgressHUD dismiss];
+
+        NSLog(@"Errors=%@", [response.error description]);
+
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:[response.error  description]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+     }];
+}
+
+- (QBUUser *)createUserWithEnteredData:(NSString *)type_user data:(NSString *)custom_data {
+    if ([type_user isEqualToString:@"doctor"] || [type_user isEqualToString:@"clinic"]) {
+//        return createQBUserWithCurrentData(String.valueOf(userNameEditText.getText()), "doctor", custom_data);
+        return [self createQBUserWithCurrentData:self.userNameTextField.text chatroom:@"doctor" data:custom_data];
+    }
+//    return createQBUserWithCurrentData(String.valueOf(userNameEditText.getText()), "user", custom_data);
+    return [self createQBUserWithCurrentData:self.userNameTextField.text chatroom:@"user" data:custom_data];
+}
+
+- (QBUUser *)createQBUserWithCurrentData:(NSString *)userName chatroom:(NSString *)chatRoomName data:(NSString *)custom_data {
+//    QBUUser *qbUser = null;
+//    if (!TextUtils.isEmpty(userName) && !TextUtils.isEmpty(chatRoomName)) {
+//        StringifyArrayList<String> userTags = new StringifyArrayList<>();
+//        userTags.add(chatRoomName);
+//
+//        qbUser = new QBUser();
+//        qbUser.setFullName(userName);
+//        qbUser.setCustomData(custom_data);
+//        qbUser.setLogin(getCurrentDeviceId());
+//        qbUser.setPassword(Consts.DEFAULT_USER_PASSWORD);
+//        qbUser.setTags(userTags);
+//    }
+    
+    
+    QBUUser *qbUser = [QBUUser user];
+    
+    qbUser.login = [NSUUID UUID].UUIDString;
+    qbUser.fullName = userName;
+    qbUser.customData = custom_data;
+    qbUser.tags = @[chatRoomName].mutableCopy;
+    qbUser.password = @"x6Bt0VDy5";
+    
+    return qbUser;
+}
+
 - (void)beginConnect {
     
     [self setInputEnabled:NO];
@@ -267,6 +362,8 @@
     if (self.isViewLoaded && self.view.window != nil) {
         // only perform segue if login view controller is visible, otherwise we are already
         // on users view controller screan and this was just a chat connect
+        [SVProgressHUD dismiss];
+        
         [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
     }
 }

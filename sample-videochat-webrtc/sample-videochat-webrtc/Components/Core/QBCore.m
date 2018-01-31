@@ -170,6 +170,11 @@ NSString *const QB_DEFAULT_PASSOWORD = @"x6Bt0VDy5";
      }];
 }
 
+- (void)didLoginWithUser:(QBUUser *)user {
+    [self.profile synchronizeWithUserData:user];
+    [self loginWithCurrentUser];
+}
+
 - (void)signUpWithFullName:(NSString *)fullName
                   roomName:(NSString *)roomName {
     

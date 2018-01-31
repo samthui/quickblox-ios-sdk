@@ -113,7 +113,7 @@ static NSString * const kVoipEvent = @"VOIPCall";
     
     self.navigationItem.leftBarButtonItem = settingsButtonItem;
     //Custom label
-    NSString *roomName = [NSString stringWithFormat:@"%@", Core.currentUser.tags.firstObject];
+    NSString *roomName = [NSString stringWithFormat:@"%@", @"Bacsiviet.vn"];//Core.currentUser.tags.firstObject
     NSString *userName = [NSString stringWithFormat:@"Logged in as %@", Core.currentUser.fullName];
     NSString *titleString = [NSString stringWithFormat:@"%@\n%@", roomName, userName];
     
