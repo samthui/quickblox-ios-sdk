@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B626E262026062700976027 /* DialogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E252026062700976027 /* DialogsViewController.m */; };
+		3B626E2A202606D000976027 /* DialogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E28202606D000976027 /* DialogTableViewCell.m */; };
 		3B71C7DB202218A500C560BE /* DoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DA202218A500C560BE /* DoctorsViewController.m */; };
 		3B71C7DE20221BA500C560BE /* PatientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DD20221BA500C560BE /* PatientsViewController.m */; };
 		3B71C7E120222CEC00C560BE /* UserIconTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7E020222CEC00C560BE /* UserIconTableViewCell.m */; };
@@ -128,6 +130,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B626E242026062700976027 /* DialogsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DialogsViewController.h; path = "../../../../sample-chat/sample-chat/ViewController/DialogsViewController.h"; sourceTree = "<group>"; };
+		3B626E252026062700976027 /* DialogsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DialogsViewController.m; path = "../../../../sample-chat/sample-chat/ViewController/DialogsViewController.m"; sourceTree = "<group>"; };
+		3B626E28202606D000976027 /* DialogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DialogTableViewCell.m; path = "../../../../sample-chat/sample-chat/Views/DialogTableViewCell.m"; sourceTree = "<group>"; };
+		3B626E29202606D000976027 /* DialogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DialogTableViewCell.h; path = "../../../../sample-chat/sample-chat/Views/DialogTableViewCell.h"; sourceTree = "<group>"; };
 		3B71C7D9202218A500C560BE /* DoctorsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoctorsViewController.h; sourceTree = "<group>"; };
 		3B71C7DA202218A500C560BE /* DoctorsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoctorsViewController.m; sourceTree = "<group>"; };
 		3B71C7DC20221BA500C560BE /* PatientsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatientsViewController.h; sourceTree = "<group>"; };
@@ -379,6 +385,10 @@
 			children = (
 				3B71C804202254A200C560BE /* ChatViewController.h */,
 				3B71C803202254A200C560BE /* ChatViewController.m */,
+				3B626E242026062700976027 /* DialogsViewController.h */,
+				3B626E252026062700976027 /* DialogsViewController.m */,
+				3B626E29202606D000976027 /* DialogTableViewCell.h */,
+				3B626E28202606D000976027 /* DialogTableViewCell.m */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1206,6 +1216,7 @@
 				E3B0B2081E1576EC00BE5FBD /* main.m in Sources */,
 				E3B0B21F1E1576EC00BE5FBD /* SliderItemModel.m in Sources */,
 				E3B0B2011E1576EC00BE5FBD /* UsersDataSource.m in Sources */,
+				3B626E262026062700976027 /* DialogsViewController.m in Sources */,
 				E3B0B2261E1576EC00BE5FBD /* SharingViewController.m in Sources */,
 				E3B0B2161E1576EC00BE5FBD /* StatsView.m in Sources */,
 				E3B0B2231E1576EC00BE5FBD /* VideoSettingsViewController.m in Sources */,
@@ -1245,6 +1256,7 @@
 				E3B0B2291E1576EC00BE5FBD /* QBButtonsFactory.m in Sources */,
 				E3B0B1F61E1576EC00BE5FBD /* OpponentCollectionViewCell.m in Sources */,
 				E3B0B22F1E1576EC00BE5FBD /* SVRadialGradientLayer.m in Sources */,
+				3B626E2A202606D000976027 /* DialogTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -164,7 +164,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UserIconTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserIconCellIdentifier"];
+    UserIconTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserIconCellIdentifier" forIndexPath:indexPath];
     
     QBUUser *user = self.usersSortedByLastSeen[indexPath.row];
     
@@ -199,6 +199,8 @@
                 cell.avatarImageView.image = [UIImage imageWithData: data];
             });
         });
+    } else {
+        cell.avatarImageView.image = nil;
     }
     
     return cell;

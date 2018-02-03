@@ -16,6 +16,10 @@ const NSUInteger kApplicationID = 28783;
 NSString *const kAuthKey        = @"b5bVGCHHv6rcAmD";
 NSString *const kAuthSecret     = @"ySwEpardeE7ZXHB";
 NSString *const kAccountKey     = @"7yvNe17TnjNUqDoPwfqp";
+//const NSUInteger kApplicationID = 67043;
+//NSString *const kAuthKey        = @"tJq9BqRPyNTeKy9";
+//NSString *const kAuthSecret     = @"yhgCMPAfpCNXJcz";
+//NSString *const kAccountKey     = @"suHzUtFPa1RhcBeFtnwU";
 
 @interface AppDelegate () <NotificationServiceDelegate>
 
