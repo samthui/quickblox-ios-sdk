@@ -60,6 +60,10 @@ NSString *const QB_DEFAULT_PASSOWORD = @"x6Bt0VDy5";
     [self.profile clearProfile];
 }
 
+- (BOOL)isPaid {
+    return [self.profile isPaid];
+}
+
 - (void)addDelegate:(id <QBCoreDelegate>)delegate {
     
     [self.multicastDelegate addDelegate:delegate];
@@ -175,6 +179,11 @@ NSString *const QB_DEFAULT_PASSOWORD = @"x6Bt0VDy5";
     [self loginWithCurrentUser];
 }
 
+- (void)didLoginWithUser:(QBUUser *)user isPaid:(BOOL)isPaid {
+    [self.profile synchronizeWithUserData:user isPaid:isPaid];
+    [self loginWithCurrentUser];
+}
+
 - (void)signUpWithFullName:(NSString *)fullName
                   roomName:(NSString *)roomName {
     
@@ -193,6 +202,33 @@ NSString *const QB_DEFAULT_PASSOWORD = @"x6Bt0VDy5";
          successBlock:^(QBResponse * _Nonnull response, QBUUser * _Nullable user)
      {
          [self.profile synchronizeWithUserData:user];
+         [self loginWithCurrentUser];
+         
+     } errorBlock:^(QBResponse * _Nonnull response) {
+         
+         [self handleError:response.error.error domain:ErrorDomainSignUp];
+     }];
+}
+
+- (void)signUpWithFullName:(NSString *)fullName
+                  roomName:(NSString *)roomName
+                    isPaid:(BOOL)isPaid {
+    
+    NSParameterAssert(!self.currentUser);
+    
+    QBUUser *newUser = [QBUUser user];
+    
+    newUser.login = [NSUUID UUID].UUIDString;
+    newUser.fullName = fullName;
+    newUser.tags = @[roomName].mutableCopy;
+    newUser.password = QB_DEFAULT_PASSOWORD;
+    
+    [self setLoginStatus:@"Signg up ..."];
+    
+    [QBRequest signUp:newUser
+         successBlock:^(QBResponse * _Nonnull response, QBUUser * _Nullable user)
+     {
+         [self.profile synchronizeWithUserData:user isPaid:isPaid];
          [self loginWithCurrentUser];
          
      } errorBlock:^(QBResponse * _Nonnull response) {

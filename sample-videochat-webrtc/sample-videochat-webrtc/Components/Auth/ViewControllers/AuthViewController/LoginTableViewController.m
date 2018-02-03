@@ -259,8 +259,9 @@
                 
                 NSString *userType = [responseObject objectForKey:@"user_type"];
                 NSString *fullName = [responseObject objectForKey:@"fullname"];
+                BOOL isPaid = [[responseObject objectForKey:@"paid"] boolValue];
                 QBUUser *qbUser = [self createUserWithEnteredData:userType data:fullName];
-                [self startSignUpNewUser:qbUser];
+                [self startSignUpNewUser:qbUser isPaid:isPaid];
             } else {
                 [SVProgressHUD dismiss];
                 
@@ -288,7 +289,7 @@
     }
 }
 
-- (void)startSignUpNewUser:(QBUUser *)newUser {
+- (void)startSignUpNewUser:(QBUUser *)newUser isPaid:(BOOL)isPaid {
     
     [SVProgressHUD showWithStatus:@"Đang tạo mới..."];
     
@@ -298,7 +299,7 @@
          
          [SVProgressHUD dismiss];
          user.password = @"x6Bt0VDy5";
-         [Core didLoginWithUser:user];
+         [Core didLoginWithUser:user isPaid:isPaid];
          [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
      } errorBlock:^(QBResponse * _Nonnull response) {
          

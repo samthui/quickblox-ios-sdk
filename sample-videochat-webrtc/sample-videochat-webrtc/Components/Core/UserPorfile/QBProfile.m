@@ -15,6 +15,7 @@ NSString *const kQBUser = @"qbuser";
 @interface QBProfile()
 
 @property (strong, nonatomic, readwrite) QBUUser *userData;
+@property (nonatomic, readwrite) BOOL paid;
 
 @end
 
@@ -50,10 +51,26 @@ NSString *const kQBUser = @"qbuser";
     return status;
 }
 
+- (OSStatus)synchronizeWithUserData:(QBUUser *)userData isPaid:(BOOL)isPaid {
+    
+    self.userData = userData;
+    self.paid = isPaid;
+    OSStatus status = [self synchronize];
+    
+    return status;
+}
+
 - (void)loadProfile {
     
     QBProfile *profile = [self loadObjectForKey:kQBProfile];
     self.userData = profile.userData;
+    self.paid = profile.isPaid;
+}
+
+- (BOOL)isPaid {
+    
+//    [self loadProfile];
+    return self.paid;
 }
 
 - (OSStatus)clearProfile {

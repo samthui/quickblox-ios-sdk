@@ -482,10 +482,17 @@ static NSString * const kVoipEvent = @"VOIPCall";
     
     UIAlertAction* dismissAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {}];
     
-    [actionSheet addAction:videoAction];
-    [actionSheet addAction:audioAction];
-    [actionSheet addAction:chatAction];
-    [actionSheet addAction:dismissAction];
+    // paid = 0 ==> chat only
+    if (Core.isPaid) {
+        [actionSheet addAction:videoAction];
+        [actionSheet addAction:audioAction];
+        [actionSheet addAction:chatAction];
+        [actionSheet addAction:dismissAction];
+    } else {
+        [actionSheet addAction:chatAction];
+        [actionSheet addAction:dismissAction];
+    }
+    
     [self presentViewController:actionSheet animated:YES completion:nil];
     
 }

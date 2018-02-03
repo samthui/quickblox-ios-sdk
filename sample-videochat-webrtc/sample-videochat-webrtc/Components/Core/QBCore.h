@@ -80,6 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param roomName room name (tag)
  */
 - (void)signUpWithFullName:(NSString *)fullName roomName:(NSString *)roomName;
+- (void)signUpWithFullName:(NSString *)fullName roomName:(NSString *)roomName isPaid:(BOOL)isPaid;
 
 /**
  *  login 
@@ -87,11 +88,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loginWithCurrentUser;
 
 - (void)didLoginWithUser:(QBUUser *)user;
+- (void)didLoginWithUser:(QBUUser *)user isPaid:(BOOL)isPaid;
 
 /**
  *  Clear current profile (Keychain)
  */
 - (void)clearProfile;
+
+- (BOOL)isPaid;
 
 /**
  *  Logout and remove current user from server

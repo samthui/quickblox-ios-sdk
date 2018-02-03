@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  User data.
  */
 @property (strong, nonatomic, readonly, nullable) QBUUser *userData;
+@property (nonatomic, readonly) BOOL paid;
 
 /**
  *  Returns loaded current profile with user.
@@ -43,6 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return whether synchronize was successful
  */
 - (OSStatus)synchronizeWithUserData:(QBUUser *)userData;
+- (OSStatus)synchronizeWithUserData:(QBUUser *)userData isPaid:(BOOL)isPaid;
 
 /**
  *  Remove all user data.
@@ -50,6 +52,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return Whether clear was successful
  */
 - (OSStatus)clearProfile;
+
+- (BOOL)isPaid;
 
 @end
 
