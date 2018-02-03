@@ -147,7 +147,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="IJL-NV-lo4"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                     <connections>
                                                         <action selector="editingChanged:" destination="s0b-Ic-sY1" eventType="editingChanged" id="moV-uE-reo"/>
                                                         <outlet property="delegate" destination="s0b-Ic-sY1" id="eDF-9s-j8f"/>
