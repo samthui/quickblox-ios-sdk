@@ -76,12 +76,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="eTy-fn-BXV">
-                                            <rect key="frame" x="20" y="8" width="49" height="48.5"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="eTy-fn-BXV">
+                                            <rect key="frame" x="20" y="8" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="48" id="IPv-4s-OtZ"/>
-                                                <constraint firstAttribute="width" constant="49" id="lzx-4P-K77"/>
+                                                <constraint firstAttribute="height" constant="50" id="IPv-4s-OtZ"/>
+                                                <constraint firstAttribute="width" constant="50" id="lzx-4P-K77"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBh-SD-ogo">
                                             <rect key="frame" x="81" y="10" width="67" height="44.5"/>
@@ -112,8 +117,8 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="centerY" secondItem="eTy-fn-BXV" secondAttribute="centerY" id="8m8-23-aq7"/>
-                                        <constraint firstItem="WBh-SD-ogo" firstAttribute="leading" secondItem="eTy-fn-BXV" secondAttribute="trailing" constant="12" id="PyH-3n-qP1"/>
+                                        <constraint firstAttribute="centerY" secondItem="eTy-fn-BXV" secondAttribute="centerY" constant="-1.25" id="8m8-23-aq7"/>
+                                        <constraint firstItem="WBh-SD-ogo" firstAttribute="leading" secondItem="eTy-fn-BXV" secondAttribute="trailing" constant="11" id="PyH-3n-qP1"/>
                                         <constraint firstAttribute="centerY" secondItem="WBh-SD-ogo" secondAttribute="centerY" id="nle-Pp-tmJ"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="WBh-SD-ogo" secondAttribute="trailing" id="tJs-jZ-1Zc"/>
                                         <constraint firstItem="eTy-fn-BXV" firstAttribute="leading" secondItem="ieV-aK-6c1" secondAttribute="leading" constant="20" id="xnJ-s5-RZ1"/>
@@ -121,6 +126,7 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="81" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="avatarImageView" destination="eTy-fn-BXV" id="d2C-hj-dHa"/>
                                     <outlet property="emailLabel" destination="jib-6C-awo" id="GNf-da-0Ep"/>
                                     <outlet property="nameLabel" destination="cdC-Nt-NCQ" id="Q9I-xY-soT"/>
                                 </connections>
@@ -294,12 +300,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="EFF-rE-NCW">
-                                            <rect key="frame" x="20" y="7.5" width="49" height="48.5"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="EFF-rE-NCW">
+                                            <rect key="frame" x="20" y="8" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="48" id="N4K-WN-vrZ"/>
-                                                <constraint firstAttribute="width" constant="49" id="qMV-AB-orn"/>
+                                                <constraint firstAttribute="height" constant="50" id="N4K-WN-vrZ"/>
+                                                <constraint firstAttribute="width" constant="50" id="qMV-AB-orn"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELv-2N-KoD">
                                             <rect key="frame" x="81" y="9.5" width="67" height="44.5"/>
@@ -332,13 +343,14 @@
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ELv-2N-KoD" secondAttribute="trailing" id="0f4-QY-h2H"/>
                                         <constraint firstItem="EFF-rE-NCW" firstAttribute="leading" secondItem="gT4-1V-0fD" secondAttribute="leading" constant="20" id="6bB-jJ-Om8"/>
-                                        <constraint firstAttribute="centerY" secondItem="EFF-rE-NCW" secondAttribute="centerY" id="E4o-gN-FVU"/>
-                                        <constraint firstItem="ELv-2N-KoD" firstAttribute="leading" secondItem="EFF-rE-NCW" secondAttribute="trailing" constant="12" id="gKB-bz-MQc"/>
+                                        <constraint firstAttribute="centerY" secondItem="EFF-rE-NCW" secondAttribute="centerY" constant="-1.25" id="E4o-gN-FVU"/>
+                                        <constraint firstItem="ELv-2N-KoD" firstAttribute="leading" secondItem="EFF-rE-NCW" secondAttribute="trailing" constant="11" id="gKB-bz-MQc"/>
                                         <constraint firstAttribute="centerY" secondItem="ELv-2N-KoD" secondAttribute="centerY" id="n77-EM-NRF"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="81" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="avatarImageView" destination="EFF-rE-NCW" id="17s-5G-p6c"/>
                                     <outlet property="emailLabel" destination="aRK-ss-vdR" id="NOp-iv-MUM"/>
                                     <outlet property="nameLabel" destination="eT4-ul-Y8s" id="LEM-SU-L3w"/>
                                 </connections>
@@ -436,12 +448,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Xpt-8d-JzJ">
-                                            <rect key="frame" x="20" y="8" width="49" height="48.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Xpt-8d-JzJ">
+                                            <rect key="frame" x="20" y="8" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="48" id="3ca-ar-DgV"/>
-                                                <constraint firstAttribute="width" constant="49" id="x0h-rJ-m8m"/>
+                                                <constraint firstAttribute="height" constant="50" id="3ca-ar-DgV"/>
+                                                <constraint firstAttribute="width" constant="50" id="x0h-rJ-m8m"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkT-7j-HIr">
                                             <rect key="frame" x="81" y="10" width="67" height="44.5"/>
@@ -474,13 +491,14 @@
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="jkT-7j-HIr" secondAttribute="trailing" id="1v2-iD-0C1"/>
                                         <constraint firstItem="Xpt-8d-JzJ" firstAttribute="leading" secondItem="tml-hl-sXc" secondAttribute="leading" constant="20" id="5En-1l-9ZX"/>
-                                        <constraint firstAttribute="centerY" secondItem="Xpt-8d-JzJ" secondAttribute="centerY" id="byd-pY-XtK"/>
+                                        <constraint firstAttribute="centerY" secondItem="Xpt-8d-JzJ" secondAttribute="centerY" constant="-1.25" id="byd-pY-XtK"/>
                                         <constraint firstAttribute="centerY" secondItem="jkT-7j-HIr" secondAttribute="centerY" id="d0n-Ce-pqf"/>
-                                        <constraint firstItem="jkT-7j-HIr" firstAttribute="leading" secondItem="Xpt-8d-JzJ" secondAttribute="trailing" constant="12" id="xzM-yy-TTe"/>
+                                        <constraint firstItem="jkT-7j-HIr" firstAttribute="leading" secondItem="Xpt-8d-JzJ" secondAttribute="trailing" constant="11" id="xzM-yy-TTe"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="81" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="avatarImageView" destination="Xpt-8d-JzJ" id="T50-0C-kdh"/>
                                     <outlet property="emailLabel" destination="NDQ-3w-ZHQ" id="YFw-rb-8wA"/>
                                     <outlet property="nameLabel" destination="WFX-Rl-W68" id="Kxh-K2-Ctv"/>
                                 </connections>

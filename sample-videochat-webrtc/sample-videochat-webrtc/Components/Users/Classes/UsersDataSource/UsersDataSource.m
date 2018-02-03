@@ -181,6 +181,26 @@
     cell.nameLabel.text = name;
     cell.emailLabel.text = detail;
     
+    // Avatar
+    [cell.avatarImageView setClipsToBounds:YES];
+    NSArray *parseUrlArray = [customData componentsSeparatedByString:@"-_-"];
+    if (parseUrlArray.count > 1) {
+        NSString *avatarUrl = [parseUrlArray lastObject];
+        if (![avatarUrl containsString:@"http://"]) {
+            avatarUrl = [NSString stringWithFormat:@"http://%@", avatarUrl];
+        }
+        NSLog(@"avatarUrl = %@", avatarUrl);
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+            NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: avatarUrl]];
+            if ( data == nil )
+                return;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // WARNING: is the cell still using the same data by this point??
+                cell.avatarImageView.image = [UIImage imageWithData: data];
+            });
+        });
+    }
+    
     return cell;
 }
 
