@@ -716,6 +716,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="CVm-b6-Y2K" kind="unwind" identifier="kBackToLoginViewController" unwindAction="backToLoginViewController:" id="m7F-te-X9D"/>
+                        <segue destination="zsV-od-EZL" kind="show" identifier="goToChat" id="mcV-f7-K06"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qd-DC-0y2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -747,7 +748,7 @@
         <image name="icon" width="49" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ber-eZ-QJ9"/>
+        <segue reference="mcV-f7-K06"/>
         <segue reference="K0e-uR-aGb"/>
         <segue reference="UKc-yC-tiS"/>
         <segue reference="6Aw-of-7yw"/>
