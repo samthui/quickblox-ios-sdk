@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -123,13 +124,28 @@
                                                 <constraint firstItem="jib-6C-awo" firstAttribute="leading" secondItem="WBh-SD-ogo" secondAttribute="leading" id="q2q-Wx-FYJ"/>
                                             </constraints>
                                         </view>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHT-Vn-RkX">
+                                            <rect key="frame" x="355" y="26" width="10" height="10"/>
+                                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="Wdb-jb-cf0"/>
+                                                <constraint firstAttribute="width" secondItem="pHT-Vn-RkX" secondAttribute="height" multiplier="1:1" id="ypW-SJ-QfQ"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="eTy-fn-BXV" secondAttribute="centerY" constant="-1.25" id="8m8-23-aq7"/>
                                         <constraint firstItem="WBh-SD-ogo" firstAttribute="leading" secondItem="eTy-fn-BXV" secondAttribute="trailing" constant="11" id="PyH-3n-qP1"/>
                                         <constraint firstAttribute="centerY" secondItem="WBh-SD-ogo" secondAttribute="centerY" id="nle-Pp-tmJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="pHT-Vn-RkX" secondAttribute="trailing" constant="10" id="pD2-YL-Btc"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="WBh-SD-ogo" secondAttribute="trailing" id="tJs-jZ-1Zc"/>
                                         <constraint firstItem="eTy-fn-BXV" firstAttribute="leading" secondItem="ieV-aK-6c1" secondAttribute="leading" constant="20" id="xnJ-s5-RZ1"/>
+                                        <constraint firstItem="pHT-Vn-RkX" firstAttribute="centerY" secondItem="ieV-aK-6c1" secondAttribute="centerY" id="z2q-wJ-H8N"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="81" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -348,11 +364,27 @@
                                                 <constraint firstAttribute="trailing" secondItem="eT4-ul-Y8s" secondAttribute="trailing" id="v1N-j6-njI"/>
                                             </constraints>
                                         </view>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2r-e1-mUg">
+                                            <rect key="frame" x="355" y="26" width="10" height="10"/>
+                                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="s2r-e1-mUg" secondAttribute="height" multiplier="1:1" id="5ew-fk-lI8"/>
+                                                <constraint firstAttribute="height" constant="10" id="PnC-g2-qyb"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ELv-2N-KoD" secondAttribute="trailing" id="0f4-QY-h2H"/>
                                         <constraint firstItem="EFF-rE-NCW" firstAttribute="leading" secondItem="gT4-1V-0fD" secondAttribute="leading" constant="20" id="6bB-jJ-Om8"/>
+                                        <constraint firstAttribute="trailing" secondItem="s2r-e1-mUg" secondAttribute="trailing" constant="10" id="AKV-DX-cwV"/>
                                         <constraint firstAttribute="centerY" secondItem="EFF-rE-NCW" secondAttribute="centerY" constant="-1.25" id="E4o-gN-FVU"/>
+                                        <constraint firstItem="s2r-e1-mUg" firstAttribute="centerY" secondItem="gT4-1V-0fD" secondAttribute="centerY" id="HJ6-c1-grq"/>
+                                        <constraint firstItem="s2r-e1-mUg" firstAttribute="width" secondItem="s2r-e1-mUg" secondAttribute="height" multiplier="1:1" id="aC8-vt-ID0"/>
                                         <constraint firstItem="ELv-2N-KoD" firstAttribute="leading" secondItem="EFF-rE-NCW" secondAttribute="trailing" constant="11" id="gKB-bz-MQc"/>
                                         <constraint firstAttribute="centerY" secondItem="ELv-2N-KoD" secondAttribute="centerY" id="n77-EM-NRF"/>
                                     </constraints>
@@ -496,12 +528,28 @@
                                                 <constraint firstItem="NDQ-3w-ZHQ" firstAttribute="leading" secondItem="jkT-7j-HIr" secondAttribute="leading" id="nNk-F1-xQJ"/>
                                             </constraints>
                                         </view>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1T-w1-Ins">
+                                            <rect key="frame" x="355" y="26" width="10" height="10"/>
+                                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Y1T-w1-Ins" secondAttribute="height" multiplier="1:1" id="Epq-g2-HKb"/>
+                                                <constraint firstAttribute="height" constant="10" id="aG1-1y-IDP"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="jkT-7j-HIr" secondAttribute="trailing" id="1v2-iD-0C1"/>
                                         <constraint firstItem="Xpt-8d-JzJ" firstAttribute="leading" secondItem="tml-hl-sXc" secondAttribute="leading" constant="20" id="5En-1l-9ZX"/>
+                                        <constraint firstItem="Y1T-w1-Ins" firstAttribute="centerY" secondItem="tml-hl-sXc" secondAttribute="centerY" id="MEC-nG-Zac"/>
+                                        <constraint firstItem="Y1T-w1-Ins" firstAttribute="width" secondItem="Y1T-w1-Ins" secondAttribute="height" multiplier="1:1" id="XqG-cn-6Nd"/>
                                         <constraint firstAttribute="centerY" secondItem="Xpt-8d-JzJ" secondAttribute="centerY" constant="-1.25" id="byd-pY-XtK"/>
                                         <constraint firstAttribute="centerY" secondItem="jkT-7j-HIr" secondAttribute="centerY" id="d0n-Ce-pqf"/>
+                                        <constraint firstAttribute="trailing" secondItem="Y1T-w1-Ins" secondAttribute="trailing" constant="10" id="qyv-XA-cDs"/>
                                         <constraint firstItem="jkT-7j-HIr" firstAttribute="leading" secondItem="Xpt-8d-JzJ" secondAttribute="trailing" constant="11" id="xzM-yy-TTe"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -857,9 +905,9 @@
         <image name="icon" width="49" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mcV-f7-K06"/>
-        <segue reference="K0e-uR-aGb"/>
-        <segue reference="UKc-yC-tiS"/>
-        <segue reference="6Aw-of-7yw"/>
+        <segue reference="Mwa-zv-wEC"/>
+        <segue reference="9hH-r1-uG9"/>
+        <segue reference="NiV-wR-fQ7"/>
+        <segue reference="5X9-lb-Gl5"/>
     </inferredMetricsTieBreakers>
 </document>
