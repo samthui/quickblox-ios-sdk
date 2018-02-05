@@ -200,7 +200,7 @@
             });
         });
     } else {
-        cell.avatarImageView.image = nil;
+        cell.avatarImageView.image = [UIImage imageNamed:@"icon"];
     }
     
     return cell;

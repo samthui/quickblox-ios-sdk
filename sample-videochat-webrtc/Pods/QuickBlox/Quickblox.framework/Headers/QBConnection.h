@@ -1,10 +1,10 @@
 //
-// Created by QuickBlox team on 01/12/2013.
-// Copyright (c) 2016 QuickBlox. All rights reserved.
-//
+// QBConnection.h
 
-#import <Foundation/Foundation.h>
-#import "QBSettings.h"
+//  Created by QuickBlox team
+//  Copyright (c) 2017 QuickBlox. All rights reserved.
+
+#import <Quickblox/QBSettings.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,6 +28,11 @@ NS_ASSUME_NONNULL_BEGIN
  @param block A block object to be executed once all messages enqueued for a session have been delivered. The block has no return value and takes a single argument: the session.
  */
 + (void)setURLSessionDidFinishBackgroundEventsBlock:(nullable void (^)(NSURLSession * _Nullable session))block;
+
+/**
+ Cancel all runing requests
+ */
++ (void)cancelAllRequests:(dispatch_block_t)completion ;
 
 @end
 

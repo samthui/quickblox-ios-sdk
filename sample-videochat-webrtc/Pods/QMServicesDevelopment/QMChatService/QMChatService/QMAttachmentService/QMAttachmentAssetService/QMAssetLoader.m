@@ -11,6 +11,7 @@
 #import "QBChatAttachment+QMCustomParameters.h"
 #import "QMTimeOut.h"
 #import "QMSLog.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface QMAssetLoader ()
 

@@ -406,12 +406,12 @@ static NSArray *qm_colors = nil;
         string = @"";
     }
     
-    unsigned long hashNumber = stringToLong_image((unsigned char*)[string UTF8String]);
+    unsigned long hashNumber = stringToLong((unsigned char*)[string UTF8String]);
     
     return qm_colors[hashNumber % qm_colors.count];
 }
 
-unsigned long stringToLong_image(unsigned char* str) {
+unsigned long stringToLong(unsigned char* str) {
     
     unsigned long hash = 5381;
     int c;

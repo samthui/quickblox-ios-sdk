@@ -28,8 +28,8 @@ QMChatConnectionDelegate
 
 @implementation DialogsViewController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
     // calling awakeFromNib due to viewDidLoad not being called by instantiateViewControllerWithIdentifier
     [[ServicesManager instance].chatService addDelegate:self];

@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B626E262026062700976027 /* DialogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E252026062700976027 /* DialogsViewController.m */; };
-		3B626E2A202606D000976027 /* DialogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E28202606D000976027 /* DialogTableViewCell.m */; };
+		3B626E38202676DE00976027 /* ChatUsersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E34202676DC00976027 /* ChatUsersDataSource.m */; };
+		3B626E39202676DE00976027 /* SelectUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E37202676DD00976027 /* SelectUserTableViewCell.m */; };
+		3B626E3C2026782F00976027 /* NewDialogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E3B2026782E00976027 /* NewDialogTableViewController.m */; };
+		3B626E3F202678AB00976027 /* DialogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E3D202678AB00976027 /* DialogsViewController.m */; };
+		3B626E422026790200976027 /* DialogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E402026790100976027 /* DialogTableViewCell.m */; };
+		3B626E502026F99000976027 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B626E4E2026F96D00976027 /* Icon-60@2x.png */; };
+		3B626E512026F9A600976027 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B0B19A1E1576EC00BE5FBD /* Images.xcassets */; };
 		3B71C7DB202218A500C560BE /* DoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DA202218A500C560BE /* DoctorsViewController.m */; };
 		3B71C7DE20221BA500C560BE /* PatientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DD20221BA500C560BE /* PatientsViewController.m */; };
 		3B71C7E120222CEC00C560BE /* UserIconTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7E020222CEC00C560BE /* UserIconTableViewCell.m */; };
@@ -56,7 +61,6 @@
 		E3B0B2061E1576EC00BE5FBD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3B0B1961E1576EC00BE5FBD /* Info.plist */; };
 		E3B0B2071E1576EC00BE5FBD /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3B0B1971E1576EC00BE5FBD /* Launch Screen.xib */; };
 		E3B0B2081E1576EC00BE5FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B0B1981E1576EC00BE5FBD /* main.m */; };
-		E3B0B2091E1576EC00BE5FBD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B0B19A1E1576EC00BE5FBD /* Images.xcassets */; };
 		E3B0B20A1E1576EC00BE5FBD /* StunList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3B0B19D1E1576EC00BE5FBD /* StunList.plist */; };
 		E3B0B20B1E1576EC00BE5FBD /* DEVUsers.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3B0B19F1E1576EC00BE5FBD /* DEVUsers.plist */; };
 		E3B0B20C1E1576EC00BE5FBD /* PRODUsers.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3B0B1A01E1576EC00BE5FBD /* PRODUsers.plist */; };
@@ -96,22 +100,12 @@
 		E3B0B22E1E1576EC00BE5FBD /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B0B1ED1E1576EC00BE5FBD /* SVProgressHUD.m */; };
 		E3B0B22F1E1576EC00BE5FBD /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B0B1EF1E1576EC00BE5FBD /* SVRadialGradientLayer.m */; };
 		E3B50D9A1FC8763500796F0D /* CallKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B50D981FC8763500796F0D /* CallKitManager.m */; };
-		FB29BC041B32BBC0009751A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB29BBC61B32BBC0009751A1 /* Images.xcassets */; };
-		FB29BC0A1B32BBC0009751A1 /* busy.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB29BBCE1B32BBC0009751A1 /* busy.wav */; };
-		FB29BC0B1B32BBC0009751A1 /* calling.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB29BBCF1B32BBC0009751A1 /* calling.wav */; };
-		FB29BC0C1B32BBC0009751A1 /* end_of_call.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB29BBD01B32BBC0009751A1 /* end_of_call.wav */; };
-		FB29BC0D1B32BBC0009751A1 /* ringtone.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB29BBD11B32BBC0009751A1 /* ringtone.wav */; };
 		FB415B9C1D80043400AD4C08 /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB44905D1BFB95D000A8233D /* Quickblox.framework */; };
 		FB415B9D1D80043400AD4C08 /* Quickblox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB44905D1BFB95D000A8233D /* Quickblox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB4490501BFB8AD000A8233D /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB44904F1BFB8AD000A8233D /* libxml2.2.tbd */; };
 		FB4490521BFB8ADD00A8233D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4490511BFB8ADD00A8233D /* libresolv.tbd */; };
 		FB4490581BFB8B2E00A8233D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4490571BFB8B2E00A8233D /* Accelerate.framework */; };
 		FB5764E01B42A00F00501049 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5764DF1B42A00F00501049 /* VideoToolbox.framework */; };
-		FBE079F41BEA204000718C56 /* StunList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE079EE1BEA204000718C56 /* StunList.plist */; };
-		FBE079F61BEA204000718C56 /* DEVUsers.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE079F11BEA204000718C56 /* DEVUsers.plist */; };
-		FBE079F71BEA204000718C56 /* PRODUsers.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE079F21BEA204000718C56 /* PRODUsers.plist */; };
-		FBE079F81BEA204000718C56 /* QAUsers.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE079F31BEA204000718C56 /* QAUsers.plist */; };
-		FBE079FA1BEA216400718C56 /* WEBUsers.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE079F91BEA216400718C56 /* WEBUsers.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -130,10 +124,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3B626E242026062700976027 /* DialogsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DialogsViewController.h; path = "../../../../sample-chat/sample-chat/ViewController/DialogsViewController.h"; sourceTree = "<group>"; };
-		3B626E252026062700976027 /* DialogsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DialogsViewController.m; path = "../../../../sample-chat/sample-chat/ViewController/DialogsViewController.m"; sourceTree = "<group>"; };
-		3B626E28202606D000976027 /* DialogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DialogTableViewCell.m; path = "../../../../sample-chat/sample-chat/Views/DialogTableViewCell.m"; sourceTree = "<group>"; };
-		3B626E29202606D000976027 /* DialogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DialogTableViewCell.h; path = "../../../../sample-chat/sample-chat/Views/DialogTableViewCell.h"; sourceTree = "<group>"; };
+		3B626E34202676DC00976027 /* ChatUsersDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatUsersDataSource.m; sourceTree = "<group>"; };
+		3B626E35202676DD00976027 /* SelectUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectUserTableViewCell.h; sourceTree = "<group>"; };
+		3B626E36202676DD00976027 /* ChatUsersDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatUsersDataSource.h; sourceTree = "<group>"; };
+		3B626E37202676DD00976027 /* SelectUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectUserTableViewCell.m; sourceTree = "<group>"; };
+		3B626E3A2026782E00976027 /* NewDialogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDialogTableViewController.h; sourceTree = "<group>"; };
+		3B626E3B2026782E00976027 /* NewDialogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDialogTableViewController.m; sourceTree = "<group>"; };
+		3B626E3D202678AB00976027 /* DialogsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogsViewController.m; sourceTree = "<group>"; };
+		3B626E3E202678AB00976027 /* DialogsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogsViewController.h; sourceTree = "<group>"; };
+		3B626E402026790100976027 /* DialogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogTableViewCell.m; sourceTree = "<group>"; };
+		3B626E412026790100976027 /* DialogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogTableViewCell.h; sourceTree = "<group>"; };
+		3B626E4E2026F96D00976027 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Resources/Icon-60@2x.png"; sourceTree = "<group>"; };
 		3B71C7D9202218A500C560BE /* DoctorsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoctorsViewController.h; sourceTree = "<group>"; };
 		3B71C7DA202218A500C560BE /* DoctorsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoctorsViewController.m; sourceTree = "<group>"; };
 		3B71C7DC20221BA500C560BE /* PatientsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatientsViewController.h; sourceTree = "<group>"; };
@@ -287,12 +288,6 @@
 		E3B0B2311E157AA800BE5FBD /* QuickbloxWebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickbloxWebRTC.framework; path = ../Framework/QuickbloxWebRTC.framework; sourceTree = "<group>"; };
 		E3B50D981FC8763500796F0D /* CallKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallKitManager.m; sourceTree = "<group>"; };
 		E3B50D991FC8763500796F0D /* CallKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallKitManager.h; sourceTree = "<group>"; };
-		FB29BBC21B32BBC0009751A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		FB29BBC61B32BBC0009751A1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FB29BBCE1B32BBC0009751A1 /* busy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = busy.wav; sourceTree = "<group>"; };
-		FB29BBCF1B32BBC0009751A1 /* calling.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = calling.wav; sourceTree = "<group>"; };
-		FB29BBD01B32BBC0009751A1 /* end_of_call.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = end_of_call.wav; sourceTree = "<group>"; };
-		FB29BBD11B32BBC0009751A1 /* ringtone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringtone.wav; sourceTree = "<group>"; };
 		FB44904F1BFB8AD000A8233D /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		FB4490511BFB8ADD00A8233D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		FB4490531BFB8AF300A8233D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -300,11 +295,6 @@
 		FB4490571BFB8B2E00A8233D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		FB44905D1BFB95D000A8233D /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quickblox.framework; path = ../Framework/Quickblox.framework; sourceTree = "<group>"; };
 		FB5764DF1B42A00F00501049 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
-		FBE079EE1BEA204000718C56 /* StunList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StunList.plist; sourceTree = "<group>"; };
-		FBE079F11BEA204000718C56 /* DEVUsers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DEVUsers.plist; sourceTree = "<group>"; };
-		FBE079F21BEA204000718C56 /* PRODUsers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PRODUsers.plist; sourceTree = "<group>"; };
-		FBE079F31BEA204000718C56 /* QAUsers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QAUsers.plist; sourceTree = "<group>"; };
-		FBE079F91BEA216400718C56 /* WEBUsers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WEBUsers.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +326,14 @@
 				D86CD64DFBB06F7BF23BD6C3 /* Pods-BacSiViet.VN.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3B626E492026F83000976027 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B626E4E2026F96D00976027 /* Icon-60@2x.png */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		3B71C7D82022180A00C560BE /* UserTabBarController */ = {
@@ -383,12 +381,18 @@
 		3B71C8022022547700C560BE /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				3B626E412026790100976027 /* DialogTableViewCell.h */,
+				3B626E402026790100976027 /* DialogTableViewCell.m */,
+				3B626E3E202678AB00976027 /* DialogsViewController.h */,
+				3B626E3D202678AB00976027 /* DialogsViewController.m */,
+				3B626E3A2026782E00976027 /* NewDialogTableViewController.h */,
+				3B626E3B2026782E00976027 /* NewDialogTableViewController.m */,
+				3B626E36202676DD00976027 /* ChatUsersDataSource.h */,
+				3B626E34202676DC00976027 /* ChatUsersDataSource.m */,
+				3B626E35202676DD00976027 /* SelectUserTableViewCell.h */,
+				3B626E37202676DD00976027 /* SelectUserTableViewCell.m */,
 				3B71C804202254A200C560BE /* ChatViewController.h */,
 				3B71C803202254A200C560BE /* ChatViewController.m */,
-				3B626E242026062700976027 /* DialogsViewController.h */,
-				3B626E252026062700976027 /* DialogsViewController.m */,
-				3B626E29202606D000976027 /* DialogTableViewCell.h */,
-				3B626E28202606D000976027 /* DialogTableViewCell.m */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -407,7 +411,6 @@
 			children = (
 				E3B0B2301E15798400BE5FBD /* BacSiViet.VN-Prefix.pch */,
 				E3B0B1531E1576EC00BE5FBD /* sample-videochat-webrtc */,
-				FB29BBC51B32BBC0009751A1 /* Resources */,
 				55E076E41A30817800118D23 /* Products */,
 				AB35EE3F551E29A444EB63EF /* Frameworks */,
 				2FA1F74ED5582685D0F225E3 /* Pods */,
@@ -472,6 +475,7 @@
 		E3B0B1531E1576EC00BE5FBD /* sample-videochat-webrtc */ = {
 			isa = PBXGroup;
 			children = (
+				3B626E492026F83000976027 /* Supporting Files */,
 				3B71C806202255C300C560BE /* Utils */,
 				3B71C7EE202250B100C560BE /* ThirdParty */,
 				3B71C7E620224D7800C560BE /* Services */,
@@ -940,57 +944,6 @@
 			path = CallKitManager;
 			sourceTree = "<group>";
 		};
-		FB29BBC51B32BBC0009751A1 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				FB29BBC21B32BBC0009751A1 /* Info.plist */,
-				FB29BBC61B32BBC0009751A1 /* Images.xcassets */,
-				FB29BBC71B32BBC0009751A1 /* Plists */,
-				FB29BBCD1B32BBC0009751A1 /* Sounds */,
-			);
-			name = Resources;
-			path = "sample-videochat-webrtc/Resources";
-			sourceTree = "<group>";
-		};
-		FB29BBC71B32BBC0009751A1 /* Plists */ = {
-			isa = PBXGroup;
-			children = (
-				FBE079ED1BEA204000718C56 /* StunList */,
-				FBE079EF1BEA204000718C56 /* Users */,
-			);
-			path = Plists;
-			sourceTree = "<group>";
-		};
-		FB29BBCD1B32BBC0009751A1 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				FB29BBCE1B32BBC0009751A1 /* busy.wav */,
-				FB29BBCF1B32BBC0009751A1 /* calling.wav */,
-				FB29BBD01B32BBC0009751A1 /* end_of_call.wav */,
-				FB29BBD11B32BBC0009751A1 /* ringtone.wav */,
-			);
-			path = Sounds;
-			sourceTree = "<group>";
-		};
-		FBE079ED1BEA204000718C56 /* StunList */ = {
-			isa = PBXGroup;
-			children = (
-				FBE079EE1BEA204000718C56 /* StunList.plist */,
-			);
-			path = StunList;
-			sourceTree = "<group>";
-		};
-		FBE079EF1BEA204000718C56 /* Users */ = {
-			isa = PBXGroup;
-			children = (
-				FBE079F91BEA216400718C56 /* WEBUsers.plist */,
-				FBE079F11BEA204000718C56 /* DEVUsers.plist */,
-				FBE079F21BEA204000718C56 /* PRODUsers.plist */,
-				FBE079F31BEA204000718C56 /* QAUsers.plist */,
-			);
-			path = Users;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1000,13 +953,13 @@
 			buildPhases = (
 				6366C8DF6801B35FF7201F48 /* [CP] Check Pods Manifest.lock */,
 				55E076DF1A30817800118D23 /* Sources */,
-				55E076E01A30817800118D23 /* Frameworks */,
-				55E076E11A30817800118D23 /* Resources */,
 				FB415B9E1D80043400AD4C08 /* Embed Frameworks */,
 				E329E0781E38AD8900E0A183 /* ShellScript */,
 				E329E07B1E38AEE800E0A183 /* ShellScript */,
 				70D61F1CED677692D03E03A4 /* [CP] Embed Pods Frameworks */,
 				E36059AC87402A2ADD3CDF1E /* [CP] Copy Pods Resources */,
+				55E076E11A30817800118D23 /* Resources */,
+				55E076E01A30817800118D23 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1067,35 +1020,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBE079FA1BEA216400718C56 /* WEBUsers.plist in Resources */,
+				3B626E512026F9A600976027 /* Images.xcassets in Resources */,
+				3B626E502026F99000976027 /* Icon-60@2x.png in Resources */,
 				E3B0B2101E1576EC00BE5FBD /* calling.wav in Resources */,
 				E3B0B20A1E1576EC00BE5FBD /* StunList.plist in Resources */,
 				E3B0B20E1E1576EC00BE5FBD /* WEBUsers.plist in Resources */,
 				E3B0B20C1E1576EC00BE5FBD /* PRODUsers.plist in Resources */,
 				E3B0B20D1E1576EC00BE5FBD /* QAUsers.plist in Resources */,
-				E3B0B2091E1576EC00BE5FBD /* Images.xcassets in Resources */,
 				E3B0B1F41E1576EC00BE5FBD /* SettingSliderCell.xib in Resources */,
 				E3B0B2061E1576EC00BE5FBD /* Info.plist in Resources */,
-				FB29BC041B32BBC0009751A1 /* Images.xcassets in Resources */,
-				FB29BC0D1B32BBC0009751A1 /* ringtone.wav in Resources */,
 				E3B0B20B1E1576EC00BE5FBD /* DEVUsers.plist in Resources */,
-				FBE079F81BEA204000718C56 /* QAUsers.plist in Resources */,
-				FBE079F71BEA204000718C56 /* PRODUsers.plist in Resources */,
-				FB29BC0C1B32BBC0009751A1 /* end_of_call.wav in Resources */,
 				E3B0B1F51E1576EC00BE5FBD /* SettingSwitchCell.xib in Resources */,
 				E3B0B2071E1576EC00BE5FBD /* Launch Screen.xib in Resources */,
 				E3B0B2021E1576EC00BE5FBD /* Users.storyboard in Resources */,
 				E3B0B1FA1E1576EC00BE5FBD /* Auth.storyboard in Resources */,
-				FB29BC0A1B32BBC0009751A1 /* busy.wav in Resources */,
-				FB29BC0B1B32BBC0009751A1 /* calling.wav in Resources */,
 				E3B0B2111E1576EC00BE5FBD /* end_of_call.wav in Resources */,
 				E3B0B1F11E1576EC00BE5FBD /* Call.storyboard in Resources */,
 				E3B0B20F1E1576EC00BE5FBD /* busy.wav in Resources */,
-				FBE079F41BEA204000718C56 /* StunList.plist in Resources */,
 				E3B0B22D1E1576EC00BE5FBD /* SVProgressHUD.bundle in Resources */,
 				E3B0B1F21E1576EC00BE5FBD /* SettingCell.xib in Resources */,
 				E3B0B1F31E1576EC00BE5FBD /* Settings.storyboard in Resources */,
-				FBE079F61BEA204000718C56 /* DEVUsers.plist in Resources */,
 				E3B0B2121E1576EC00BE5FBD /* ringtone.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1202,6 +1146,7 @@
 				3B71C7FF202250B200C560BE /* QMMessageNotification.m in Sources */,
 				E3B0B22A1E1576EC00BE5FBD /* QBToolBar.m in Sources */,
 				3B71C7ED20224D7800C560BE /* ServicesManager.m in Sources */,
+				3B626E39202676DE00976027 /* SelectUserTableViewCell.m in Sources */,
 				E3B0B2051E1576EC00BE5FBD /* UserTableViewCell.m in Sources */,
 				E3B0B1FB1E1576EC00BE5FBD /* LoginTableViewController.m in Sources */,
 				E3B0B1FD1E1576EC00BE5FBD /* QBAVCallPermissions.m in Sources */,
@@ -1216,7 +1161,6 @@
 				E3B0B2081E1576EC00BE5FBD /* main.m in Sources */,
 				E3B0B21F1E1576EC00BE5FBD /* SliderItemModel.m in Sources */,
 				E3B0B2011E1576EC00BE5FBD /* UsersDataSource.m in Sources */,
-				3B626E262026062700976027 /* DialogsViewController.m in Sources */,
 				E3B0B2261E1576EC00BE5FBD /* SharingViewController.m in Sources */,
 				E3B0B2161E1576EC00BE5FBD /* StatsView.m in Sources */,
 				E3B0B2231E1576EC00BE5FBD /* VideoSettingsViewController.m in Sources */,
@@ -1237,8 +1181,10 @@
 				E3B0B2041E1576EC00BE5FBD /* CheckView.m in Sources */,
 				E3B0B2001E1576EC00BE5FBD /* PlaceholderGenerator.m in Sources */,
 				E3B50D9A1FC8763500796F0D /* CallKitManager.m in Sources */,
+				3B626E3F202678AB00976027 /* DialogsViewController.m in Sources */,
 				3B71C800202250B200C560BE /* QMMessageNotificationManager.m in Sources */,
 				E332B2221EDD7E6500FFF7EE /* RecordsViewController.m in Sources */,
+				3B626E38202676DE00976027 /* ChatUsersDataSource.m in Sources */,
 				E3B0B2211E1576EC00BE5FBD /* BaseSettingsCell.m in Sources */,
 				E3B0B21C1E1576EC00BE5FBD /* SettingSliderCell.m in Sources */,
 				E3B0B2191E1576EC00BE5FBD /* BaseSettingsViewController.m in Sources */,
@@ -1246,6 +1192,7 @@
 				E3B0B2171E1576EC00BE5FBD /* IncomingCallViewController.m in Sources */,
 				E3B0B1FC1E1576EC00BE5FBD /* QBLoadingButton.m in Sources */,
 				E3B0B1F01E1576EC00BE5FBD /* AppDelegate.m in Sources */,
+				3B626E3C2026782F00976027 /* NewDialogTableViewController.m in Sources */,
 				3B71C7DE20221BA500C560BE /* PatientsViewController.m in Sources */,
 				E3B0B22B1E1576EC00BE5FBD /* SVIndefiniteAnimatedView.m in Sources */,
 				3B71C7FC202250B200C560BE /* UIAlertDialog.m in Sources */,
@@ -1254,9 +1201,9 @@
 				E3B0B2221E1576EC00BE5FBD /* SwitchItemModel.m in Sources */,
 				E3B0B2281E1576EC00BE5FBD /* QBButton.m in Sources */,
 				E3B0B2291E1576EC00BE5FBD /* QBButtonsFactory.m in Sources */,
+				3B626E422026790200976027 /* DialogTableViewCell.m in Sources */,
 				E3B0B1F61E1576EC00BE5FBD /* OpponentCollectionViewCell.m in Sources */,
 				E3B0B22F1E1576EC00BE5FBD /* SVRadialGradientLayer.m in Sources */,
-				3B626E2A202606D000976027 /* DialogTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1386,7 +1333,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73A8D2E4C3C10331EEBB6561 /* Pods-BacSiViet.VN.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = BSVIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1432,7 +1379,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D86CD64DFBB06F7BF23BD6C3 /* Pods-BacSiViet.VN.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = BSVIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

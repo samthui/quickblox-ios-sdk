@@ -56,12 +56,12 @@
 
 - (UIColor* _Nonnull)colorForString:(NSString*)string {
     
-    unsigned long hashNumber = stringToLong((unsigned char*)[string UTF8String]);
+    unsigned long hashNumber = pg_stringToLong((unsigned char*)[string UTF8String]);
     UIColor* color = self.colors[hashNumber % [self.colors count]];
     return color;
 }
 
-unsigned long stringToLong(unsigned char* str) {
+unsigned long pg_stringToLong(unsigned char* str) {
     
     unsigned long hash = 5381;
     int c;

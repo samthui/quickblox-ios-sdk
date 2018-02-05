@@ -9,25 +9,82 @@
 #import "NewDialogTableViewController.h"
 #import "ServicesManager.h"
 #import "UsersDataSource.h"
+#import "ChatUsersDataSource.h"
 #import "ChatViewController.h"
 #import "UIAlertDialog.h"
+#import "QBCore.h"
 
 @interface NewDialogTableViewController ()
 
-@property (strong, nonatomic) UsersDataSource *dataSource;
+@property (strong, nonatomic) ChatUsersDataSource *dataSource;
 
 @end
 
 @implementation NewDialogTableViewController
 
 - (void)viewDidLoad {
-    self.dataSource = [[UsersDataSource alloc] initWithUsers:[[ServicesManager instance] sortedUsers]];
-    [self.dataSource setExcludeUsersIDs:@[@([QBSession currentSession].currentUser.ID)]];
-    self.tableView.dataSource = self.dataSource;
+//    // Reachability
+//    __weak __typeof(self)weakSelf = self;
+//    Core.networkStatusBlock = ^(QBNetworkStatus status) {
+//        if (status != QBNetworkStatusNotReachable) {
+//            [weakSelf loadUsers];
+//        }
+//    };
+//    [self loadUsers];
+    
+    
+//    UsersDataSource *tDataSource = [[UsersDataSource alloc] initWithCurrentUser:Core.currentUser];
+////    self.dataSource = [[ChatUsersDataSource alloc] initWithUsers:[[ServicesManager instance] sortedUsers]];
+//    self.dataSource = [[ChatUsersDataSource alloc] initWithUsers:tDataSource.usersSortedByFullName];
+//    [self.dataSource setExcludeUsersIDs:@[@([QBSession currentSession].currentUser.ID)]];
+//    self.tableView.dataSource = self.dataSource;
+    
 
 	[super viewDidLoad];
     
     self.tableView.tableFooterView = [UIView new];
+    
+    [self downloadCurrentEnvironmentUsers];
+}
+
+- (void)downloadCurrentEnvironmentUsers {
+    
+//    if (self.isUsersAreDownloading) {
+//        [self.refreshControl endRefreshing];
+//        return;
+//    }
+//
+//    self.usersAreDownloading = YES;
+    
+//    __weak __typeof(self)weakSelf = self;
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"SA_STR_LOADING_USERS", nil) maskType:SVProgressHUDMaskTypeClear];
+    
+    // Downloading latest users.
+    [[ServicesManager instance] downloadCurrentEnvironmentUsersWithSuccessBlock:^(NSArray *latestUsers) {
+        [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"SA_STR_COMPLETED", nil)];
+        [self loadDataSourceWithUsers:latestUsers];
+//        weakSelf.usersAreDownloading = NO;
+        [self.refreshControl endRefreshing];
+        
+    } errorBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+//        weakSelf.usersAreDownloading = NO;
+        [self.refreshControl endRefreshing];
+    }];
+}
+
+- (void)loadDataSourceWithUsers:(NSArray *)users {
+//
+//    self.dataSource = [[UsersDataSource alloc] initWithUsers:users];
+//    self.dataSource.addStringLoginAsBeforeUserFullname = YES;
+
+    
+    //    self.dataSource = [[ChatUsersDataSource alloc] initWithUsers:[[ServicesManager instance] sortedUsers]];
+    self.dataSource = [[ChatUsersDataSource alloc] initWithUsers:users];
+    [self.dataSource setExcludeUsersIDs:@[@([QBSession currentSession].currentUser.ID)]];
+    
+    self.tableView.dataSource = self.dataSource;
+    [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
