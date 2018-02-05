@@ -958,8 +958,8 @@
 				E329E07B1E38AEE800E0A183 /* ShellScript */,
 				70D61F1CED677692D03E03A4 /* [CP] Embed Pods Frameworks */,
 				E36059AC87402A2ADD3CDF1E /* [CP] Copy Pods Resources */,
-				55E076E11A30817800118D23 /* Resources */,
 				55E076E01A30817800118D23 /* Frameworks */,
+				55E076E11A30817800118D23 /* Resources */,
 			);
 			buildRules = (
 			);

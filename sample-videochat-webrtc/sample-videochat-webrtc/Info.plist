@@ -25,7 +25,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>21</string>
+	<string>23</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -52,7 +52,9 @@
 	<key>NSCameraUsageDescription</key>
 	<string>We would like to use your camera for video calling</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>We would like to use your camera for audio calling</string>
+	<string>We would like to use your microphone for audio calling</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We would like to access your photo library for chatting</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>voip</string>
