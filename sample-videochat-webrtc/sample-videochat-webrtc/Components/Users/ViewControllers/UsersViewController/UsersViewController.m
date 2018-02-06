@@ -715,6 +715,10 @@ static NSString * const kVoipEvent = @"VOIPCall";
     }
 }
 
+- (void)postCalltime {
+    
+}
+
 - (void)incomingCallViewController:(IncomingCallViewController *)vc didAcceptSession:(QBRTCSession *)session {
     
     CallViewController *callViewController =
