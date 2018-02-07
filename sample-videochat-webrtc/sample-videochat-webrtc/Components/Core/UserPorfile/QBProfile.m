@@ -40,6 +40,7 @@ NSString *const kQBUser = @"qbuser";
 - (OSStatus)synchronize {
     
     NSParameterAssert(self.userData);
+    [self saveData:[NSNumber numberWithBool:self.paid] forKey:@"kIsPaid"];
     return [self saveData:self forKey:kQBProfile];
 }
 
@@ -64,7 +65,7 @@ NSString *const kQBUser = @"qbuser";
     
     QBProfile *profile = [self loadObjectForKey:kQBProfile];
     self.userData = profile.userData;
-    self.paid = profile.isPaid;
+    self.paid = [[self loadObjectForKey:@"kIsPaid"] boolValue];
 }
 
 - (BOOL)isPaid {
