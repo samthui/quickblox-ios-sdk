@@ -183,7 +183,7 @@
             <objects>
                 <tableViewController id="afJ-Up-tW1" customClass="DialogInfoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yHl-ue-AbZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="QTG-jn-rvX">
@@ -474,7 +474,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                                        <navigationItem key="navigationItem" title="New Chat" id="huI-kB-t92">
+                    <navigationItem key="navigationItem" title="New Chat" id="huI-kB-t92">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="HTr-2f-oTE">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wbM-ss-DtU">
                                 <rect key="frame" x="299" y="7" width="60" height="30"/>
@@ -604,6 +604,6 @@
         <image name="second" width="145" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1zd-x0-9Io"/>
+        <segue reference="htm-nF-U3k"/>
     </inferredMetricsTieBreakers>
 </document>

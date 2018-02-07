@@ -688,7 +688,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z5F-5w-6QI">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GroupChatIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Z5F-5w-6QI">
                                             <rect key="frame" x="8" y="10" width="44" height="43"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="yDt-11-ac0"/>
@@ -759,10 +759,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Dialogs" id="74j-pg-apd">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="aQB-Ah-uJ5">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZoZ-xO-iMi">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZoZ-xO-iMi">
+                                <rect key="frame" x="310" y="0.0" width="49" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create"/>
+                                <state key="normal" backgroundImage="GroupChatIcon"/>
                                 <connections>
                                     <segue destination="zB0-ex-F4t" kind="show" id="hG4-MA-eI0"/>
                                 </connections>
@@ -774,6 +774,7 @@
                     <connections>
                         <segue destination="CVm-b6-Y2K" kind="unwind" identifier="kBackToLoginViewController" unwindAction="backToLoginViewController:" id="m7F-te-X9D"/>
                         <segue destination="zsV-od-EZL" kind="show" identifier="goToChat" id="mcV-f7-K06"/>
+                        <segue destination="MJL-K9-GZh" kind="presentation" identifier="PresentSettingsViewController" id="4ZY-Ug-coh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qd-DC-0y2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -906,15 +907,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="GroupChatIcon" width="49" height="48"/>
         <image name="checkbox_active" width="22" height="22"/>
         <image name="checkbox_nonactive" width="22" height="22"/>
         <image name="icon" width="49" height="48"/>
-        <image name="pause_icon.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mcV-f7-K06"/>
         <segue reference="9hH-r1-uG9"/>
         <segue reference="NiV-wR-fQ7"/>
-        <segue reference="5X9-lb-Gl5"/>
+        <segue reference="4ZY-Ug-coh"/>
     </inferredMetricsTieBreakers>
 </document>

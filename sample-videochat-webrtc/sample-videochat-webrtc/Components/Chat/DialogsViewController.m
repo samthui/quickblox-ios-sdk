@@ -8,17 +8,20 @@
 
 #import "DialogsViewController.h"
 
+#import "QBCore.h"
 #import <Quickblox/QBASession.h>
 #import "ServicesManager.h"
 #import "EditDialogTableViewController.h"
 #import "ChatViewController.h"
 #import "DialogTableViewCell.h"
+#import "SessionSettingsViewController.h"
 
 @interface DialogsViewController ()
 <
 QMChatServiceDelegate,
 QMAuthServiceDelegate,
-QMChatConnectionDelegate
+QMChatConnectionDelegate,
+SettingsViewControllerDelegate
 >
 
 @property (nonatomic, strong) id <NSObject> observerDidBecomeActive;
@@ -44,13 +47,63 @@ QMChatConnectionDelegate
     if ([ServicesManager instance].isAuthorized) {
         [self loadDialogs];
     }
-     self.navigationItem.title = [ServicesManager instance].currentUser.login;
+//     self.navigationItem.title = [ServicesManager instance].currentUser.login;
+    [self configureNavigationBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
     
 	[self.tableView reloadData];
+}
+
+- (void)configureNavigationBar {
+    
+    UIBarButtonItem *settingsButtonItem =
+    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic-settings"]
+                                     style:UIBarButtonItemStylePlain
+                                    target:self
+                                    action:@selector(didPressSettingsButton:)];
+    
+    self.navigationItem.leftBarButtonItem = settingsButtonItem;
+    
+    //Custom label
+    NSString *roomName = [NSString stringWithFormat:@"%@", @"Bacsiviet.vn"];//Core.currentUser.tags.firstObject
+    NSString *userName = [NSString stringWithFormat:@"Logged in as %@", Core.currentUser.fullName];
+    NSString *titleString = [NSString stringWithFormat:@"%@\n%@", roomName, userName];
+    
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:titleString];
+    NSRange roomNameRange = [titleString rangeOfString:roomName];
+    [attrString addAttribute:NSFontAttributeName
+                       value:[UIFont boldSystemFontOfSize:16.0f]
+                       range:roomNameRange];
+    
+    NSRange userNameRange = [titleString rangeOfString:userName];
+    [attrString addAttribute:NSFontAttributeName
+                       value:[UIFont systemFontOfSize:12.0f]
+                       range:userNameRange];
+    [attrString addAttribute:NSForegroundColorAttributeName
+                       value:[UIColor grayColor]
+                       range:userNameRange];
+    
+    UILabel * titleView = [[UILabel alloc] initWithFrame:CGRectZero];
+    titleView.numberOfLines = 2;
+    titleView.attributedText = attrString;
+    titleView.textAlignment = NSTextAlignmentCenter;
+    [titleView sizeToFit];
+    
+    self.navigationItem.titleView = titleView;
+    //Show tool bar
+    self.navigationController.toolbarHidden = NO;
+    //Set exclusive touch for tool bar
+    for (UIView *subview in self.navigationController.toolbar.subviews) {
+        [subview setExclusiveTouch:YES];
+    }
+}
+
+- (void)didPressSettingsButton:(UIBarButtonItem *)item {
+    
+    [self performSegueWithIdentifier:@"PresentSettingsViewController" sender:item];
 }
 
 - (IBAction)logoutButtonPressed:(UIButton *)sender
@@ -219,6 +272,11 @@ QMChatConnectionDelegate
     if ([segue.identifier isEqualToString:kGoToChatSegueIdentifier]) {
         ChatViewController *chatViewController = segue.destinationViewController;
         chatViewController.dialog = sender;
+    } else if ([segue.identifier isEqualToString:@"PresentSettingsViewController"]) {
+        
+        SessionSettingsViewController *settingsViewController =
+        (id)((UINavigationController *)segue.destinationViewController).topViewController;
+        settingsViewController.delegate = self;
     }
 }
 
@@ -316,6 +374,14 @@ QMChatConnectionDelegate
 
 - (void)chatServiceChatDidFailWithStreamError:(NSError *)error {
     [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"SA_STR_FAILED_TO_CONNECT_WITH_ERROR", nil), [error localizedDescription]]];
+}
+
+#pragma mark - SettingsViewControllerDelegate
+
+- (void)settingsViewController:(SessionSettingsViewController *)vc didPressLogout:(id)sender {
+    
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"Logout...", nil)];
+    [Core logout];
 }
 
 @end
