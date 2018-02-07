@@ -24,6 +24,10 @@
 #import "RecordSettings.h"
 #import "CallKitManager.h"
 
+#import "AFURLRequestSerialization.h"
+#import "AFURLResponseSerialization.h"
+#import "AFHTTPSessionManager.h"
+
 static NSString * const kOpponentCollectionViewCellIdentifier = @"OpponentCollectionViewCellIdentifier";
 static NSString * const kSharingViewControllerIdentifier = @"SharingViewController";
 
@@ -628,6 +632,9 @@ static NSString * const kQBRTCRecordingTitle = @"[Recording] ";
         }];
         
         self.title = [NSString stringWithFormat:@"End - %@", [self stringWithTimeDuration:self.timeDuration]];
+        
+        
+        [self postCalltime];
     }
 }
 
@@ -693,6 +700,63 @@ static NSString * const kQBRTCRecordingTitle = @"[Recording] ";
         [localVideoView.superview.layer addAnimation:animation forKey:nil];
         self.cameraCapture.position = newPosition;
     }
+}
+
+- (void)postCalltime {
+    
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"send call time...", nil)];
+    
+    QBUUser *callerUser = [self.users firstObject];
+    NSString *caller = callerUser.fullName;
+    QBUUser *receiverUser = [self.users lastObject];
+    NSString *receiver = receiverUser.fullName;
+    NSNumber *callTime = [NSNumber numberWithDouble:self.timeDuration];
+    
+    NSString *url = @"http://bacsiviet.vn/times-call";
+    NSDictionary *parameters = @{@"user_email": caller, @"doctor_email": receiver, @"times": callTime};
+    
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success! data=%@",responseObject);
+        
+        if ([[responseObject objectForKey:@"isSave"] boolValue] == true) {
+            [SVProgressHUD dismiss];
+            
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"OK"
+                                                            message:[responseObject objectForKey:@"msg"]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        } else {
+            [SVProgressHUD dismiss];
+            
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[responseObject objectForKey:@"msg"]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        
+        NSLog(@"Errors=%@", [error description]);
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:[error  description]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }];
+    
 }
 
 @end

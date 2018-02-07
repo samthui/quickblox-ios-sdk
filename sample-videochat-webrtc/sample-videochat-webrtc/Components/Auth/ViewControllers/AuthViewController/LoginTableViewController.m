@@ -225,38 +225,6 @@
             
             if ([[responseObject objectForKey:@"isLogin"] intValue] == 1) {
                 
-//                [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
-                
-//                [QBRequest logInWithUserEmail:login password:password successBlock:^(QBResponse *response, QBUUser *user) {
-//                    [SVProgressHUD dismiss];
-//
-//                    [Core didLoginWithUser:user];
-//
-//                    [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
-//                } errorBlock:^(QBResponse *response) {
-//                    [SVProgressHUD dismiss];
-//
-//                    NSLog(@"Errors=%@", [response.error description]);
-//
-//                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-//                                                                    message:[response.error  description]
-//                                                                   delegate:nil
-//                                                          cancelButtonTitle:@"OK"
-//                                                          otherButtonTitles:nil];
-//                    [alert show];
-//                }];
-                
-                
-//                if (Core.currentUser) {
-//
-//                    [Core loginWithCurrentUser];
-//                }
-//                else {
-//
-//                    [Core signUpWithFullName:login
-//                                    roomName:@"Bacsiviet"];
-//                }
-                
                 NSString *userType = [responseObject objectForKey:@"user_type"];
                 NSString *fullName = [responseObject objectForKey:@"fullname"];
                 BOOL isPaid = [[responseObject objectForKey:@"paid"] boolValue];
