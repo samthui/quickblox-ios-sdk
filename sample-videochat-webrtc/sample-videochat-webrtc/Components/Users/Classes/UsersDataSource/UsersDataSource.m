@@ -168,22 +168,8 @@
     
     QBUUser *user = self.usersSortedByLastSeen[indexPath.row];
     
-    NSString *name = @"";
-    NSString *detail = @"";
-    
-    NSString *customData = user.customData;
-    NSArray *array = [customData componentsSeparatedByString:@"-"];
-    if (array.count > 0) {
-        name = [array firstObject];
-        detail = [customData substringFromIndex:[name length] + 1];
-    }
-    
-    cell.nameLabel.text = name;
-    cell.emailLabel.text = detail;
-    
     // Avatar
-    [cell.avatarImageView setClipsToBounds:YES];
-    NSArray *parseUrlArray = [customData componentsSeparatedByString:@"-_-"];
+    NSArray *parseUrlArray = [user.customData componentsSeparatedByString:@"-_-"];
     if (parseUrlArray.count > 1) {
         NSString *avatarUrl = [parseUrlArray lastObject];
         if (![avatarUrl containsString:@"http://"]) {
@@ -202,6 +188,20 @@
     } else {
         cell.avatarImageView.image = [UIImage imageNamed:@"icon"];
     }
+    
+    // Info
+    NSString *name = @"";
+    NSString *detail = @"";
+    
+    NSString *customData = [parseUrlArray firstObject];
+    NSArray *array = [customData componentsSeparatedByString:@"-"];
+    if (array.count > 0) {
+        name = [array firstObject];
+        detail = [customData substringFromIndex:[name length] + 1];
+    }
+    
+    cell.nameLabel.text = name;
+    cell.emailLabel.text = detail;
     
     return cell;
 }
