@@ -688,7 +688,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z5F-5w-6QI">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Z5F-5w-6QI">
                                             <rect key="frame" x="8" y="10" width="44" height="43"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="yDt-11-ac0"/>
@@ -905,7 +905,7 @@
         <image name="icon" width="49" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mwa-zv-wEC"/>
+        <segue reference="mcV-f7-K06"/>
         <segue reference="9hH-r1-uG9"/>
         <segue reference="NiV-wR-fQ7"/>
         <segue reference="5X9-lb-Gl5"/>
