@@ -647,7 +647,7 @@
             </objects>
             <point key="canvasLocation" x="4604" y="1557"/>
         </scene>
-        <!--Dialogs-->
+        <!--Lịch sử-->
         <scene sceneID="SDA-Qz-bS5">
             <objects>
                 <tableViewController storyboardIdentifier="DialogsViewController" id="hUQ-pf-ONX" customClass="DialogsViewController" sceneMemberID="viewController">
@@ -660,7 +660,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a Dialog to chat:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRL-7q-Aer">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lịch sử trò chuyện" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRL-7q-Aer">
                                     <rect key="frame" x="8" y="21" width="147" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -757,12 +757,12 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Dialogs" id="74j-pg-apd">
+                    <navigationItem key="navigationItem" title="Lịch sử" id="74j-pg-apd">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="aQB-Ah-uJ5">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZoZ-xO-iMi">
-                                <rect key="frame" x="310" y="0.0" width="49" height="44"/>
+                                <rect key="frame" x="319" y="2" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="GroupChatIcon"/>
+                                <state key="normal" image="CallKitLogo"/>
                                 <connections>
                                     <segue destination="zB0-ex-F4t" kind="show" id="hG4-MA-eI0"/>
                                 </connections>
@@ -782,11 +782,11 @@
             </objects>
             <point key="canvasLocation" x="3249" y="2672"/>
         </scene>
-        <!--Chat-->
+        <!--Trò chuyện-->
         <scene sceneID="9IM-3E-eDv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T3a-0m-sdC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" id="bL8-p0-iA8"/>
+                    <tabBarItem key="tabBarItem" title="Trò chuyện" id="bL8-p0-iA8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rk1-KP-6nZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -813,7 +813,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Users you want to chat with:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJk-8n-xoY">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thêm thành viên vào nhóm:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJk-8n-xoY">
                                     <rect key="frame" x="8" y="21" width="227" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -882,12 +882,12 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="New Chat" id="HdX-X2-0gc">
+                    <navigationItem key="navigationItem" title="Nhóm" id="HdX-X2-0gc">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="PX2-Zx-4Ys">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5Ni-U4-4hv">
                                 <rect key="frame" x="299" y="7" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create">
+                                <state key="normal" title="Tạo">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -907,6 +907,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CallKitLogo" width="40" height="40"/>
         <image name="GroupChatIcon" width="49" height="48"/>
         <image name="checkbox_active" width="22" height="22"/>
         <image name="checkbox_nonactive" width="22" height="22"/>

@@ -39,6 +39,7 @@ NSString *const kAccountKey     = @"suHzUtFPa1RhcBeFtnwU";//@"7yvNe17TnjNUqDoPwf
     [QBRTCConfig setStatsReportTimeInterval:1.f];
     
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD setMinimumDismissTimeInterval:0.5];
     
     [QBRTCClient initializeRTC];
     

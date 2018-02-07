@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B41C6BB202AE99C00E1C35C /* ReplaceSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B41C6BA202AE99C00E1C35C /* ReplaceSegue.m */; };
+		3B41C6BD202B004600E1C35C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B41C6BC202B004600E1C35C /* Localizable.strings */; };
 		3B626E38202676DE00976027 /* ChatUsersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E34202676DC00976027 /* ChatUsersDataSource.m */; };
 		3B626E39202676DE00976027 /* SelectUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E37202676DD00976027 /* SelectUserTableViewCell.m */; };
 		3B626E3C2026782F00976027 /* NewDialogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E3B2026782E00976027 /* NewDialogTableViewController.m */; };
@@ -127,6 +128,7 @@
 /* Begin PBXFileReference section */
 		3B41C6B9202AE99C00E1C35C /* ReplaceSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplaceSegue.h; sourceTree = "<group>"; };
 		3B41C6BA202AE99C00E1C35C /* ReplaceSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceSegue.m; sourceTree = "<group>"; };
+		3B41C6BC202B004600E1C35C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = SOURCE_ROOT; };
 		3B626E34202676DC00976027 /* ChatUsersDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatUsersDataSource.m; sourceTree = "<group>"; };
 		3B626E35202676DD00976027 /* SelectUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectUserTableViewCell.h; sourceTree = "<group>"; };
 		3B626E36202676DD00976027 /* ChatUsersDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatUsersDataSource.h; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 		3B626E492026F83000976027 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3B41C6BC202B004600E1C35C /* Localizable.strings */,
 				3B626E4E2026F96D00976027 /* Icon-60@2x.png */,
 			);
 			name = "Supporting Files";
@@ -1046,6 +1049,7 @@
 				E3B0B1F51E1576EC00BE5FBD /* SettingSwitchCell.xib in Resources */,
 				E3B0B2071E1576EC00BE5FBD /* Launch Screen.xib in Resources */,
 				E3B0B2021E1576EC00BE5FBD /* Users.storyboard in Resources */,
+				3B41C6BD202B004600E1C35C /* Localizable.strings in Resources */,
 				E3B0B1FA1E1576EC00BE5FBD /* Auth.storyboard in Resources */,
 				E3B0B2111E1576EC00BE5FBD /* end_of_call.wav in Resources */,
 				E3B0B1F11E1576EC00BE5FBD /* Call.storyboard in Resources */,

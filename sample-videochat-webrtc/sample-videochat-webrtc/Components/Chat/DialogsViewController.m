@@ -68,8 +68,8 @@ SettingsViewControllerDelegate
     self.navigationItem.leftBarButtonItem = settingsButtonItem;
     
     //Custom label
-    NSString *roomName = [NSString stringWithFormat:@"%@", @"Bacsiviet.vn"];//Core.currentUser.tags.firstObject
-    NSString *userName = [NSString stringWithFormat:@"Logged in as %@", Core.currentUser.fullName];
+    NSString *roomName = @"Bacsiviet.vn";
+    NSString *userName = Core.currentUser.fullName;
     NSString *titleString = [NSString stringWithFormat:@"%@\n%@", roomName, userName];
     
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:titleString];
@@ -202,7 +202,7 @@ SettingsViewControllerDelegate
         case QBChatDialogTypePrivate: {
             cell.lastMessageTextLabel.text = chatDialog.lastMessageText;
 			QBUUser *recipient = [[ServicesManager instance].usersService.usersMemoryStorage userWithID:chatDialog.recipientID];
-            cell.dialogNameLabel.text = recipient.login == nil ? (recipient.fullName == nil ? [NSString stringWithFormat:@"%lu", (unsigned long)recipient.ID] : recipient.fullName) : recipient.login;
+            cell.dialogNameLabel.text = recipient.fullName;
             cell.dialogImageView.image = [UIImage imageNamed:@"chatRoomIcon"];
         }
             break;
