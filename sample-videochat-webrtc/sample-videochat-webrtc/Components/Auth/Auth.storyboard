@@ -141,7 +141,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chat room name" textAlignment="natural" minimumFontSize="17" background="bg-textinputline" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EuA-HP-sft">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" background="bg-textinputline" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EuA-HP-sft">
                                                     <rect key="frame" x="32" y="15" width="311" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="IJL-NV-lo4"/>
