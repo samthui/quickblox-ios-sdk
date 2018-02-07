@@ -688,7 +688,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Z5F-5w-6QI">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z5F-5w-6QI">
                                             <rect key="frame" x="8" y="10" width="44" height="43"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="yDt-11-ac0"/>
@@ -836,7 +836,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajE-xk-yUb" customClass="CornerView">
-                                            <rect key="frame" x="52" y="13" width="25" height="25"/>
+                                            <rect key="frame" x="58" y="13" width="25" height="25"/>
                                             <color key="backgroundColor" red="1" green="0.3514364123" blue="0.26619486869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="25" id="YwJ-vu-ANw"/>
@@ -844,7 +844,7 @@
                                             </constraints>
                                         </view>
                                         <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="User 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iue-Gy-zmk">
-                                            <rect key="frame" x="98" y="15" width="261" height="21"/>
+                                            <rect key="frame" x="104" y="15" width="255" height="21"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="wYY-Vz-Xa6"/>
@@ -853,7 +853,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox_nonactive" highlightedImage="checkbox_active" translatesAutoresizingMaskIntoConstraints="NO" id="C23-h5-YvG">
-                                            <rect key="frame" x="16" y="12" width="16" height="21"/>
+                                            <rect key="frame" x="16" y="12" width="22" height="21"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -906,12 +906,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkbox_active" width="16" height="16"/>
-        <image name="checkbox_nonactive" width="16" height="16"/>
+        <image name="checkbox_active" width="22" height="22"/>
+        <image name="checkbox_nonactive" width="22" height="22"/>
         <image name="icon" width="49" height="48"/>
+        <image name="pause_icon.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UoG-FQ-SgG"/>
+        <segue reference="mcV-f7-K06"/>
         <segue reference="9hH-r1-uG9"/>
         <segue reference="NiV-wR-fQ7"/>
         <segue reference="5X9-lb-Gl5"/>
