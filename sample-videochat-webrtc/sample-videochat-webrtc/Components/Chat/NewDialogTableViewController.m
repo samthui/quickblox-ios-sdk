@@ -23,23 +23,6 @@
 @implementation NewDialogTableViewController
 
 - (void)viewDidLoad {
-//    // Reachability
-//    __weak __typeof(self)weakSelf = self;
-//    Core.networkStatusBlock = ^(QBNetworkStatus status) {
-//        if (status != QBNetworkStatusNotReachable) {
-//            [weakSelf loadUsers];
-//        }
-//    };
-//    [self loadUsers];
-    
-    
-//    UsersDataSource *tDataSource = [[UsersDataSource alloc] initWithCurrentUser:Core.currentUser];
-////    self.dataSource = [[ChatUsersDataSource alloc] initWithUsers:[[ServicesManager instance] sortedUsers]];
-//    self.dataSource = [[ChatUsersDataSource alloc] initWithUsers:tDataSource.usersSortedByFullName];
-//    [self.dataSource setExcludeUsersIDs:@[@([QBSession currentSession].currentUser.ID)]];
-//    self.tableView.dataSource = self.dataSource;
-    
-
 	[super viewDidLoad];
     
     self.tableView.tableFooterView = [UIView new];
@@ -77,9 +60,7 @@
 //
 //    self.dataSource = [[UsersDataSource alloc] initWithUsers:users];
 //    self.dataSource.addStringLoginAsBeforeUserFullname = YES;
-
     
-    //    self.dataSource = [[ChatUsersDataSource alloc] initWithUsers:[[ServicesManager instance] sortedUsers]];
     self.dataSource = [[ChatUsersDataSource alloc] initWithUsers:users];
     [self.dataSource setExcludeUsersIDs:@[@([QBSession currentSession].currentUser.ID)]];
     

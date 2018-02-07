@@ -763,6 +763,9 @@
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create"/>
+                                <connections>
+                                    <segue destination="zB0-ex-F4t" kind="show" id="hG4-MA-eI0"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -893,6 +896,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="zsV-od-EZL" kind="custom" identifier="goToChat" customClass="ReplaceSegue" id="UoG-FQ-SgG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXy-bd-4Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -905,7 +911,7 @@
         <image name="icon" width="49" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mcV-f7-K06"/>
+        <segue reference="UoG-FQ-SgG"/>
         <segue reference="9hH-r1-uG9"/>
         <segue reference="NiV-wR-fQ7"/>
         <segue reference="5X9-lb-Gl5"/>

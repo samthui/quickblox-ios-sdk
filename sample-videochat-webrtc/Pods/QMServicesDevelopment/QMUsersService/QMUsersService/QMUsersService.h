@@ -349,6 +349,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 //MARK: - Search
 
+- (BFTask *)getAllUsers;
+
 /**
  *  Search for users by full name.
  *

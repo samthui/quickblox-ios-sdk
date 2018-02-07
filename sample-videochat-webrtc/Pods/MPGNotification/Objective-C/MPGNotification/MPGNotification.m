@@ -113,9 +113,9 @@ static const CGFloat kColorAdjustmentLight = 0.35;
         
         self.delegate = self;
         
-        if (@available(iOS 11.0, *)) {
-            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        }
+//        if (@available(iOS 11.0, *)) {
+//            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        }
         
         [super setBackgroundColor:[UIColor clearColor]]; // set background color of scrollView to clear
         
@@ -168,9 +168,9 @@ static const CGFloat kColorAdjustmentLight = 0.35;
     CGFloat contentPaddingX = (self.fullWidthMessages) ? 0 : MAX(0,maxWidth);
     
     CGFloat topSafeAreaInset = kTopPadding;
-    if (@available(iOS 11.0, *)) {
-        topSafeAreaInset += MAX(self.safeAreaInsets.top - kStatusBarPadding, 0.0);
-    }
+//    if (@available(iOS 11.0, *)) {
+//        topSafeAreaInset += MAX(self.safeAreaInsets.top - kStatusBarPadding, 0.0);
+//    }
     
     // ICON IMAGE
     static const CGFloat kIconPaddingY = 15;
@@ -791,9 +791,9 @@ static const CGFloat kColorAdjustmentLight = 0.35;
     
     UIView *superview = self.superview;
     CGRect frame = CGRectMake(0, 0, CGRectGetWidth(superview.bounds), kNotificationHeight + kTopPadding);
-    if (@available(iOS 11.0, *)) {
-        frame.size.height += MAX(superview.safeAreaInsets.top - kStatusBarPadding, 0.0);
-    }
+//    if (@available(iOS 11.0, *)) {
+//        frame.size.height += MAX(superview.safeAreaInsets.top - kStatusBarPadding, 0.0);
+//    }
     
     self.frame = frame;
     self.contentSize = CGSizeMake(CGRectGetWidth(self.bounds), 2 * CGRectGetHeight(self.bounds));

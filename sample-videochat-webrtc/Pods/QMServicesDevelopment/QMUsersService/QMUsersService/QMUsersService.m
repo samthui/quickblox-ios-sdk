@@ -527,10 +527,43 @@
     });
 }
 
+
+- (BFTask *)getAllUsers {
+    
+    return [self getAllUserWithPage:[QBGeneralResponsePage responsePageWithCurrentPage:1 perPage:100]];
+}
+
 - (BFTask *)searchUsersWithTags:(NSArray *)tags {
     
     return [self searchUsersWithTags:tags
                                 page:[QBGeneralResponsePage responsePageWithCurrentPage:1 perPage:100]];
+}
+
+- (BFTask *)getAllUserWithPage:(QBGeneralResponsePage *)page {
+    
+    NSParameterAssert(page);
+    
+    return make_task(^(BFTaskCompletionSource * _Nonnull source) {
+        
+        [QBRequest usersForPage:page
+                    successBlock:^(QBResponse *response, QBGeneralResponsePage *page, NSArray *users)
+         {
+             
+             [self.usersMemoryStorage addUsers:users];
+             
+             if ([self.multicastDelegate respondsToSelector:@selector(usersService:didAddUsers:)]) {
+                 [self.multicastDelegate usersService:self didAddUsers:users];
+             }
+             
+             [self notifyListenersAboutUsersUpdate:users];
+             
+             [source setResult:users];
+             
+         } errorBlock:^(QBResponse *response) {
+             
+             [source setError:response.error.error];
+         }];
+    });
 }
 
 - (BFTask *)searchUsersWithTags:(NSArray *)tags page:(QBGeneralResponsePage *)page {

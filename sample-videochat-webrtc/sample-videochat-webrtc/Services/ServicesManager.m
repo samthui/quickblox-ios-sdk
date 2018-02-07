@@ -91,7 +91,7 @@
 - (void)downloadCurrentEnvironmentUsersWithSuccessBlock:(void(^)(NSArray *latestUsers))successBlock errorBlock:(void(^)(NSError *error))errorBlock {
     
     __weak __typeof(self)weakSelf = self;
-    [[self.usersService searchUsersWithTags:@[[self currentEnvironment]]] continueWithBlock:^id(BFTask *task) {
+    [[self.usersService getAllUsers] continueWithBlock:^id(BFTask *task) {
         //
         if (task.error != nil) {
             if (errorBlock) {
