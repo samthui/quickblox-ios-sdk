@@ -40,7 +40,7 @@ typedef NS_ENUM(NSUInteger, SessionConfigureItem) {
                          appVersion, appBuild,
                          QuickbloxWebRTCFrameworkVersion, QuickbloxWebRTCRevision];
     
-    self.versionLabel.text = version;
+//    self.versionLabel.text = version;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

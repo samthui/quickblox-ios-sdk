@@ -86,6 +86,7 @@ QMDeferredQueueManagerDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setExtendedLayoutIncludesOpaqueBars:YES];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.inputToolbar.contentView.backgroundColor = [UIColor whiteColor];
     self.inputToolbar.contentView.textView.placeHolder = NSLocalizedString(@"SA_STR_MESSAGE_PLACEHOLDER", nil);

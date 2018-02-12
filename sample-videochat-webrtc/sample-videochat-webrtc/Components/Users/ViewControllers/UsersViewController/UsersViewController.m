@@ -121,7 +121,7 @@ static NSString * const kVoipEvent = @"VOIPCall";
     
     self.navigationItem.leftBarButtonItem = settingsButtonItem;
     //Custom label
-    NSString *roomName = @"Bacsiviet.vn";
+    NSString *roomName = @"BacSiViet";
     NSString *userName = Core.currentUser.fullName;
     NSString *titleString = [NSString stringWithFormat:@"%@\n%@", roomName, userName];
     
@@ -436,19 +436,6 @@ static NSString * const kVoipEvent = @"VOIPCall";
 }
 
 #pragma mark - UITableViewDelegate
-
-/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [self.dataSource selectUserAtIndexPath:indexPath];
-    
-    [self setToolbarButtonsEnabled:self.dataSource.selectedUsers.count > 0];
-    
-    if (self.dataSource.selectedUsers.count > 4) {
-        self.videoCallButton.enabled = NO;
-    }
-    
-    [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
-}*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     QBUUser *user = [self.dataSource userAtIndexPath:indexPath];

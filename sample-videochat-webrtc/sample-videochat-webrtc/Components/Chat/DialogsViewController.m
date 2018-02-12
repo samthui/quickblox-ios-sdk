@@ -68,7 +68,7 @@ SettingsViewControllerDelegate
     self.navigationItem.leftBarButtonItem = settingsButtonItem;
     
     //Custom label
-    NSString *roomName = @"Bacsiviet.vn";
+    NSString *roomName = @"BacSiViet";
     NSString *userName = Core.currentUser.fullName;
     NSString *titleString = [NSString stringWithFormat:@"%@\n%@", roomName, userName];
     

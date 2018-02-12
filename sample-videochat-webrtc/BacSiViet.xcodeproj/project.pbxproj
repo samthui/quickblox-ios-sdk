@@ -27,6 +27,7 @@
 		3B71C801202250B200C560BE /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7FB202250B100C560BE /* UIImage+fixOrientation.m */; };
 		3B71C805202254A200C560BE /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C803202254A200C560BE /* ChatViewController.m */; };
 		3B71C809202255C300C560BE /* MessageStatusStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C808202255C300C560BE /* MessageStatusStringBuilder.m */; };
+		3B867BA5202D8DD9003FA86D /* Icon-App-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B867BA4202D8DD8003FA86D /* Icon-App-60x60@2x.png */; };
 		55CF63A81A3AFF2500FE8D19 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CF63A71A3AFF2500FE8D19 /* SystemConfiguration.framework */; };
 		55E156AF1AD6C41C00C62699 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E156AE1AD6C41C00C62699 /* MobileCoreServices.framework */; };
 		55F6BDCA1A3F21CC0080C326 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F6BDC91A3F21CC0080C326 /* GLKit.framework */; };
@@ -163,9 +164,10 @@
 		3B71C804202254A200C560BE /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		3B71C807202255C300C560BE /* MessageStatusStringBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageStatusStringBuilder.h; sourceTree = "<group>"; };
 		3B71C808202255C300C560BE /* MessageStatusStringBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageStatusStringBuilder.m; sourceTree = "<group>"; };
+		3B867BA4202D8DD8003FA86D /* Icon-App-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App-60x60@2x.png"; path = "Resources/Icon-App-60x60@2x.png"; sourceTree = "<group>"; };
 		558AB9372E84DB0C976B3271 /* libPods-BacSiViet.VN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BacSiViet.VN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CF63A71A3AFF2500FE8D19 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		55E076E31A30817800118D23 /* BacSiViet.VN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BacSiViet.VN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E076E31A30817800118D23 /* BacSiViet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BacSiViet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E156AE1AD6C41C00C62699 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		55F6BDC91A3F21CC0080C326 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		55F6BDCB1A3F21F10080C326 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -289,7 +291,7 @@
 		E3B0B1ED1E1576EC00BE5FBD /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		E3B0B1EE1E1576EC00BE5FBD /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		E3B0B1EF1E1576EC00BE5FBD /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
-		E3B0B2301E15798400BE5FBD /* BacSiViet.VN-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BacSiViet.VN-Prefix.pch"; sourceTree = "<group>"; };
+		E3B0B2301E15798400BE5FBD /* BacSiViet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BacSiViet-Prefix.pch"; sourceTree = "<group>"; };
 		E3B0B2311E157AA800BE5FBD /* QuickbloxWebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickbloxWebRTC.framework; path = ../Framework/QuickbloxWebRTC.framework; sourceTree = "<group>"; };
 		E3B50D981FC8763500796F0D /* CallKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallKitManager.m; sourceTree = "<group>"; };
 		E3B50D991FC8763500796F0D /* CallKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallKitManager.h; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		3B626E492026F83000976027 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3B867BA4202D8DD8003FA86D /* Icon-App-60x60@2x.png */,
 				3B41C6BC202B004600E1C35C /* Localizable.strings */,
 				3B626E4E2026F96D00976027 /* Icon-60@2x.png */,
 			);
@@ -424,7 +427,7 @@
 		55E076DA1A30817800118D23 = {
 			isa = PBXGroup;
 			children = (
-				E3B0B2301E15798400BE5FBD /* BacSiViet.VN-Prefix.pch */,
+				E3B0B2301E15798400BE5FBD /* BacSiViet-Prefix.pch */,
 				E3B0B1531E1576EC00BE5FBD /* sample-videochat-webrtc */,
 				55E076E41A30817800118D23 /* Products */,
 				AB35EE3F551E29A444EB63EF /* Frameworks */,
@@ -435,7 +438,7 @@
 		55E076E41A30817800118D23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55E076E31A30817800118D23 /* BacSiViet.VN.app */,
+				55E076E31A30817800118D23 /* BacSiViet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -963,9 +966,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		55E076E21A30817800118D23 /* BacSiViet.VN */ = {
+		55E076E21A30817800118D23 /* BacSiViet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55E077061A30817900118D23 /* Build configuration list for PBXNativeTarget "BacSiViet.VN" */;
+			buildConfigurationList = 55E077061A30817900118D23 /* Build configuration list for PBXNativeTarget "BacSiViet" */;
 			buildPhases = (
 				6366C8DF6801B35FF7201F48 /* [CP] Check Pods Manifest.lock */,
 				55E076DF1A30817800118D23 /* Sources */,
@@ -981,9 +984,9 @@
 			);
 			dependencies = (
 			);
-			name = BacSiViet.VN;
+			name = BacSiViet;
 			productName = QBRTCChatSemple;
-			productReference = 55E076E31A30817800118D23 /* BacSiViet.VN.app */;
+			productReference = 55E076E31A30817800118D23 /* BacSiViet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1013,7 +1016,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 55E076DE1A30817800118D23 /* Build configuration list for PBXProject "BacSiViet.VN" */;
+			buildConfigurationList = 55E076DE1A30817800118D23 /* Build configuration list for PBXProject "BacSiViet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1026,7 +1029,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				55E076E21A30817800118D23 /* BacSiViet.VN */,
+				55E076E21A30817800118D23 /* BacSiViet */,
 			);
 		};
 /* End PBXProject section */
@@ -1042,6 +1045,7 @@
 				E3B0B20A1E1576EC00BE5FBD /* StunList.plist in Resources */,
 				E3B0B20E1E1576EC00BE5FBD /* WEBUsers.plist in Resources */,
 				E3B0B20C1E1576EC00BE5FBD /* PRODUsers.plist in Resources */,
+				3B867BA5202D8DD9003FA86D /* Icon-App-60x60@2x.png in Resources */,
 				E3B0B20D1E1576EC00BE5FBD /* QAUsers.plist in Resources */,
 				E3B0B1F41E1576EC00BE5FBD /* SettingSliderCell.xib in Resources */,
 				E3B0B2061E1576EC00BE5FBD /* Info.plist in Resources */,
@@ -1351,8 +1355,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73A8D2E4C3C10331EEBB6561 /* Pods-BacSiViet.VN.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = BSVIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = BacSiViet;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = "sample-videochat-webrtc/sample-videochat-webrtc.entitlements";
@@ -1367,7 +1370,7 @@
 					"\"$(SRCROOT)/../Framework\"",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_PREFIX_HEADER = "BacSiViet.VN-Prefix.pch";
+				GCC_PREFIX_HEADER = "BacSiViet-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1386,7 +1389,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = vn.bacsiviet.bacsiviet;
-				PRODUCT_NAME = BacSiViet.VN;
+				PRODUCT_NAME = BacSiViet;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1397,8 +1400,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D86CD64DFBB06F7BF23BD6C3 /* Pods-BacSiViet.VN.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = BSVIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = BacSiViet;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = "sample-videochat-webrtc/sample-videochat-webrtc.entitlements";
@@ -1412,7 +1414,7 @@
 					"\"$(SRCROOT)/../Framework\"",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_PREFIX_HEADER = "BacSiViet.VN-Prefix.pch";
+				GCC_PREFIX_HEADER = "BacSiViet-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1431,7 +1433,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = vn.bacsiviet.bacsiviet;
-				PRODUCT_NAME = BacSiViet.VN;
+				PRODUCT_NAME = BacSiViet;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1441,7 +1443,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		55E076DE1A30817800118D23 /* Build configuration list for PBXProject "BacSiViet.VN" */ = {
+		55E076DE1A30817800118D23 /* Build configuration list for PBXProject "BacSiViet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55E077041A30817900118D23 /* Debug */,
@@ -1450,7 +1452,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55E077061A30817900118D23 /* Build configuration list for PBXNativeTarget "BacSiViet.VN" */ = {
+		55E077061A30817900118D23 /* Build configuration list for PBXNativeTarget "BacSiViet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55E077071A30817900118D23 /* Debug */,
