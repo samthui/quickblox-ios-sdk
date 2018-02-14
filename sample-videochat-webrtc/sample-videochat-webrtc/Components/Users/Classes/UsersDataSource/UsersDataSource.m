@@ -147,21 +147,6 @@
     return self.usersSortedByLastSeen.count;
 }
 
-/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserCell"];
-    
-    QBUUser *user = self.usersSortedByLastSeen[indexPath.row];
-    BOOL selected = [_selectedUsers containsObject:user];
-    UIImage *userImage = [PlaceholderGenerator placeholderWithSize:CGSizeMake(32, 32)  title:user.fullName];
-    
-    [cell setFullName:user.fullName];
-    [cell setCheck:selected];
-    [cell setUserImage:userImage];
-    
-    return cell;
-}*/
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UserIconTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserIconCellIdentifier" forIndexPath:indexPath];
@@ -204,13 +189,6 @@
     cell.emailLabel.text = detail;
     
     return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    NSString *str = @"";//[NSString stringWithFormat:@"Select users for call (%tu)", _selectedUsers.count];
-    
-    return NSLocalizedString(str, nil);
 }
 
 - (QBUUser *)userAtIndexPath:(NSIndexPath *)indexPath {

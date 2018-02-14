@@ -93,12 +93,6 @@ SettingsViewControllerDelegate
     [titleView sizeToFit];
     
     self.navigationItem.titleView = titleView;
-    //Show tool bar
-    self.navigationController.toolbarHidden = NO;
-    //Set exclusive touch for tool bar
-    for (UIView *subview in self.navigationController.toolbar.subviews) {
-        [subview setExclusiveTouch:YES];
-    }
 }
 
 - (void)didPressSettingsButton:(UIBarButtonItem *)item {
@@ -272,6 +266,9 @@ SettingsViewControllerDelegate
     if ([segue.identifier isEqualToString:kGoToChatSegueIdentifier]) {
         ChatViewController *chatViewController = segue.destinationViewController;
         chatViewController.dialog = sender;
+        
+        // Hide bottom tab bar in the detail view
+        chatViewController.hidesBottomBarWhenPushed = YES;
     } else if ([segue.identifier isEqualToString:@"PresentSettingsViewController"]) {
         
         SessionSettingsViewController *settingsViewController =

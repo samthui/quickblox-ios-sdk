@@ -82,6 +82,9 @@
     if ([segue.identifier isEqualToString:kGoToChatSegueIdentifier]) {
         ChatViewController* viewController = segue.destinationViewController;
         viewController.dialog = sender;
+        
+        // Hide bottom tab bar in the detail view
+        viewController.hidesBottomBarWhenPushed = YES;
     }
 }
 

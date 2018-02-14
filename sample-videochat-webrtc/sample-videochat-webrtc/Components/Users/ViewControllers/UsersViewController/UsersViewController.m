@@ -75,7 +75,6 @@ static NSString * const kVoipEvent = @"VOIPCall";
     
     [self configureNavigationBar];
     [self configureTableViewController];
-    [self setToolbarButtonsEnabled:NO];
     [self loadUsers];
     
     self.voipRegistry = [[PKPushRegistry alloc] initWithQueue:dispatch_get_main_queue()];
@@ -85,18 +84,14 @@ static NSString * const kVoipEvent = @"VOIPCall";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     if (self.refreshControl.refreshing) {
         [self.tableView setContentOffset:CGPointMake(0, -self.refreshControl.frame.size.height) animated:NO];
     }
-    
-    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
-    self.navigationController.toolbarHidden = YES;
 }
 
 #pragma mark - UI Configuration
@@ -107,7 +102,6 @@ static NSString * const kVoipEvent = @"VOIPCall";
     CallKitManager.instance.usersDatasource = _dataSource;
     
     self.tableView.dataSource = _dataSource;
-//    self.tableView.rowHeight = 44;
     [self.refreshControl beginRefreshing];
 }
 
@@ -146,12 +140,6 @@ static NSString * const kVoipEvent = @"VOIPCall";
     [titleView sizeToFit];
     
     self.navigationItem.titleView = titleView;
-    //Show tool bar
-    self.navigationController.toolbarHidden = NO;
-    //Set exclusive touch for tool bar
-    for (UIView *subview in self.navigationController.toolbar.subviews) {
-        [subview setExclusiveTouch:YES];
-    }
     
     UIBarButtonItem *recordsButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"Records"
@@ -470,15 +458,15 @@ static NSString * const kVoipEvent = @"VOIPCall";
     UIAlertAction* dismissAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {}];
     
     // paid = 0 ==> chat only
-//    if (Core.isPaid) {
+    if (Core.isPaid) {
         [actionSheet addAction:videoAction];
         [actionSheet addAction:audioAction];
         [actionSheet addAction:chatAction];
         [actionSheet addAction:dismissAction];
-//    } else {
-//        [actionSheet addAction:chatAction];
-//        [actionSheet addAction:dismissAction];
-//    }
+    } else {
+        [actionSheet addAction:chatAction];
+        [actionSheet addAction:dismissAction];
+    }
     
     [self presentViewController:actionSheet animated:YES completion:nil];
     
@@ -510,7 +498,6 @@ static NSString * const kVoipEvent = @"VOIPCall";
     
     NSArray *selectedUsers =users;
     
-//    if (selectedUsers.count == 1) {
         // Creating private chat dialog.
         [ServicesManager.instance.chatService createPrivateChatDialogWithOpponent:selectedUsers.firstObject completion:^(QBResponse *response, QBChatDialog *createdDialog) {
             if (!response.success && createdDialog == nil) {
@@ -524,54 +511,6 @@ static NSString * const kVoipEvent = @"VOIPCall";
                 }
             }
         }];
-//    } else if (selectedUsers.count > 1) {
-//        if (name == nil || [[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
-//            name = [NSString stringWithFormat:@"%@_", [QBSession currentSession].currentUser.login];
-//            for (QBUUser *user in selectedUsers) {
-//                name = [NSString stringWithFormat:@"%@%@,", name, user.login];
-//            }
-//            name = [name substringToIndex:name.length - 1]; // remove last , (comma)
-//        }
-//        else {
-//            name = [name stringByTrimmingCharactersInSet:
-//                    [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-//        }
-//
-//        [SVProgressHUD showWithStatus:NSLocalizedString(@"SA_STR_LOADING", nil) maskType:SVProgressHUDMaskTypeClear];
-//
-//
-//        // Creating group chat dialog.
-//        [ServicesManager.instance.chatService createGroupChatDialogWithName:name photo:nil occupants:selectedUsers completion:^(QBResponse *response, QBChatDialog *createdDialog) {
-//            if (response.success) {
-//                NSString * notificationText = [self updatedMessageWithUsers:selectedUsers];
-//                // Notifying users about created dialog.
-//                [[ServicesManager instance].chatService sendSystemMessageAboutAddingToDialog:createdDialog
-//                                                                                  toUsersIDs:createdDialog.occupantIDs
-//                                                                                    withText:notificationText
-//                                                                                  completion:^(NSError *error) {
-//
-//
-//                                                                                      // Notify occupants that dialog was updated.
-//                                                                                      [[ServicesManager instance].chatService sendNotificationMessageAboutAddingOccupants:createdDialog.occupantIDs
-//                                                                                                                                                                 toDialog:createdDialog
-//                                                                                                                                                     withNotificationText:notificationText
-//                                                                                                                                                               completion:nil];
-//
-//                                                                                      if (completion) {
-//                                                                                          completion(createdDialog);
-//                                                                                      }
-//                                                                                  }];
-//            }
-//            else {
-//                [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"SA_STR_ERROR", nil)];
-//                if (completion) {
-//                    completion(nil);
-//                }
-//            }
-//        }];
-//    } else {
-//        assert("no given users");
-//    }
 }
 
 #pragma mark - QBSampleCoreDelegate
@@ -609,13 +548,6 @@ static NSString * const kVoipEvent = @"VOIPCall";
 }
 
 #pragma mark - Helpers
-
-- (void)setToolbarButtonsEnabled:(BOOL)enabled {
-    
-    for (UIBarButtonItem *item in self.toolbarItems) {
-        item.enabled = enabled;
-    }
-}
 
 #pragma mark - QBWebRTCChatDelegate
 

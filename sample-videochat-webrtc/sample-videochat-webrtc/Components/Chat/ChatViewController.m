@@ -1080,31 +1080,6 @@ QMDeferredQueueManagerDelegate
     
     if ([UIPasteboard generalPasteboard].image) {
         
-        /* Variant 1*/
-        
-        //        // If there's an image in the pasteboard, construct a message with that image and `send` it.
-        //
-        //        QBChatMessage *message = [QBChatMessage new];
-        //        message.senderID = self.senderID;
-        //        message.dialogID = self.dialog.ID;
-        //        message.dateSent = [NSDate date];
-        //
-        //        [[ServicesManager instance].chatService sendAttachmentMessage:message
-        //                                                             toDialog:self.dialog
-        //                                                  withAttachmentImage:[UIPasteboard generalPasteboard].image
-        //                                                           completion:^(NSError *error) {
-        //
-        //                                                               [self.attachmentCells removeObjectForKey:message.ID];
-        //
-        //                                                               if (error != nil) {
-        //                                                                   [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-        //
-        //                                                                   // perform local attachment deleting
-        //                                                                   [[ServicesManager instance].chatService deleteMessageLocally:message];
-        //                                                                   [self.chatSectionManager deleteMessage:message];
-        //                                                               }
-        //                                                           }];
-        
         /* Variant 2*/
         NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
         textAttachment.image = [UIPasteboard generalPasteboard].image;

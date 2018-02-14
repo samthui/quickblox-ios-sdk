@@ -265,9 +265,9 @@ UIAlertViewDelegate, QMChatDataSourceDelegate>
 
 - (NSUInteger)inputToolBarStartPos {
     
-    if (self.tabBarItem) {
-        return self.tabBarController.tabBar.frame.size.height;
-    }
+//    if (self.tabBarItem) {
+//        return self.tabBarController.tabBar.frame.size.height;
+//    }
     
     return 0;
 }
