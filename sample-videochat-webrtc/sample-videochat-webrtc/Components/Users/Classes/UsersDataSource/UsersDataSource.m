@@ -12,6 +12,7 @@
 #import <Quickblox/Quickblox.h>
 #import "QBProfile.h"
 #import "PlaceholderGenerator.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface UsersDataSource() {
     
@@ -153,23 +154,15 @@
     
     QBUUser *user = self.usersSortedByLastSeen[indexPath.row];
     
-    // Avatar
     NSArray *parseUrlArray = [user.customData componentsSeparatedByString:@"-_-"];
+    // Avatar
     if (parseUrlArray.count > 1) {
         NSString *avatarUrl = [parseUrlArray lastObject];
         if (![avatarUrl containsString:@"http://"]) {
             avatarUrl = [NSString stringWithFormat:@"http://%@", avatarUrl];
         }
-        NSLog(@"avatarUrl = %@", avatarUrl);
-        dispatch_async(dispatch_get_global_queue(0,0), ^{
-            NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: avatarUrl]];
-            if ( data == nil )
-                return;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // WARNING: is the cell still using the same data by this point??
-                cell.avatarImageView.image = [UIImage imageWithData: data];
-            });
-        });
+        [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarUrl]
+                     placeholderImage:[UIImage imageNamed:@"icon"]];
     } else {
         cell.avatarImageView.image = [UIImage imageNamed:@"icon"];
     }
