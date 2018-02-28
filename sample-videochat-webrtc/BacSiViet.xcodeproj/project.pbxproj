@@ -1406,7 +1406,7 @@
 					"-ObjC",
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = vn.bacsiviet.bacsiviet;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.bacsiviet.contact;
 				PRODUCT_NAME = BacSiViet;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1450,7 +1450,7 @@
 					"-ObjC",
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = vn.bacsiviet.bacsiviet;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.bacsiviet.contact;
 				PRODUCT_NAME = BacSiViet;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
