@@ -24,7 +24,7 @@
 #import "ServicesManager.h"
 #import "ChatViewController.h"
 
-const NSUInteger kQBPageSize = 50;
+const NSUInteger kQBPageSize = 100;
 static NSString * const kAps = @"aps";
 static NSString * const kAlert = @"alert";
 static NSString * const kVoipEvent = @"VOIPCall";
@@ -65,6 +65,17 @@ static NSString * const kVoipEvent = @"VOIPCall";
     
     [Core addDelegate:self];
     [QBRTCClient.instance addDelegate:self];
+    
+    [self configureNavigationBar];
+    [self configureTableViewController];
+    
+    [self loadUsers];
+    
+    self.voipRegistry = [[PKPushRegistry alloc] initWithQueue:dispatch_get_main_queue()];
+    self.voipRegistry.delegate = self;
+    self.voipRegistry.desiredPushTypes = [NSSet setWithObject:PKPushTypeVoIP];
+    
+    
     // Reachability
     __weak __typeof(self)weakSelf = self;
     Core.networkStatusBlock = ^(QBNetworkStatus status) {
@@ -72,14 +83,6 @@ static NSString * const kVoipEvent = @"VOIPCall";
             [weakSelf loadUsers];
         }
     };
-    
-    [self configureNavigationBar];
-    [self configureTableViewController];
-    [self loadUsers];
-    
-    self.voipRegistry = [[PKPushRegistry alloc] initWithQueue:dispatch_get_main_queue()];
-    self.voipRegistry.delegate = self;
-    self.voipRegistry.desiredPushTypes = [NSSet setWithObject:PKPushTypeVoIP];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -149,6 +152,7 @@ static NSString * const kVoipEvent = @"VOIPCall";
     
     self.navigationItem.rightBarButtonItem = recordsButtonItem;
 }
+
 /**
  *  Load all (Recursive) users for current room (tag)
  */
@@ -167,8 +171,13 @@ static NSString * const kVoipEvent = @"VOIPCall";
              page.currentPage++;
              [allUsers addObjectsFromArray:users];
              
+             NSLog(@"totalEntries %lu", (unsigned long)page.totalEntries);
+             
              BOOL cancel = NO;
-             if (page.currentPage * page.perPage >= page.totalEntries) {
+//             if (page.currentPage * page.perPage >= page.totalEntries) {
+//                 cancel = YES;
+//             }
+             if ([allUsers count] >= page.totalEntries) {
                  cancel = YES;
              }
              

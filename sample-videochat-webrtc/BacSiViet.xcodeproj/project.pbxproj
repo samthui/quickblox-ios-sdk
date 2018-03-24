@@ -32,7 +32,7 @@
 		55E156AF1AD6C41C00C62699 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E156AE1AD6C41C00C62699 /* MobileCoreServices.framework */; };
 		55F6BDCA1A3F21CC0080C326 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F6BDC91A3F21CC0080C326 /* GLKit.framework */; };
 		55F6BDCC1A3F21F10080C326 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F6BDCB1A3F21F10080C326 /* CFNetwork.framework */; };
-		7FDAAEC8706C7B3B3714E821 /* libPods-BacSiViet.VN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 558AB9372E84DB0C976B3271 /* libPods-BacSiViet.VN.a */; };
+		6E2E471BF368E631F5653F63 /* libPods-BacSiViet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C66152863395AE2871C29687 /* libPods-BacSiViet.a */; };
 		E329E0791E38AE7B00E0A183 /* QuickbloxWebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B0B2311E157AA800BE5FBD /* QuickbloxWebRTC.framework */; };
 		E329E07A1E38AE7B00E0A183 /* QuickbloxWebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E3B0B2311E157AA800BE5FBD /* QuickbloxWebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E332B21C1EDD7E3700FFF7EE /* RecordSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E332B21B1EDD7E3700FFF7EE /* RecordSettingsViewController.m */; };
@@ -171,6 +171,9 @@
 		55F6BDC91A3F21CC0080C326 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		55F6BDCB1A3F21F10080C326 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		73A8D2E4C3C10331EEBB6561 /* Pods-BacSiViet.VN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BacSiViet.VN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BacSiViet.VN/Pods-BacSiViet.VN.debug.xcconfig"; sourceTree = "<group>"; };
+		A2D49E935588FBDAC9C2C335 /* Pods-BacSiViet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BacSiViet.release.xcconfig"; path = "Pods/Target Support Files/Pods-BacSiViet/Pods-BacSiViet.release.xcconfig"; sourceTree = "<group>"; };
+		B1007AA34470F3B39B62D031 /* Pods-BacSiViet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BacSiViet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BacSiViet/Pods-BacSiViet.debug.xcconfig"; sourceTree = "<group>"; };
+		C66152863395AE2871C29687 /* libPods-BacSiViet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BacSiViet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86CD64DFBB06F7BF23BD6C3 /* Pods-BacSiViet.VN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BacSiViet.VN.release.xcconfig"; path = "Pods/Target Support Files/Pods-BacSiViet.VN/Pods-BacSiViet.VN.release.xcconfig"; sourceTree = "<group>"; };
 		E332B21A1EDD7E3700FFF7EE /* RecordSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordSettingsViewController.h; path = RecordSettingsViewController/RecordSettingsViewController.h; sourceTree = "<group>"; };
 		E332B21B1EDD7E3700FFF7EE /* RecordSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordSettingsViewController.m; path = RecordSettingsViewController/RecordSettingsViewController.m; sourceTree = "<group>"; };
@@ -318,7 +321,7 @@
 				55F6BDCA1A3F21CC0080C326 /* GLKit.framework in Frameworks */,
 				E329E0791E38AE7B00E0A183 /* QuickbloxWebRTC.framework in Frameworks */,
 				55CF63A81A3AFF2500FE8D19 /* SystemConfiguration.framework in Frameworks */,
-				7FDAAEC8706C7B3B3714E821 /* libPods-BacSiViet.VN.a in Frameworks */,
+				6E2E471BF368E631F5653F63 /* libPods-BacSiViet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +333,8 @@
 			children = (
 				73A8D2E4C3C10331EEBB6561 /* Pods-BacSiViet.VN.debug.xcconfig */,
 				D86CD64DFBB06F7BF23BD6C3 /* Pods-BacSiViet.VN.release.xcconfig */,
+				B1007AA34470F3B39B62D031 /* Pods-BacSiViet.debug.xcconfig */,
+				A2D49E935588FBDAC9C2C335 /* Pods-BacSiViet.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 				55F6BDC91A3F21CC0080C326 /* GLKit.framework */,
 				55CF63A71A3AFF2500FE8D19 /* SystemConfiguration.framework */,
 				558AB9372E84DB0C976B3271 /* libPods-BacSiViet.VN.a */,
+				C66152863395AE2871C29687 /* libPods-BacSiViet.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -999,7 +1005,7 @@
 				TargetAttributes = {
 					55E076E21A30817800118D23 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = Z2724AW2JL;
+						DevelopmentTeam = VCJ98AF5TV;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1077,7 +1083,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BacSiViet.VN-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BacSiViet-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1090,7 +1096,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BacSiViet.VN/Pods-BacSiViet.VN-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-BacSiViet/Pods-BacSiViet-frameworks.sh",
 				"${PODS_ROOT}/QuickBlox/Quickblox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1099,7 +1105,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BacSiViet.VN/Pods-BacSiViet.VN-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BacSiViet/Pods-BacSiViet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E329E0781E38AD8900E0A183 /* ShellScript */ = {
@@ -1134,7 +1140,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BacSiViet.VN/Pods-BacSiViet.VN-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-BacSiViet/Pods-BacSiViet-resources.sh",
 				"${PODS_ROOT}/QMCVDevelopment/QMChatViewController/Icons/Media.xcassets",
 				$PODS_CONFIGURATION_BUILD_DIR/QMCVDevelopment/QMChatViewController.bundle,
 				$PODS_CONFIGURATION_BUILD_DIR/QMServicesDevelopment/QMChatCacheModel.bundle,
@@ -1148,7 +1154,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BacSiViet.VN/Pods-BacSiViet.VN-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BacSiViet/Pods-BacSiViet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1371,7 +1377,7 @@
 		};
 		55E077071A30817900118D23 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73A8D2E4C3C10331EEBB6561 /* Pods-BacSiViet.VN.debug.xcconfig */;
+			baseConfigurationReference = B1007AA34470F3B39B62D031 /* Pods-BacSiViet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = BacSiViet;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1381,7 +1387,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Z2724AW2JL;
+				DEVELOPMENT_TEAM = VCJ98AF5TV;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1406,7 +1412,7 @@
 					"-ObjC",
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = vn.bacsiviet.contact;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.congbado.bacsiviet;
 				PRODUCT_NAME = BacSiViet;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1416,7 +1422,7 @@
 		};
 		55E077081A30817900118D23 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D86CD64DFBB06F7BF23BD6C3 /* Pods-BacSiViet.VN.release.xcconfig */;
+			baseConfigurationReference = A2D49E935588FBDAC9C2C335 /* Pods-BacSiViet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = BacSiViet;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1425,7 +1431,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z2724AW2JL;
+				DEVELOPMENT_TEAM = VCJ98AF5TV;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1450,7 +1456,7 @@
 					"-ObjC",
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = vn.bacsiviet.contact;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.congbado.bacsiviet;
 				PRODUCT_NAME = BacSiViet;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
