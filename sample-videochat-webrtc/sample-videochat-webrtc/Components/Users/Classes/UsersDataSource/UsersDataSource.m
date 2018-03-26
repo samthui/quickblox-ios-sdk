@@ -175,7 +175,9 @@
     NSArray *array = [customData componentsSeparatedByString:@"-"];
     if (array.count > 0) {
         name = [array firstObject];
-        detail = [customData substringFromIndex:[name length] + 1];
+    }
+    if (array.count > 1) {
+        detail = [array objectAtIndex:1];
     }
     
     cell.nameLabel.text = name;
