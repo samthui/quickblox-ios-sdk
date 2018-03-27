@@ -536,6 +536,10 @@ static NSString * const kVoipEvent = @"VOIPCall";
     [SVProgressHUD dismiss];
     //Dismiss Settings view controller
     [self dismissViewControllerAnimated:NO completion:nil];
+    
+    //Dismiss self -> back to login screen
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController popToRootViewControllerAnimated:NO];
     });
