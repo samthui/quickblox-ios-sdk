@@ -290,6 +290,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
+                                                        <action selector="editingChanged:" destination="bTh-IP-QO1" eventType="editingChanged" id="wjQ-N8-FLO"/>
                                                         <outlet property="delegate" destination="bTh-IP-QO1" id="wSI-Hs-0P5"/>
                                                     </connections>
                                                 </textField>
@@ -318,6 +319,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     <connections>
+                                                        <action selector="editingChanged:" destination="bTh-IP-QO1" eventType="editingChanged" id="7rg-30-Z3O"/>
                                                         <outlet property="delegate" destination="bTh-IP-QO1" id="dgT-T5-PQ5"/>
                                                     </connections>
                                                 </textField>
@@ -389,6 +391,7 @@
                     </tableView>
                     <connections>
                         <outlet property="passwordTextField" destination="l9b-zZ-uqx" id="8mU-lJ-osP"/>
+                        <outlet property="registerInfo" destination="bKg-H5-q65" id="YHl-Qa-oY5"/>
                         <outlet property="userNameTextField" destination="9Ax-nC-5in" id="rZA-9O-4k7"/>
                     </connections>
                 </tableViewController>

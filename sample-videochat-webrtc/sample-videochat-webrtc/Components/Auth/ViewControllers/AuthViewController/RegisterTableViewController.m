@@ -9,11 +9,12 @@
 #import "RegisterTableViewController.h"
 #import "QBLoadingButton.h"
 
-@interface RegisterTableViewController ()
+@interface RegisterTableViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet QBLoadingButton *registerButton;
+@property (weak, nonatomic) IBOutlet UILabel *registerInfo;
 
 @end
 
@@ -61,40 +62,6 @@
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -103,5 +70,76 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    [self validateTextField:textField];
+}
+
+- (IBAction)editingChanged:(UITextField *)sender {
+    
+    [self validateTextField:sender];
+    self.registerButton.enabled = [self userNameIsValid] && [self passwordIsValid];
+}
+
+- (void)validateTextField:(UITextField *)textField {
+    
+    if (textField == self.userNameTextField && ![self userNameIsValid]) {
+        
+//        self.chatRoomDescritptionLabel.text = @"";
+//        self.userNameDescriptionLabel.text =
+//        NSLocalizedString(@"Field should contain alphanumeric characters only in a range 3 to 20. The first character must be a letter.", nil);
+        [self setRegisterInfoText:@"Tên tài khoản không hợp lệ."];
+    }
+    else if (textField == self.passwordTextField && ![self passwordIsValid]) {
+        
+//        self.userNameDescriptionLabel.text = @"";
+//        self.chatRoomDescritptionLabel.text =
+//        NSLocalizedString(@"Field should contain alphanumeric characters only in a range 3 to 15, without space. The first character must be a letter.", nil);
+        [self setRegisterInfoText:@"Mật khẩu không hợp lệ."];
+    }
+    else {
+        
+//        self.chatRoomDescritptionLabel.text = self.userNameDescriptionLabel.text = @"";
+        [self setRegisterInfoText:@""];
+    }
+    
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+}
+
+- (void)setRegisterInfoText:(NSString *)text {
+    
+    if (![text isEqualToString:self.registerInfo.text]) {
+        
+        self.registerInfo.text = text;
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+    }
+}
+
+#pragma mark - Validation helpers
+
+- (BOOL)userNameIsValid {
+    BOOL isValid = false;
+    
+    if (self.userNameTextField.text && ![[self.userNameTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""] isEqualToString:@""]) {
+        isValid = true;
+    }
+    
+    return isValid;
+}
+
+- (BOOL)passwordIsValid {
+    BOOL isValid = false;
+    
+    if (self.passwordTextField.text && [self.passwordTextField.text length] > 0) {
+        isValid = true;
+    }
+    
+    return isValid;
+}
 
 @end
