@@ -19,6 +19,7 @@
 		3B68A2792066571E0070B799 /* FilteredUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B68A2782066571E0070B799 /* FilteredUsersViewController.m */; };
 		3B68A2C9206A4FE10070B799 /* SearchUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B68A2C8206A4FE10070B799 /* SearchUserViewController.m */; };
 		3B68A2CD206CCCF00070B799 /* FilteredUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B68A2CC206CCCF00070B799 /* FilteredUserCell.xib */; };
+		3B68A2D0206CDC4C0070B799 /* RegisterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B68A2CF206CDC4C0070B799 /* RegisterTableViewController.m */; };
 		3B71C7DB202218A500C560BE /* DoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DA202218A500C560BE /* DoctorsViewController.m */; };
 		3B71C7DE20221BA500C560BE /* PatientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DD20221BA500C560BE /* PatientsViewController.m */; };
 		3B71C7E120222CEC00C560BE /* UserIconTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7E020222CEC00C560BE /* UserIconTableViewCell.m */; };
@@ -148,6 +149,8 @@
 		3B68A2C7206A4FE10070B799 /* SearchUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUserViewController.h; sourceTree = "<group>"; };
 		3B68A2C8206A4FE10070B799 /* SearchUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUserViewController.m; sourceTree = "<group>"; };
 		3B68A2CC206CCCF00070B799 /* FilteredUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteredUserCell.xib; sourceTree = "<group>"; };
+		3B68A2CE206CDC4C0070B799 /* RegisterTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterTableViewController.h; sourceTree = "<group>"; };
+		3B68A2CF206CDC4C0070B799 /* RegisterTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterTableViewController.m; sourceTree = "<group>"; };
 		3B71C7D9202218A500C560BE /* DoctorsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoctorsViewController.h; sourceTree = "<group>"; };
 		3B71C7DA202218A500C560BE /* DoctorsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoctorsViewController.m; sourceTree = "<group>"; };
 		3B71C7DC20221BA500C560BE /* PatientsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatientsViewController.h; sourceTree = "<group>"; };
@@ -617,6 +620,8 @@
 			children = (
 				E3B0B1731E1576EC00BE5FBD /* LoginTableViewController.h */,
 				E3B0B1741E1576EC00BE5FBD /* LoginTableViewController.m */,
+				3B68A2CE206CDC4C0070B799 /* RegisterTableViewController.h */,
+				3B68A2CF206CDC4C0070B799 /* RegisterTableViewController.m */,
 			);
 			path = AuthViewController;
 			sourceTree = "<group>";
@@ -1218,6 +1223,7 @@
 				E332B2291EDD7E9900FFF7EE /* RecordSettings.m in Sources */,
 				3B71C809202255C300C560BE /* MessageStatusStringBuilder.m in Sources */,
 				E3B0B2271E1576EC00BE5FBD /* CornerView.m in Sources */,
+				3B68A2D0206CDC4C0070B799 /* RegisterTableViewController.m in Sources */,
 				E3B0B2131E1576EC00BE5FBD /* CallViewController.m in Sources */,
 				E3B0B21E1E1576EC00BE5FBD /* SettingSwitchCell.m in Sources */,
 				E3B0B2041E1576EC00BE5FBD /* CheckView.m in Sources */,

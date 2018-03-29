@@ -42,7 +42,7 @@
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.tableView.delaysContentTouches = NO;
     
-    self.navigationItem.title = NSLocalizedString(@"Enter to chat", nil);
+    self.navigationItem.title = NSLocalizedString(@"", nil);
     
     [self defaultConfiguration];
     //Update interface and start login if user exist
