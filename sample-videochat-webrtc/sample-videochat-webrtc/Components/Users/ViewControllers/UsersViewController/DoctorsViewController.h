@@ -6,8 +6,8 @@
 //  Copyright © 2018 QuickBlox Team. All rights reserved.
 //
 
-#import "UsersViewController.h"
+#import "SearchUserViewController.h"
 
-@interface DoctorsViewController : UsersViewController
+@interface DoctorsViewController : SearchUserViewController
 
 @end

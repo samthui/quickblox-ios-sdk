@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UsersDataSource.h"
 
 @interface UsersViewController : UITableViewController
+
+@property (strong, nonatomic) UsersDataSource *dataSource;
 
 @end

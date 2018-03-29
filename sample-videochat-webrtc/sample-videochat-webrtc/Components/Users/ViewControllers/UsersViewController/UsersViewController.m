@@ -12,7 +12,6 @@
 #import <PushKit/PushKit.h>
 
 #import "QBCore.h"
-#import "UsersDataSource.h"
 #import "PlaceholderGenerator.h"
 #import "QBAVCallPermissions.h"
 #import "SessionSettingsViewController.h"
@@ -23,6 +22,7 @@
 #import "CallKitManager.h"
 #import "ServicesManager.h"
 #import "ChatViewController.h"
+#import "FilteredUsersViewController.h"
 
 const NSUInteger kQBPageSize = 100;
 static NSString * const kAps = @"aps";
@@ -34,7 +34,6 @@ static NSString * const kVoipEvent = @"VOIPCall";
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *audioCallButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *videoCallButton;
 
-@property (strong, nonatomic) UsersDataSource *dataSource;
 @property (strong, nonatomic) UINavigationController *nav;
 @property (weak, nonatomic) QBRTCSession *session;
 @property (weak, nonatomic) RecordsViewController *recordsViewController;
@@ -87,7 +86,7 @@ static NSString * const kVoipEvent = @"VOIPCall";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
+    
     if (self.refreshControl.refreshing) {
         [self.tableView setContentOffset:CGPointMake(0, -self.refreshControl.frame.size.height) animated:NO];
     }
@@ -104,7 +103,12 @@ static NSString * const kVoipEvent = @"VOIPCall";
     _dataSource = [[UsersDataSource alloc] initWithCurrentUser:Core.currentUser];
     CallKitManager.instance.usersDatasource = _dataSource;
     
-    self.tableView.dataSource = _dataSource;
+    
+    if ([self isKindOfClass:[FilteredUsersViewController class]]) {
+        
+    } else {
+        self.tableView.dataSource = _dataSource;
+    }
     [self.refreshControl beginRefreshing];
 }
 
@@ -174,9 +178,9 @@ static NSString * const kVoipEvent = @"VOIPCall";
              NSLog(@"totalEntries %lu", (unsigned long)page.totalEntries);
              
              BOOL cancel = NO;
-//             if (page.currentPage * page.perPage >= page.totalEntries) {
-//                 cancel = YES;
-//             }
+             //             if (page.currentPage * page.perPage >= page.totalEntries) {
+             //                 cancel = YES;
+             //             }
              if ([allUsers count] >= page.totalEntries) {
                  cancel = YES;
              }
@@ -416,8 +420,8 @@ static NSString * const kVoipEvent = @"VOIPCall";
         self.recordsViewController = segue.destinationViewController;
     }
     else if ([segue.identifier isEqualToString:kGoToChatSegueIdentifier]) {
-            ChatViewController* viewController = segue.destinationViewController;
-            viewController.dialog = sender;
+        ChatViewController* viewController = segue.destinationViewController;
+        viewController.dialog = sender;
         
         // Hide bottom tab bar in the detail view
         viewController.hidesBottomBarWhenPushed = YES;
@@ -436,6 +440,11 @@ static NSString * const kVoipEvent = @"VOIPCall";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     QBUUser *user = [self.dataSource userAtIndexPath:indexPath];
+    
+    if ([self isKindOfClass:[FilteredUsersViewController class]]) {
+        
+        user = [[(FilteredUsersViewController *)self filteredUsers] objectAtIndex:indexPath.row];
+    }
     
     NSString *name = @"";
     NSString *detail = @"";
@@ -483,9 +492,9 @@ static NSString * const kVoipEvent = @"VOIPCall";
 
 - (void)chatWithUser:(QBUUser *)user {
     [self createChatWithName:nil users:@[user] completion:^(QBChatDialog *dialog) {
-//        __typeof(self) strongSelf = weakSelf;
+        //        __typeof(self) strongSelf = weakSelf;
         if( dialog != nil ) {
-//            [strongSelf navigateToChatViewControllerWithDialog:dialog];
+            //            [strongSelf navigateToChatViewControllerWithDialog:dialog];
             [self navigateToChatViewControllerWithDialog:dialog];
         }
         else {
@@ -507,19 +516,19 @@ static NSString * const kVoipEvent = @"VOIPCall";
     
     NSArray *selectedUsers =users;
     
-        // Creating private chat dialog.
-        [ServicesManager.instance.chatService createPrivateChatDialogWithOpponent:selectedUsers.firstObject completion:^(QBResponse *response, QBChatDialog *createdDialog) {
-            if (!response.success && createdDialog == nil) {
-                if (completion) {
-                    completion(nil);
-                }
+    // Creating private chat dialog.
+    [ServicesManager.instance.chatService createPrivateChatDialogWithOpponent:selectedUsers.firstObject completion:^(QBResponse *response, QBChatDialog *createdDialog) {
+        if (!response.success && createdDialog == nil) {
+            if (completion) {
+                completion(nil);
             }
-            else {
-                if (completion) {
-                    completion(createdDialog);
-                }
+        }
+        else {
+            if (completion) {
+                completion(createdDialog);
             }
-        }];
+        }
+    }];
 }
 
 #pragma mark - QBSampleCoreDelegate
@@ -711,3 +720,4 @@ static NSString * const kVoipEvent = @"VOIPCall";
 }
 
 @end
+

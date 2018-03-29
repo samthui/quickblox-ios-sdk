@@ -562,7 +562,7 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="S4y-QI-sz8" id="J53-hN-a4A"/>
+                            <outlet property="dataSource" destination="S4y-QI-sz8" id="Wrt-qb-4TW"/>
                             <outlet property="delegate" destination="S4y-QI-sz8" id="NM4-mu-kMN"/>
                         </connections>
                     </tableView>
@@ -915,9 +915,9 @@
         <image name="icon" width="49" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mwa-zv-wEC"/>
-        <segue reference="9hH-r1-uG9"/>
-        <segue reference="NiV-wR-fQ7"/>
-        <segue reference="5X9-lb-Gl5"/>
+        <segue reference="ber-eZ-QJ9"/>
+        <segue reference="num-3x-oEx"/>
+        <segue reference="aQd-I2-Vb8"/>
+        <segue reference="muR-nh-XnT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="UserIconCellIdentifier" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserIconCellIdentifier" rowHeight="64" id="Gb0-p4-XEd" customClass="UserIconTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gb0-p4-XEd" id="dak-g7-by4">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="J2N-H6-fK1">
+                        <rect key="frame" x="20" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="931-By-cxR"/>
+                            <constraint firstAttribute="width" constant="50" id="GpE-hr-LTx"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnd-62-cTo">
+                        <rect key="frame" x="81" y="10" width="67" height="44.5"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1o-Zs-g1e" userLabel="User name">
+                                <rect key="frame" x="0.0" y="0.0" width="67" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCm-8p-kPN" userLabel="Email">
+                                <rect key="frame" x="0.0" y="24.5" width="67" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="P1o-Zs-g1e" firstAttribute="top" secondItem="vnd-62-cTo" secondAttribute="top" id="3rC-3h-IdD"/>
+                            <constraint firstAttribute="trailing" secondItem="P1o-Zs-g1e" secondAttribute="trailing" id="CGY-nr-yQ2"/>
+                            <constraint firstItem="ZCm-8p-kPN" firstAttribute="top" secondItem="P1o-Zs-g1e" secondAttribute="bottom" constant="5" id="RAm-cg-rzH"/>
+                            <constraint firstItem="ZCm-8p-kPN" firstAttribute="leading" secondItem="vnd-62-cTo" secondAttribute="leading" id="bLA-C6-loy"/>
+                            <constraint firstAttribute="bottom" secondItem="ZCm-8p-kPN" secondAttribute="bottom" id="dCI-3I-Uqm"/>
+                            <constraint firstAttribute="trailing" secondItem="ZCm-8p-kPN" secondAttribute="trailing" id="id3-Ve-0aO"/>
+                            <constraint firstItem="P1o-Zs-g1e" firstAttribute="leading" secondItem="vnd-62-cTo" secondAttribute="leading" id="pKB-9L-lhY"/>
+                        </constraints>
+                    </view>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Duw-Wl-h4L">
+                        <rect key="frame" x="355" y="26" width="10" height="10"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Duw-Wl-h4L" secondAttribute="height" multiplier="1:1" id="dhM-Xt-dQu"/>
+                            <constraint firstAttribute="height" constant="10" id="g9C-aL-r1H"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="vnd-62-cTo" secondAttribute="centerY" id="Ag0-8j-1xn"/>
+                    <constraint firstItem="J2N-H6-fK1" firstAttribute="leading" secondItem="dak-g7-by4" secondAttribute="leading" constant="20" id="EMD-uR-40m"/>
+                    <constraint firstAttribute="trailing" secondItem="Duw-Wl-h4L" secondAttribute="trailing" constant="10" id="Xdh-Wy-LIL"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="vnd-62-cTo" secondAttribute="trailing" id="YeK-ZU-juw"/>
+                    <constraint firstItem="Duw-Wl-h4L" firstAttribute="centerY" secondItem="dak-g7-by4" secondAttribute="centerY" id="ZXZ-fq-JFy"/>
+                    <constraint firstItem="vnd-62-cTo" firstAttribute="leading" secondItem="J2N-H6-fK1" secondAttribute="trailing" constant="11" id="wSF-5K-bGJ"/>
+                    <constraint firstAttribute="centerY" secondItem="J2N-H6-fK1" secondAttribute="centerY" constant="-1.25" id="wyk-b7-VuV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="81" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="avatarImageView" destination="J2N-H6-fK1" id="FEN-nZ-4Wh"/>
+                <outlet property="emailLabel" destination="ZCm-8p-kPN" id="TdX-he-PJZ"/>
+                <outlet property="nameLabel" destination="P1o-Zs-g1e" id="RhM-gX-kjT"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon" width="49" height="48"/>
+    </resources>
+</document>

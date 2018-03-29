@@ -16,6 +16,9 @@
 		3B626E422026790200976027 /* DialogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B626E402026790100976027 /* DialogTableViewCell.m */; };
 		3B626E502026F99000976027 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B626E4E2026F96D00976027 /* Icon-60@2x.png */; };
 		3B626E512026F9A600976027 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B0B19A1E1576EC00BE5FBD /* Images.xcassets */; };
+		3B68A2792066571E0070B799 /* FilteredUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B68A2782066571E0070B799 /* FilteredUsersViewController.m */; };
+		3B68A2C9206A4FE10070B799 /* SearchUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B68A2C8206A4FE10070B799 /* SearchUserViewController.m */; };
+		3B68A2CD206CCCF00070B799 /* FilteredUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B68A2CC206CCCF00070B799 /* FilteredUserCell.xib */; };
 		3B71C7DB202218A500C560BE /* DoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DA202218A500C560BE /* DoctorsViewController.m */; };
 		3B71C7DE20221BA500C560BE /* PatientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7DD20221BA500C560BE /* PatientsViewController.m */; };
 		3B71C7E120222CEC00C560BE /* UserIconTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71C7E020222CEC00C560BE /* UserIconTableViewCell.m */; };
@@ -140,6 +143,11 @@
 		3B626E402026790100976027 /* DialogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogTableViewCell.m; sourceTree = "<group>"; };
 		3B626E412026790100976027 /* DialogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogTableViewCell.h; sourceTree = "<group>"; };
 		3B626E4E2026F96D00976027 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Resources/Icon-60@2x.png"; sourceTree = "<group>"; };
+		3B68A2772066571E0070B799 /* FilteredUsersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilteredUsersViewController.h; sourceTree = "<group>"; };
+		3B68A2782066571E0070B799 /* FilteredUsersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilteredUsersViewController.m; sourceTree = "<group>"; };
+		3B68A2C7206A4FE10070B799 /* SearchUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchUserViewController.h; sourceTree = "<group>"; };
+		3B68A2C8206A4FE10070B799 /* SearchUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchUserViewController.m; sourceTree = "<group>"; };
+		3B68A2CC206CCCF00070B799 /* FilteredUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteredUserCell.xib; sourceTree = "<group>"; };
 		3B71C7D9202218A500C560BE /* DoctorsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoctorsViewController.h; sourceTree = "<group>"; };
 		3B71C7DA202218A500C560BE /* DoctorsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoctorsViewController.m; sourceTree = "<group>"; };
 		3B71C7DC20221BA500C560BE /* PatientsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatientsViewController.h; sourceTree = "<group>"; };
@@ -716,6 +724,11 @@
 				3B71C7DA202218A500C560BE /* DoctorsViewController.m */,
 				3B71C7DC20221BA500C560BE /* PatientsViewController.h */,
 				3B71C7DD20221BA500C560BE /* PatientsViewController.m */,
+				3B68A2772066571E0070B799 /* FilteredUsersViewController.h */,
+				3B68A2782066571E0070B799 /* FilteredUsersViewController.m */,
+				3B68A2C7206A4FE10070B799 /* SearchUserViewController.h */,
+				3B68A2C8206A4FE10070B799 /* SearchUserViewController.m */,
+				3B68A2CC206CCCF00070B799 /* FilteredUserCell.xib */,
 			);
 			path = UsersViewController;
 			sourceTree = "<group>";
@@ -1057,6 +1070,7 @@
 				E3B0B1F51E1576EC00BE5FBD /* SettingSwitchCell.xib in Resources */,
 				E3B0B2071E1576EC00BE5FBD /* Launch Screen.xib in Resources */,
 				E3B0B2021E1576EC00BE5FBD /* Users.storyboard in Resources */,
+				3B68A2CD206CCCF00070B799 /* FilteredUserCell.xib in Resources */,
 				3B41C6BD202B004600E1C35C /* Localizable.strings in Resources */,
 				E3B0B1FA1E1576EC00BE5FBD /* Auth.storyboard in Resources */,
 				E3B0B2111E1576EC00BE5FBD /* end_of_call.wav in Resources */,
@@ -1168,6 +1182,7 @@
 				E3B0B2201E1576EC00BE5FBD /* BaseItemModel.m in Sources */,
 				E3B0B1FE1E1576EC00BE5FBD /* QBCore.m in Sources */,
 				E3B0B1F71E1576EC00BE5FBD /* Profile.m in Sources */,
+				3B68A2C9206A4FE10070B799 /* SearchUserViewController.m in Sources */,
 				3B71C7FF202250B200C560BE /* QMMessageNotification.m in Sources */,
 				E3B0B22A1E1576EC00BE5FBD /* QBToolBar.m in Sources */,
 				3B71C7ED20224D7800C560BE /* ServicesManager.m in Sources */,
@@ -1183,6 +1198,7 @@
 				E332B21C1EDD7E3700FFF7EE /* RecordSettingsViewController.m in Sources */,
 				E3B0B22E1E1576EC00BE5FBD /* SVProgressHUD.m in Sources */,
 				E332B2261EDD7E7D00FFF7EE /* FileManager.m in Sources */,
+				3B68A2792066571E0070B799 /* FilteredUsersViewController.m in Sources */,
 				E3B0B2081E1576EC00BE5FBD /* main.m in Sources */,
 				E3B0B21F1E1576EC00BE5FBD /* SliderItemModel.m in Sources */,
 				E3B0B2011E1576EC00BE5FBD /* UsersDataSource.m in Sources */,
