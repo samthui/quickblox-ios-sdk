@@ -60,8 +60,8 @@
         self.tableView.tableHeaderView = self.searchController.searchBar;
     }
     
-    // We want ourselves to be the delegate for this filtered table so didSelectRowAtIndexPath is called for both tables.
-    self.resultsTableController.tableView.delegate = self;
+//     We want ourselves to be the delegate for this filtered table so didSelectRowAtIndexPath is called for both tables.
+//    self.resultsTableController.tableView.delegate = self;
     self.searchController.delegate = self;
     self.searchController.dimsBackgroundDuringPresentation = NO; // default is YES
     self.searchController.searchBar.delegate = self; // so we can monitor text changes + others
@@ -125,8 +125,6 @@
 #pragma mark - UISearchResultsUpdating
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    
-    NSLog(@"........");
     
         // update the filtered array based on the search text
         NSString *searchText = searchController.searchBar.text;
