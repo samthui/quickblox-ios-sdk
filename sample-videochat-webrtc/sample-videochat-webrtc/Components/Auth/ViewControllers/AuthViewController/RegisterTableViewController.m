@@ -8,6 +8,7 @@
 
 #import "RegisterTableViewController.h"
 #import "QBLoadingButton.h"
+#import "QBCore.h"
 
 @interface RegisterTableViewController () <UITextFieldDelegate>
 
@@ -15,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet QBLoadingButton *registerButton;
 @property (weak, nonatomic) IBOutlet UILabel *registerInfo;
+
+@property (assign, nonatomic) BOOL needReconnect;
 
 @end
 
@@ -35,6 +38,8 @@
     self.tableView.delaysContentTouches = NO;
     
     self.navigationItem.title = NSLocalizedString(@"Đăng ký", nil);
+    
+    [self defaultConfiguration];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,17 +47,90 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (void)defaultConfiguration {
     
-    // Configure the cell...
+    [self.registerButton hideLoading];
+    [self.registerButton setTitle:NSLocalizedString(@"Đăng ký", nil)
+                      forState:UIControlStateNormal];
     
-    return cell;
+    self.registerButton.enabled = NO;
+    self.userNameTextField.text = @"";
+    self.passwordTextField.text = @"";
+    
+    [self setInputEnabled:YES];
+    // Reachability
+    void (^updateRegisterInfo)(QBNetworkStatus status) = ^(QBNetworkStatus status) {
+        
+        NSString *registerInfo = (status == QBNetworkStatusNotReachable) ?
+        NSLocalizedString(@"Please check your Internet connection", nil):
+        NSLocalizedString(@"", nil);
+        [self setRegisterInfoText:registerInfo];
+    };
+    
+    Core.networkStatusBlock = ^(QBNetworkStatus status) {
+        
+        if (self.needReconnect && status != QBNetworkStatusNotReachable) {
+            
+            self.needReconnect = NO;
+//            [self login];
+        }
+        else {
+            
+            updateRegisterInfo(status);
+        }
+    };
+    
+    updateRegisterInfo(Core.networkStatus);
 }
-*/
+
+#pragma mark - Disable / Enable inputs
+
+- (void)setInputEnabled:(BOOL)enabled {
+    
+    self.passwordTextField.enabled = enabled;
+    self.userNameTextField.enabled = enabled;
+}
+
+#pragma mark - QBCoreDelegate
+
+- (void)coreDidLogin:(QBCore *)core {
+    if (self.isViewLoaded && self.view.window != nil) {
+        // only perform segue if login view controller is visible, otherwise we are already
+        // on users view controller screan and this was just a chat connect
+        [SVProgressHUD dismiss];
+        
+        [self performSegueWithIdentifier:@"ShowUsersViewController" sender:nil];
+    }
+}
+
+- (void)coreDidLogout:(QBCore *)core {
+    
+    [self defaultConfiguration];
+}
+
+- (void)core:(QBCore *)core error:(NSError *)error domain:(ErrorDomain)domain {
+    
+    NSString *infoText = error.localizedDescription;
+    
+    if (error.code == NSURLErrorNotConnectedToInternet) {
+        
+        infoText = NSLocalizedString(@"Please check your Internet connection", nil);
+        self.needReconnect = YES;
+    }
+    else if (core.networkStatus != QBNetworkStatusNotReachable) {
+        
+        if (domain == ErrorDomainSignUp || domain == ErrorDomainLogIn) {
+//            [self login];
+        }
+    }
+    
+    [self setRegisterInfoText:infoText];
+}
+
+- (void)core:(QBCore *)core loginStatus:(NSString *)loginStatus {
+    
+    [self setRegisterInfoText:loginStatus];
+}
 
 #pragma mark - UITableViewDelegate
 
@@ -87,22 +165,12 @@
 - (void)validateTextField:(UITextField *)textField {
     
     if (textField == self.userNameTextField && ![self userNameIsValid]) {
-        
-//        self.chatRoomDescritptionLabel.text = @"";
-//        self.userNameDescriptionLabel.text =
-//        NSLocalizedString(@"Field should contain alphanumeric characters only in a range 3 to 20. The first character must be a letter.", nil);
         [self setRegisterInfoText:@"Tên tài khoản không hợp lệ."];
     }
     else if (textField == self.passwordTextField && ![self passwordIsValid]) {
-        
-//        self.userNameDescriptionLabel.text = @"";
-//        self.chatRoomDescritptionLabel.text =
-//        NSLocalizedString(@"Field should contain alphanumeric characters only in a range 3 to 15, without space. The first character must be a letter.", nil);
         [self setRegisterInfoText:@"Mật khẩu không hợp lệ."];
     }
     else {
-        
-//        self.chatRoomDescritptionLabel.text = self.userNameDescriptionLabel.text = @"";
         [self setRegisterInfoText:@""];
     }
     

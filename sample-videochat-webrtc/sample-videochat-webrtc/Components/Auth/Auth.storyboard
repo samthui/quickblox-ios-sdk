@@ -361,22 +361,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u31-pj-tTc">
-                                                    <rect key="frame" x="112.5" y="11" width="150" height="34"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u31-pj-tTc" customClass="QBLoadingButton">
+                                                    <rect key="frame" x="112.5" y="13" width="150" height="47"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="47" id="Van-Ah-OiO"/>
                                                         <constraint firstAttribute="width" constant="150" id="v8I-2J-G2M"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="Đăng ký">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="u31-pj-tTc" secondAttribute="bottom" constant="11" id="Ffj-nl-bqh"/>
-                                                <constraint firstItem="u31-pj-tTc" firstAttribute="top" secondItem="roG-LU-nNg" secondAttribute="top" constant="11" id="Qtb-lA-3SY"/>
+                                                <constraint firstAttribute="bottom" secondItem="u31-pj-tTc" secondAttribute="bottom" constant="20" id="Ffj-nl-bqh"/>
+                                                <constraint firstItem="u31-pj-tTc" firstAttribute="top" secondItem="roG-LU-nNg" secondAttribute="top" constant="13" id="Qtb-lA-3SY"/>
                                                 <constraint firstItem="u31-pj-tTc" firstAttribute="centerX" secondItem="roG-LU-nNg" secondAttribute="centerX" id="mBk-mw-jri"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -391,6 +390,7 @@
                     </tableView>
                     <connections>
                         <outlet property="passwordTextField" destination="l9b-zZ-uqx" id="8mU-lJ-osP"/>
+                        <outlet property="registerButton" destination="u31-pj-tTc" id="dXy-BR-HTP"/>
                         <outlet property="registerInfo" destination="bKg-H5-q65" id="YHl-Qa-oY5"/>
                         <outlet property="userNameTextField" destination="9Ax-nC-5in" id="rZA-9O-4k7"/>
                     </connections>
