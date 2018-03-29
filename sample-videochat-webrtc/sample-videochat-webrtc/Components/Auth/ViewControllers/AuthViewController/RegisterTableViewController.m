@@ -10,6 +10,10 @@
 #import "QBLoadingButton.h"
 #import "QBCore.h"
 
+#import "AFURLRequestSerialization.h"
+#import "AFURLResponseSerialization.h"
+#import "AFHTTPSessionManager.h"
+
 @interface RegisterTableViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
@@ -89,6 +93,96 @@
     
     self.passwordTextField.enabled = enabled;
     self.userNameTextField.enabled = enabled;
+}
+
+#pragma mark - UIControl Actions
+
+- (IBAction)didPressRegisterButton:(QBLoadingButton *)sender {
+    [self registerAccount];
+}
+
+- (void)beginConnect {
+    
+    [self setInputEnabled:NO];
+    [self.registerButton showLoading];
+}
+
+- (void)endConnectError:(NSError *)error {
+    
+    [self setInputEnabled:YES];
+    [self.registerButton hideLoading];
+}
+
+- (void)registerAccount {
+    
+    [self setEditing:NO];
+    [self beginConnect];
+    
+    
+    [self.view endEditing:YES];
+    
+    BOOL notEmptyAccount = [self userNameIsValid];
+    BOOL notEmptyPassword = [self passwordIsValid];
+    
+    if (notEmptyAccount && notEmptyPassword) {
+        NSString *username = self.userNameTextField.text;
+        NSString *password = self.passwordTextField.text;
+        
+        [SVProgressHUD showWithStatus:@"Signing up"];
+        
+        NSString *url = @"http://bacsiviet.vn/dangkyapp";
+        NSDictionary *parameters = @{@"username": username, @"fullname": username, @"password": password, @"phone": @1, @"type": @"professional", @"presenter": @1};
+        
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+        [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"success! data=%@",responseObject);
+            
+            if ([[responseObject objectForKey:@"isLogin"] intValue] == 1) {
+                
+//                NSString *userType = [responseObject objectForKey:@"user_type"];
+//                NSString *fullName = [responseObject objectForKey:@"fullname"];
+//                BOOL isPaid = [[responseObject objectForKey:@"paid"] boolValue];
+//                QBUUser *qbUser = [self createUserWithEnteredData:userType data:fullName];
+//                [self startSignUpNewUser:qbUser isPaid:isPaid];
+                
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"OK"
+                                                                message:[responseObject objectForKey:@"ok"]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                
+            } else {
+                [SVProgressHUD dismiss];
+                
+                [self endConnectError:nil];
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                message:[responseObject objectForKey:@"msg"]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [SVProgressHUD dismiss];
+            
+            NSLog(@"Errors=%@", [error description]);
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error  description]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }];
+    }
 }
 
 #pragma mark - QBCoreDelegate

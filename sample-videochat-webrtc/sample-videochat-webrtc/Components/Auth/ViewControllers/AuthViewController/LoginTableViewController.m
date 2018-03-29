@@ -221,7 +221,7 @@
         [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
         [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"success! data=%@",responseObject);
+//            NSLog(@"success! data=%@",responseObject);
             
             if ([[responseObject objectForKey:@"isLogin"] intValue] == 1) {
                 
@@ -245,7 +245,7 @@
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [SVProgressHUD dismiss];
             
-            NSLog(@"Errors=%@", [error description]);
+//            NSLog(@"Errors=%@", [error description]);
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:[error  description]
@@ -273,7 +273,7 @@
          
         [SVProgressHUD dismiss];
 
-        NSLog(@"Errors=%@", [response.error description]);
+//        NSLog(@"Errors=%@", [response.error description]);
 
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                         message:[response.error  description]
