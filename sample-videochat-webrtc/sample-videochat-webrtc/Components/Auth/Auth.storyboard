@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-391" y="488"/>
         </scene>
-        <!--Login-->
+        <!--Delegate-->
         <scene sceneID="BY5-x9-R67">
             <objects>
                 <tableViewController storyboardIdentifier="LoginTableViewController" title="Login" clearsSelectionOnViewWillAppear="NO" id="s0b-Ic-sY1" customClass="LoginTableViewController" sceneMemberID="viewController">
@@ -251,6 +251,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="didPressRegisterButton:" destination="bTh-IP-QO1" eventType="touchUpInside" id="mjS-vO-JL5"/>
+                                                        <outlet property="delegate" destination="s0b-Ic-sY1" id="StQ-M9-2jA"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

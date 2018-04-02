@@ -20,8 +20,9 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+//#import<FacebookSDK/FacebookSDK.h>
 
-@interface LoginTableViewController () <UITextFieldDelegate, QBCoreDelegate>
+@interface LoginTableViewController () <UITextFieldDelegate, QBCoreDelegate, FBSDKLoginButtonDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *loginInfo;
 @property (weak, nonatomic) IBOutlet UILabel *userNameDescriptionLabel;
@@ -29,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *chatRoomNameTextField;
 @property (weak, nonatomic) IBOutlet QBLoadingButton *loginButton;
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *fbLoginButton;
 
 @property (assign, nonatomic) BOOL needReconnect;
 
@@ -40,6 +42,7 @@
     [super viewDidLoad];
     
     [Core addDelegate:self];
+    self.fbLoginButton.delegate = self;
     
     self.tableView.estimatedRowHeight = 80;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -60,6 +63,8 @@
     if (Core.currentUser) {
         [self beginConnect];
         [Core loginWithCurrentUser];
+        
+        return;
     }
 }
 
@@ -167,6 +172,29 @@
     }
 }
 
+#pragma mark - FBSDKLoginButtonDelegate
+- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             if (!error) {
+                 
+                 NSString *name = [result objectForKey:@"name"];
+                 self.userNameTextField.text = name;
+                 
+                 NSString *password = [result objectForKey:@"id"];
+                 self.chatRoomNameTextField.text = password;
+                [self registerFBuser:name password:password];
+             }
+         }];
+    }
+}
+
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+    NSLog(@"did logout fb");
+}
+
 #pragma mark - Login
 
 /*- (void)login {
@@ -260,6 +288,52 @@
         }];
     }
 }
+
+- (void)registerFBuser:(NSString*)name password:(NSString *)password {
+    
+    NSString *url = @"http://bacsiviet.vn/apiappfacebook";
+    NSDictionary *parameters = @{@"username": name, @"qwd": password};
+    
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //            NSLog(@"success! data=%@",responseObject);
+        
+        if ([[responseObject objectForKey:@"isLogin"] intValue] == 1) {
+            
+            NSString *fullName = name;
+            NSString *userType = [responseObject objectForKey:@"user_type"];
+            BOOL isPaid = [[responseObject objectForKey:@"paid"] boolValue];
+            
+            [self signupUser:fullName type:userType paid:isPaid];
+        } else {
+            [SVProgressHUD dismiss];
+            
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[responseObject objectForKey:@"msg"]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+        
+        //            NSLog(@"Errors=%@", [error description]);
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:[error  description]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }];
+}
+
 
 - (void)startSignUpNewUser:(QBUUser *)newUser isPaid:(BOOL)isPaid {
     
