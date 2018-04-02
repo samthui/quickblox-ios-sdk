@@ -10,12 +10,16 @@
 #import "LoginTableViewController.h"
 #import "QBLoadingButton.h"
 #import "UsersViewController.h"
+#import "RegisterTableViewController.h"
 #import "QBCore.h"
 #import "SVProgressHUD.h"
 
 #import "AFURLRequestSerialization.h"
 #import "AFURLResponseSerialization.h"
 #import "AFHTTPSessionManager.h"
+
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface LoginTableViewController () <UITextFieldDelegate, QBCoreDelegate>
 
@@ -225,11 +229,11 @@
             
             if ([[responseObject objectForKey:@"isLogin"] intValue] == 1) {
                 
-                NSString *userType = [responseObject objectForKey:@"user_type"];
                 NSString *fullName = [responseObject objectForKey:@"fullname"];
+                NSString *userType = [responseObject objectForKey:@"user_type"];
                 BOOL isPaid = [[responseObject objectForKey:@"paid"] boolValue];
-                QBUUser *qbUser = [self createUserWithEnteredData:userType data:fullName];
-                [self startSignUpNewUser:qbUser isPaid:isPaid];
+                
+                [self signupUser:fullName type:userType paid:isPaid];
             } else {
                 [SVProgressHUD dismiss];
                 
@@ -396,6 +400,32 @@
 //
 //    return tagIsValid;
     return YES;
+}
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+     if ([segue.destinationViewController isKindOfClass:[RegisterTableViewController class]]) {
+         RegisterTableViewController *registerTableVC = (RegisterTableViewController *)segue.destinationViewController;
+         registerTableVC.loginTableViewController = self;
+     }
+ }
+
+#pragma mark - public methods
+- (void)signupUser:(NSString *)fullname type:(NSString *)type paid:(BOOL)isPaid {
+    QBUUser *qbUser = [self createUserWithEnteredData:type data:fullname];
+    [self startSignUpNewUser:qbUser isPaid:isPaid];
+}
+
+- (void)updateFieldsName:(NSString *)fullname type:(NSString *)type paid:(BOOL)isPaid {
+    // Assign UI
+    self.userNameTextField.text = fullname;
+    
+    //
+    [self signupUser:fullname type:type paid:isPaid];
 }
 
 @end

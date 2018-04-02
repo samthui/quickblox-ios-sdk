@@ -3,6 +3,7 @@
 
 target 'BacSiViet' do
     pod 'AFNetworking', '~> 3.0'
+    pod 'FBSDKLoginKit'
     
     pod 'QMCVDevelopment', :git => 'git@github.com:QuickBlox/QMChatViewController-ios.git', :tag => '0.5.1'
     pod 'QMServicesDevelopment', :git => 'git@github.com:QuickBlox/q-municate-services-ios.git', :tag => '0.5.5'

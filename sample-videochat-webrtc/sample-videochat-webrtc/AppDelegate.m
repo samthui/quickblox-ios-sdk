@@ -11,6 +11,14 @@
 #import "QBCore.h"
 #import "Settings.h"
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
 const CGFloat kQBRingThickness = 1.f;
 const NSTimeInterval kQBAnswerTimeInterval = 60.f;
 const NSTimeInterval kQBDialingTimeInterval = 5.f;
@@ -25,6 +33,9 @@ NSString *const kAccountKey     = @"suHzUtFPa1RhcBeFtnwU";//@"7yvNe17TnjNUqDoPwf
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     
     [QBSettings setAccountKey:kAccountKey];
     [QBSettings setApplicationID:kApplicationID];
@@ -48,6 +59,33 @@ NSString *const kAccountKey     = @"suHzUtFPa1RhcBeFtnwU";//@"7yvNe17TnjNUqDoPwf
     
     return YES;
 }
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+                    ];
+    // Add any custom logic here.
+    return handled;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:sourceApplication
+                                                               annotation:annotation
+                    ];
+    // Add any custom logic here.
+    return handled;
+} 
 
 // MARK: - Application states
 

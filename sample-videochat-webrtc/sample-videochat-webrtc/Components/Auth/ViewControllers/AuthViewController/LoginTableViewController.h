@@ -10,4 +10,7 @@
 
 @interface LoginTableViewController : UITableViewController
 
+//-(void)signupUser:(NSString *)fullname type:(NSString *)type paid:(BOOL)isPaid;
+- (void)updateFieldsName:(NSString *)fullname type:(NSString *)type paid:(BOOL)isPaid;
+
 @end

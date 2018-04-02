@@ -141,20 +141,18 @@
             NSLog(@"success! data=%@",responseObject);
             
             if ([[responseObject objectForKey:@"isLogin"] intValue] == 1) {
+                // Pop out
+                [self.navigationController popViewControllerAnimated:YES];
                 
-//                NSString *userType = [responseObject objectForKey:@"user_type"];
-//                NSString *fullName = [responseObject objectForKey:@"fullname"];
-//                BOOL isPaid = [[responseObject objectForKey:@"paid"] boolValue];
-//                QBUUser *qbUser = [self createUserWithEnteredData:userType data:fullName];
-//                [self startSignUpNewUser:qbUser isPaid:isPaid];
+                // Sign in
+                NSString *fullName = [responseObject objectForKey:@"fullname"];
+                NSString *userType = [responseObject objectForKey:@"user_type"];
+                BOOL isPaid = [[responseObject objectForKey:@"paid"] boolValue];
                 
-                
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"OK"
-                                                                message:[responseObject objectForKey:@"ok"]
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
+                if (self.loginTableViewController) {
+//                    [self.loginTableViewController signupUser:fullName type:userType paid:isPaid];
+                    [self.loginTableViewController updateFieldsName:fullName type:userType paid:isPaid];
+                }
                 
             } else {
                 [SVProgressHUD dismiss];
@@ -172,6 +170,8 @@
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [SVProgressHUD dismiss];
+            
+            [self endConnectError:nil];
             
             NSLog(@"Errors=%@", [error description]);
             
@@ -233,15 +233,16 @@
     return UITableViewAutomaticDimension;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSLog(@"hi there");
 }
-*/
+
 
 #pragma mark - UITextFieldDelegate
 

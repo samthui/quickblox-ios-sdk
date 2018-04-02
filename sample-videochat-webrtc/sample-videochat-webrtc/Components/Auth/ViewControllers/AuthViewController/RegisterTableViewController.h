@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginTableViewController.h"
 
 @interface RegisterTableViewController : UITableViewController
+
+@property (nonatomic, retain) LoginTableViewController *loginTableViewController;
 
 @end
